@@ -1,0 +1,116 @@
+/*
+ * This is is imported by virtue of "sass.var" in "app.json".
+ */
+
+$enable-font-awesome: dynamic(true);
+
+/*overrides*/
+.x-mask {
+    opacity: 0.5 !important;
+    background-color: #546E7A !important;
+}
+/*end overrides*/
+
+.penknife-logo {
+    background-image: url("img/pn-elegantt.svg");
+}
+.hamburger-icon {
+    background-image: url("img/hamburger.svg");
+}
+.close-icon {
+    background-image: url("img/close.svg");
+}
+
+.icon-advertising {
+    background-image: url("img/megaphone.svg");
+}
+.icon-lookup {
+    background-image: url("img/binoculars.svg");
+}
+.icon-light-bulb {
+    background-image: url("img/light-bulb.svg");
+}
+.icon-skyscraper {
+    background-image: url("img/skyscraper.svg");
+}
+.icon-investment {
+    background-image: url("img/investment.svg");
+}
+.icon-hand-shake {
+    background-image: url("img/hand-shake.svg");
+}
+
+
+.btn-china-round,
+.btn-italy-round,
+.play-clip-round {
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    border-radius: 50% !important;
+}
+
+.btn-china-round {
+    background-image: url("img/china-round.svg") !important;    
+    box-shadow: 0px 2px 3px #a60000;
+}
+.btn-italy-round {
+    background-image: url("img/italy-round.svg") !important;
+    box-shadow: 0px 2px 3px #a60000;
+}
+.play-clip-round {
+    background-image: url("img/play.svg") !important;
+}
+
+.toolbar-red {
+    background-color: red !important;
+}
+.button-toolbar-light {
+    background-color: #ffe082 !important;
+    color: red !important;
+}
+
+.button-green {
+    background-color: #64dd17 !important;
+}
+.button-red {
+    background-color: #ff3d00 !important;
+}
+.button-text-red {
+    color: #ff3d00 !important;
+}
+
+
+.toolbar-menu-minimal .x-toolbar-inner {
+    padding: 5px 2px !important;
+}
+.toolbar-menu-minimal-buttons {
+    text-transform: none !important;
+    color: #D80027 !important;
+    font-size: 11px !important;
+}
+.toolbar-menu-minimal-buttons .x-button-label,
+.hamburger-menu-list-buttons .x-button-label {
+    white-space: normal;
+}
+.toolbar-menu-minimal-button-icon {
+    font-size: 18px !important;
+}
+
+
+
+.hamburger-menu-list-buttons {
+    text-transform: none !important;
+    color: #d80027 !important;
+    font-size: 13px !important;
+    margin: 10px;
+}
+
+.button-icon-24 .x-button-icon {
+    font-size: 24px;
+}
+
+.button-sign-up-big {
+    font-size: 24px !important;
+}
