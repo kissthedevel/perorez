@@ -3,7 +3,7 @@ Ext.define('PENKNIFE.view.arch.menu.HamburgerMenu',{
     extend: 'Ext.Container',
 
     requires: [
-        'PENKNIFE.view.arch.menu.MainMenuMinimalController'
+        'PENKNIFE.view.arch.menu.HamburgerMenuController'
     ],
 
     controller: 'arch-menu-HamburgerMenu',
@@ -58,11 +58,13 @@ Ext.define('PENKNIFE.view.arch.menu.HamburgerMenu',{
                         {
                             xtype: 'button',
                             itemId: 'BtnHamSignIn', reference: 'BtnHamSignIn',
-                            text: PENKNIFE.std._translate('Sign In'),
+                            //text: PENKNIFE.lang._translate('SIGN_IN'),
                             cls: 'button-text-red',
                             listeners: {
                                 tap: 'tapBtnHamSignIn'
-                            }
+                            },
+                            localized: 'text',
+                            localizedKey: `SIGN_IN`
                         }
                     ]
                 },
@@ -144,27 +146,33 @@ Ext.define('PENKNIFE.view.arch.menu.HamburgerMenu',{
                         {
                             xtype: 'button',
                             itemId: 'BtnHamServizi', reference: 'BtnHamServizi',
-                            text: PENKNIFE.std._translate('I nostri Servizi'),
+                            //text: PENKNIFE.lang._translate('NOSTRI_SERVIZI'),
                             ui: 'action',
                             cls: 'button-red',
-                            margin: '0 10 10 10'
+                            margin: '0 10 10 10',
+                            localized: 'text',
+                            localizedKey: `NOSTRI_SERVIZI`
                         },
                         {
                             xtype: 'button',
                             itemId: 'BtnHamContattaci', reference: 'BtnHamContattaci',
-                            text: PENKNIFE.std._translate('Vuoi saperne di più?'),
+                            //text: PENKNIFE.lang._translate('VUOI_SAPERNE_DI_PIU'),
                             ui: 'action',
                             cls: 'button-red',
-                            margin: '0 10 10 10'
+                            margin: '0 10 10 10',
+                            localized: 'text',
+                            localizedKey: `VUOI_SAPERNE_DI_PIU`
                         },
                         {
                             xtype: 'button',
                             itemId: 'BtnHamSignUp', reference: 'BtnHamSignUp',
-                            text: PENKNIFE.std._translate('Sign Up'),
+                            //text: PENKNIFE.lang._translate('SIGN_UP'),
                             ui: 'action',
                             cls: 'button-green button-sign-up-big',
                             height: 80,
-                            margin: '0 10 10 10'
+                            margin: '0 10 10 10',
+                            localized: 'text',
+                            localizedKey: `SIGN_UP`
                         }
                     ]
                 }

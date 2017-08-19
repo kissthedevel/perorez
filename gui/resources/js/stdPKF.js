@@ -2,7 +2,15 @@
 
 class stdPKF {
     constructor() {
-
+        Ext.define('Override.Ext.Component', {
+            override : 'Ext.Component',
+        
+            initialize : function() {
+                if (this.localized) {
+                    PENKNIFE.lang._localize([this])
+                }
+            }
+        })
     }
 
     initGlobals() {
@@ -10,7 +18,8 @@ class stdPKF {
             PENKNIFE['globals'] = {
                 menus: {
                     createMenuMinimal: false
-                }
+                },
+                language: 'it'
             }
         }
     }
@@ -21,9 +30,5 @@ class stdPKF {
 
     isPhone() {
         return Ext.os.deviceType.toLowerCase() === 'phone'
-    }
-
-    _translate(string) {
-        return string
     }
 }

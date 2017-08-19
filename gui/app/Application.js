@@ -14,6 +14,7 @@ Ext.define('PENKNIFE.Application', {
 
     launch: function () {
         // TODO - Launch the application
+        PENKNIFE.lang = new langPKF()
         PENKNIFE.std = new stdPKF()
         PENKNIFE.std.initGlobals()
         PENKNIFE.std.createHomeView()        

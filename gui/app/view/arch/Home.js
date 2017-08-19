@@ -48,13 +48,19 @@ Ext.define('PENKNIFE.view.arch.Home',{
                         {
                             xtype: 'button',
                             itemId: 'BtnChina', reference: 'BtnChina',
-                            cls: 'btn-china-round'
+                            cls: 'btn-china-round',
+                            listeners: {
+                                tap: 'tapBtnChina'
+                            }
                         },
                         {
                             xtype: 'button',
                             itemId: 'BtnItaly', reference: 'BtnItaly',
                             cls: 'btn-italy-round',
-                            margin: '0 0 0 15'
+                            margin: '0 0 0 15',
+                            listeners: {
+                                tap: 'tapBtnItaly'
+                            }
                         },
                         {
                             xtype: 'container',

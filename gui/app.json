@@ -211,6 +211,9 @@
         },
         {
             "path": "resources/js/stdPKF.js"
+        },
+        {
+            "path": "resources/locale/lang.js"
         }
     ],
 

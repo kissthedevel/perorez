@@ -8,7 +8,15 @@ Ext.define('PENKNIFE.view.arch.HomeController', {
         }
         this.overlay.show()
     },
-
+    tapBtnChina: function(th) {
+        PENKNIFE.globals.language = 'zh_CN'
+        PENKNIFE.lang._localize(Ext.Viewport.query('[localized]'))
+    },
+    tapBtnItaly: function(th) {
+        PENKNIFE.globals.language = 'it'
+        PENKNIFE.lang._localize(Ext.Viewport.query('[localized]'))
+    },
+    
     init: function() {
         if (PENKNIFE.std.isPhone()) {
             //PENKNIFE.globals.menus.createMenuMinimal = true

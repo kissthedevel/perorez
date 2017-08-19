@@ -99,35 +99,42 @@ Ext.define('PENKNIFE.view.arch.menu.MainMenuItemsList',{
                     xtype: 'button',
                     cls: 'toolbar-menu-minimal-buttons',
                     iconAlign: 'top',
-                    flex: 1
+                    flex: 1,
+                    localized: 'text'
                 } : {
                     xtype: 'button',
                     cls: 'hamburger-menu-list-buttons button-icon-24',
-                    iconAlign: 'left'
+                    iconAlign: 'left',
+                    localized: 'text'
                 },
                 items: [
                     {
-                        text: PENKNIFE.std._translate('Pubblicizza l\'azienda in Italia'),
+                        //text: PENKNIFE.lang._translate(`PUBBL_IN_ITA${this.minimalMenu ? '_SHORT' : ''}`),
                         itemId: 'BtnAdvertiseTbMain', reference: 'BtnAdvertiseTbMain',
-                        iconCls: `icon-advertising ${this.minimalMenu ? 'toolbar-menu-minimal-button-icon' : ''}`
+                        iconCls: `icon-advertising ${this.minimalMenu ? 'toolbar-menu-minimal-button-icon' : ''}`,
+                        localizedKey: `PUBBL_IN_ITA${this.minimalMenu ? '_SHORT' : ''}`
                     },
                     {
-                        text: PENKNIFE.std._translate('Trova un\'azienda italiana'),
+                        //text: PENKNIFE.lang._translate(`TROVA_AZIENDA_ITA${this.minimalMenu ? '_SHORT' : ''}`),
+                        localizedKey: `TROVA_AZIENDA_ITA${this.minimalMenu ? '_SHORT' : ''}`,
                         iconCls: `icon-lookup ${this.minimalMenu ? 'toolbar-menu-minimal-button-icon' : ''}`,
                         listeners: {
                             tap: 'tapTrovaAziendaItaliana'
                         }
                     },
                     {
-                        text: PENKNIFE.std._translate('Presenta un progetto innovativo'),
+                        //text: PENKNIFE.lang._translate(`PRESENTA_PRG_INNOVAT${this.minimalMenu ? '_SHORT' : ''}`),
+                        localizedKey: `PRESENTA_PRG_INNOVAT${this.minimalMenu ? '_SHORT' : ''}`,
                         iconCls: `icon-light-bulb ${this.minimalMenu ? 'toolbar-menu-minimal-button-icon' : ''}`
                     },
                     {
-                        text: PENKNIFE.std._translate('Vendi / compra Immobili'),
+                        //text: PENKNIFE.lang._translate(`VENDI_COMPRA_IMMOB${this.minimalMenu ? '_SHORT' : ''}`),
+                        localizedKey: `VENDI_COMPRA_IMMOB${this.minimalMenu ? '_SHORT' : ''}`,
                         iconCls: `icon-skyscraper ${this.minimalMenu ? 'toolbar-menu-minimal-button-icon' : ''}`
                     },
                     {
-                        text: PENKNIFE.std._translate('Investi in progetti italiani'),
+                        //text: PENKNIFE.lang._translate(`INVESTI_IN_PRG_ITA${this.minimalMenu ? '_SHORT' : ''}`),
+                        localizedKey: `INVESTI_IN_PRG_ITA${this.minimalMenu ? '_SHORT' : ''}`,
                         iconCls: `icon-investment ${this.minimalMenu ? 'toolbar-menu-minimal-button-icon' : ''}`
                     }
                 ]
