@@ -7,93 +7,19 @@ Ext.define('PENKNIFE.view.arch.menu.MainMenuItemsList',{
     ],
 
     controller: 'arch-menu-MainMenuItemsList',
-
-    /**
-     * TODO non funziona in modalità wide
-     */
-    /* plugins: 'responsive',
-    responsiveConfig: {
-        wide: {
-            layout: 'hbox'
-        },
-        tall: {
-            layout: 'vbox'
-        }
-    }, */
     
-    layout: 'vbox',
-    flex: 1,
+    layout: {
+        type: 'vbox',
+        align: 'stretch'
+    },
 
     initialize: function() {
         this.setItems([
-            /* {
-                xtype: 'container',
-                layout: {
-                    type: 'hbox'
-                },
-                items: [
-                    {
-                        xtype: 'button',
-                        text: PENKNIFE.std._translate('Pubblicizzati'),
-                        cls: 'toolbar-menu-minimal-buttons',
-                        iconCls: 'icon-advertising toolbar-menu-minimal-button-icon',
-                        iconAlign: 'top',
-                        flex: 1
-                    },
-                    {
-                        xtype: 'button',
-                        text: PENKNIFE.std._translate('Trova un\'azienda'),
-                        cls: 'toolbar-menu-minimal-buttons',
-                        iconCls: 'icon-lookup toolbar-menu-minimal-button-icon',
-                        iconAlign: 'top',
-                        flex: 1,                    
-                    },
-                    {
-                        xtype: 'button',
-                        text: PENKNIFE.std._translate('Presenta progetto'),
-                        cls: 'toolbar-menu-minimal-buttons',
-                        iconCls: 'icon-light-bulb toolbar-menu-minimal-button-icon',
-                        iconAlign: 'top',
-                        flex: 1
-                    }
-                ]
-            },
             {
                 xtype: 'container',
                 layout: {
-                    type: 'hbox'
-                },
-                items: [
-                    {
-                        xtype: 'button',
-                        text: PENKNIFE.std._translate('Immobili'),
-                        cls: 'toolbar-menu-minimal-buttons',
-                        iconCls: 'icon-skyscraper toolbar-menu-minimal-button-icon',
-                        iconAlign: 'top',
-                        flex: 1
-                    },
-                    {
-                        xtype: 'button',
-                        text: PENKNIFE.std._translate('Investi'),
-                        cls: 'toolbar-menu-minimal-buttons',
-                        iconCls: 'icon-investment toolbar-menu-minimal-button-icon',
-                        iconAlign: 'top',
-                        flex: 1
-                    },
-                    {
-                        xtype: 'button',
-                        text: PENKNIFE.std._translate('Fai business'),
-                        cls: 'toolbar-menu-minimal-buttons',
-                        iconCls: 'icon-hand-shake toolbar-menu-minimal-button-icon',
-                        iconAlign: 'top',
-                        flex: 1
-                    }
-                ]
-            }, */
-            {
-                xtype: 'container',
-                layout: {
-                    type: this.minimalMenu ? 'hbox' : 'vbox'
+                    type: this.minimalMenu ? 'hbox' : 'vbox',
+                    align: 'stretch'
                 },
                 defaults: this.minimalMenu ? {
                     xtype: 'button',

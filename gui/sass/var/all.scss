@@ -11,6 +11,7 @@ $enable-font-awesome: dynamic(true);
 }
 /*end overrides*/
 
+/*ICONS*/
 .penknife-logo {
     background-image: url("img/pn-elegantt.svg");
 }
@@ -43,7 +44,8 @@ $enable-font-awesome: dynamic(true);
 
 .btn-china-round,
 .btn-italy-round,
-.play-clip-round {
+.play-clip-round,
+.icon-logout-mini-white {
     background-repeat: no-repeat;
     width: 32px;
     height: 32px;
@@ -62,6 +64,22 @@ $enable-font-awesome: dynamic(true);
 .play-clip-round {
     background-image: url("img/play.svg") !important;
 }
+
+.icon-send-message {
+    background-image: url("img/paper-plane.svg");
+}
+.icon-user-male {
+    background-image: url("img/user-male-outline.svg");
+}
+.icon-logout-hamburger {
+    background-image: url("img/logout-grey-blue.svg");
+}
+.icon-logout-mini-white {
+    background-image: url("img/logout-mini-white.svg") !important;
+}
+
+
+/*END ICONS*/
 
 .toolbar-red {
     background-color: red !important;
@@ -107,10 +125,43 @@ $enable-font-awesome: dynamic(true);
     margin: 10px;
 }
 
+.hamburger-menu-list-buttons .x-button-label {
+    padding-right: 5px !important;
+}
+
 .button-icon-24 .x-button-icon {
     font-size: 24px;
 }
 
 .button-sign-up-big {
     font-size: 24px !important;
+}
+
+.label-user-toolbar {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    font-style: oblique;
+}
+.label-user-city-toolbar {
+    color: white;
+    font-size: 13px;
+}
+
+.label-user-toolbar-hamburger {
+    font-size: 19px;
+    font-weight: bold;
+    color: #303c42;
+    font-style: oblique;
+    margin-bottom: 0px !important;
+}
+.label-user-city-toolbar-hamburger {
+    color: #303c42;
+    font-size: 12px;
+    margin-bottom: 0px !important;
+}
+
+.no-margin-top-bottom-user {
+    margin-top: -5px !important;
+    margin-bottom: -5px !important;
 }

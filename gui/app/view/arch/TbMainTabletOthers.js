@@ -37,6 +37,31 @@ Ext.define('PENKNIFE.view.arch.TbMainTabletOthers',{
                     margin: '0 0 0 15'
                 }
             ]
+        },
+        {
+            xtype: 'container',
+            itemId: 'CntLogged', reference: 'CntLogged',
+            layout: {
+                type: 'hbox',
+                align: 'middle'
+            },
+            hidden: true,
+            items: [
+                {
+                    xtype: 'container',
+                    itemId: 'CntTbUserInfo', reference: 'CntTbUserInfo',
+                    layout: {
+                        type: 'vbox',
+                        align: 'stretch'
+                    },
+                    height: 42,
+                    margin: '0 15 0 0'
+                },
+                {
+                    xtype: 'button',
+                    cls: 'icon-logout-mini-white'
+                }
+            ]
         }
     ]
 });

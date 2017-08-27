@@ -18,22 +18,38 @@ Ext.define('PENKNIFE.view.arch.HomeController', {
     },
     
     init: function() {
+        Ext.suspendLayouts()
+
         if (PENKNIFE.std.isPhone()) {
-            //PENKNIFE.globals.menus.createMenuMinimal = true
             this.lookupReference('ArchHome').add(Ext.create('Ext.Toolbar', {
                 docked: 'top',
                 cls: 'toolbar-menu-minimal',
                 items: [
                     Ext.create('PENKNIFE.view.arch.menu.MainMenuItemsList', {
-                        minimalMenu: true
+                        minimalMenu: true,
+                        flex: 1
                     })
                 ]
             }))
-            //PENKNIFE.globals.menus.createMenuMinimal = false
         } else {
             let tbOthers = this.lookupReference('TbMainTablet_others')
             tbOthers.add(Ext.create('PENKNIFE.view.arch.TbMainTabletOthers'))
-            //TODO creare menu di sinistra esploso
+            let leftMenu = this.lookupReference('CntMainMenu')
+            leftMenu.add(Ext.create('PENKNIFE.view.arch.menu.MainMenuItemsList'))
+            leftMenu.add(Ext.create('Ext.Toolbar', {
+                docked: 'bottom',
+                layout: {
+                    type: 'vbox',
+                    align: 'stretch'
+                },
+                items: [
+                    Ext.create('PENKNIFE.view.arch.menu.TbMainMenuUnloggedTablet', {
+                        controllerHome: this
+                    })
+                ]
+            }))
         }
+
+        Ext.resumeLayouts()
     }
 });

@@ -42,14 +42,15 @@ class langPKF {
          * @description CONTACT_US
          */
         this.dictionary['en']['CONTACT_US'] = `Contact Us`
-        this.dictionary['it']['CONTACT_US'] = `traduzione`
-        this.dictionary['zh_CN']['CONTACT_US'] = `接触`
+        this.dictionary['it']['CONTACT_US'] = `Contattaci`
+        this.dictionary['zh_CN']['CONTACT_US'] = `联系我们`
 
         /**
          * @description PUBBL_IN_ITA_SHORT
          */
         this.dictionary['en']['PUBBL_IN_ITA_SHORT'] = `Advertise your company in Italy`
-        this.dictionary['it']['PUBBL_IN_ITA_SHORT'] = `Pubblicizza l'azienda in Italia`
+        //this.dictionary['it']['PUBBL_IN_ITA_SHORT'] = `Pubblicizza l'azienda in Italia`
+        this.dictionary['it']['PUBBL_IN_ITA_SHORT'] = `Pubblicizza in Italia`
         this.dictionary['zh_CN']['PUBBL_IN_ITA_SHORT'] = `广告公司在意大利`
         /**
          * @description PUBBL_IN_ITA
@@ -63,7 +64,8 @@ class langPKF {
          * @description TROVA_AZIENDA_ITA_SHORT
          */
         this.dictionary['en']['TROVA_AZIENDA_ITA_SHORT'] = `Find an Italian company`
-        this.dictionary['it']['TROVA_AZIENDA_ITA_SHORT'] = `Trova un'azienda italiana`
+        //this.dictionary['it']['TROVA_AZIENDA_ITA_SHORT'] = `Trova un'azienda italiana`
+        this.dictionary['it']['TROVA_AZIENDA_ITA_SHORT'] = `Trova un'azienda`
         this.dictionary['zh_CN']['TROVA_AZIENDA_ITA_SHORT'] = `找到一家意大利公司`
         /**
          * @description TROVA_AZIENDA_ITA
@@ -77,7 +79,8 @@ class langPKF {
          * @description PRESENTA_PRG_INNOVAT_SHORT
          */
         this.dictionary['en']['PRESENTA_PRG_INNOVAT_SHORT'] = `It presents an innovative project`
-        this.dictionary['it']['PRESENTA_PRG_INNOVAT_SHORT'] = `Presenta un progetto innovativo`
+        //this.dictionary['it']['PRESENTA_PRG_INNOVAT_SHORT'] = `Presenta un progetto innovativo`
+        this.dictionary['it']['PRESENTA_PRG_INNOVAT_SHORT'] = `Presenta un progetto`
         this.dictionary['zh_CN']['PRESENTA_PRG_INNOVAT_SHORT'] = `它提出了一个创新项目`
         /**
          * @description PRESENTA_PRG_INNOVAT
@@ -91,7 +94,8 @@ class langPKF {
          * @description VENDI_COMPRA_IMMOB_SHORT
          */
         this.dictionary['en']['VENDI_COMPRA_IMMOB_SHORT'] = `Sell ​​/ Buy Real Estate`
-        this.dictionary['it']['VENDI_COMPRA_IMMOB_SHORT'] = `Vendi / Compra Immobili`
+        //this.dictionary['it']['VENDI_COMPRA_IMMOB_SHORT'] = `Vendi / Compra Immobili`
+        this.dictionary['it']['VENDI_COMPRA_IMMOB_SHORT'] = `Mercato Immobiliare`
         this.dictionary['zh_CN']['VENDI_COMPRA_IMMOB_SHORT'] = `出售/购买属性`
         /**
          * @description VENDI_COMPRA_IMMOB
@@ -105,7 +109,8 @@ class langPKF {
          * @description INVESTI_IN_PRG_ITA_SHORT
          */
         this.dictionary['en']['INVESTI_IN_PRG_ITA_SHORT'] = `Invest in Italian projects`
-        this.dictionary['it']['INVESTI_IN_PRG_ITA_SHORT'] = `Investi in progetti italiani`
+        //this.dictionary['it']['INVESTI_IN_PRG_ITA_SHORT'] = `Investi in progetti italiani`
+        this.dictionary['it']['INVESTI_IN_PRG_ITA_SHORT'] = `Investi in Italia`
         this.dictionary['zh_CN']['INVESTI_IN_PRG_ITA_SHORT'] = `投资意大利项目`
         /**
          * @description INVESTI_IN_PRG_ITA
@@ -114,6 +119,12 @@ class langPKF {
         this.dictionary['it']['INVESTI_IN_PRG_ITA'] = `Investi in progetti innovativi italiani`
         this.dictionary['zh_CN']['INVESTI_IN_PRG_ITA'] = `投资于创新的意大利项目`
         
+        /**
+         * @description SEI_GIA_ISCRITTO
+         */
+        this.dictionary['en']['SEI_GIA_ISCRITTOKEY'] = `Are you already a member?`
+        this.dictionary['it']['SEI_GIA_ISCRITTO'] = `sei già iscritto?`
+        this.dictionary['zh_CN']['SEI_GIA_ISCRITTO'] = `你已经注册了吗？`
 
 
         /**
@@ -136,6 +147,9 @@ class langPKF {
                 switch (el.localized) {
                     case 'text':
                         el.setText(this._translate(el.localizedKey))
+                        break;
+                    case 'html':
+                        el.setHtml(this._translate(el.localizedKey))
                         break;
                 
                     default:

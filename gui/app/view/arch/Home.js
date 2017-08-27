@@ -5,6 +5,9 @@ Ext.define('PENKNIFE.view.arch.Home',{
     requires: [
         'PENKNIFE.view.arch.HomeController'
     ],
+    uses: [
+        'PENKNIFE.view.arch.menu.TbMainMenuUnloggedTablet'
+    ],
 
     controller: 'arch-home',
     
@@ -41,9 +44,10 @@ Ext.define('PENKNIFE.view.arch.Home',{
                         {
                             xtype: 'image',
                             src: 'resources/img/pn-elegantt.png',
-                            height: 35,
+                            height: PENKNIFE.std.isPhone() ? 35 : 48,
+                            margin: PENKNIFE.std.isPhone() ? null : '0 0 -5 0',
                             flex: PENKNIFE.std.isPhone() ? 1 : null,
-                            minWidth: PENKNIFE.std.isPhone() ? null : 190
+                            minWidth: PENKNIFE.std.isPhone() ? null : 270
                         },
                         {
                             xtype: 'button',
@@ -81,7 +85,12 @@ Ext.define('PENKNIFE.view.arch.Home',{
                         type: 'hbox',
                         align: 'stretch'
                     },
+                    flex: 1,
                     items: [
+                        /**
+                         * Sezione di sinistra
+                         * ONLY TABLET/DESKTOP
+                         */
                         {
                             xtype: 'container',
                             itemId: 'CntMainMenu', reference: 'CntMainMenu',
@@ -89,11 +98,13 @@ Ext.define('PENKNIFE.view.arch.Home',{
                                 type: 'vbox',
                                 align: 'stretch'
                             },
-                            width: 200,
-                            minHeight: 1000,
+                            width: 280,
                             hidden: PENKNIFE.std.isPhone(),
+                            scrollable: true,
                             style: {
-                                'background-color': '#D50000'
+                                //'background-color': '#D50000'
+                                'background-color': '#fafafa',
+                                'border-right': '3px solid #d50000'
                             }
                         },
                         /**
@@ -108,7 +119,7 @@ Ext.define('PENKNIFE.view.arch.Home',{
                                 align: 'stretch'
                             },
                             flex: 1,
-                            minHeight: 1000,
+                            scrollable: true,
                             style: {
                                 'background-color': '#607D8B'
                             }
