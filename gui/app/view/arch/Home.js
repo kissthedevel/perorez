@@ -114,15 +114,52 @@ Ext.define('PENKNIFE.view.arch.Home',{
                         {
                             xtype: 'container',
                             itemId: 'CntMainContent', reference: 'CntMainContent',
-                            layout: {
-                                type: 'vbox',
-                                align: 'stretch'
-                            },
+                            layout: 'card',
                             flex: 1,
-                            scrollable: true,
-                            style: {
-                                'background-color': '#607D8B'
-                            }
+                            items: [
+                                {
+                                    xtype: 'container',
+                                    itemId: 'LevelHome', reference: 'LevelHome',
+                                    layout: {
+                                        type: 'vbox',
+                                        align: 'stretch'
+                                    },
+                                    flex: 1,
+                                    style: {
+                                        'background-color': 'green'
+                                    },
+                                    scrollable: true/* ,
+                                    listeners: {
+                                        element: 'element',
+                                        tap: function() {
+                                            alert('tap')
+                                        },
+                                        longpress: function() {
+                                            alert('longpress')
+                                        }
+                                    } */
+                                },
+                                {
+                                    xtype: 'container',
+                                    itemId: 'LevelFirst', reference: 'LevelFirst',
+                                    layout: {
+                                        type: 'vbox',
+                                        align: 'stretch'
+                                    },
+                                    flex: 1,
+                                    scrollable: true
+                                },
+                                {
+                                    xtype: 'container',
+                                    itemId: 'LevelSecond', reference: 'LevelSecond',
+                                    layout: {
+                                        type: 'vbox',
+                                        align: 'stretch'
+                                    },
+                                    flex: 1,
+                                    scrollable: true
+                                }
+                            ]
                         }
                     ]
                 }
