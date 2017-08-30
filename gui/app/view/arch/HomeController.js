@@ -54,10 +54,9 @@ Ext.define('PENKNIFE.view.arch.HomeController', {
          * GESTIONE HOME PAGE
          */
         //creazione panel tiles
-        let panelTiles = Ext.create('PENKNIFE.view.arch.UserInfo', {
+        let panelTiles = Ext.create('PENKNIFE.view.tiles.PanelTiles', {
             controllerHome: this
         })
-        //this.lookupReference('LevelHome').add(panelTiles)
         this.lookupReference('LevelHome').add(panelTiles)
 
         Ext.resumeLayouts()

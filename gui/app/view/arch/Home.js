@@ -125,9 +125,6 @@ Ext.define('PENKNIFE.view.arch.Home',{
                                         align: 'stretch'
                                     },
                                     flex: 1,
-                                    style: {
-                                        'background-color': 'green'
-                                    },
                                     scrollable: true/* ,
                                     listeners: {
                                         element: 'element',

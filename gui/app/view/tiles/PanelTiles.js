@@ -11,23 +11,6 @@ Ext.define('PENKNIFE.view.tiles.PanelTiles',{
         type: 'vbox',
         align: 'stretch'
     },
-    height: 50,
-    style: {
-        'background-color': 'red'
-    },
-
-    items: PENKNIFE.std.isPhone() ? [
-        /**
-         * SMARTPHONE
-         */
-        {
-            xtype: 'container',
-            height: 30
-        }
-    ] : [
-        /**
-         * TABLET / DESKTOP
-         */
-
-    ]
+    height: PENKNIFE.std.getPanelTilesSize().height,
+    cls: 'button-red'
 });
