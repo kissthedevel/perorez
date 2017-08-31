@@ -47,7 +47,7 @@ Ext.define('PENKNIFE.view.arch.Home',{
                             height: PENKNIFE.std.isPhone() ? 35 : 48,
                             margin: PENKNIFE.std.isPhone() ? null : '0 0 -5 0',
                             flex: PENKNIFE.std.isPhone() ? 1 : null,
-                            minWidth: PENKNIFE.std.isPhone() ? null : 270
+                            minWidth: PENKNIFE.std.isPhone() ? null : PENKNIFE.globals.tabletMenuWidth - 10
                         },
                         {
                             xtype: 'button',
@@ -98,7 +98,7 @@ Ext.define('PENKNIFE.view.arch.Home',{
                                 type: 'vbox',
                                 align: 'stretch'
                             },
-                            width: 280,
+                            width: PENKNIFE.globals.tabletMenuWidth,
                             hidden: PENKNIFE.std.isPhone(),
                             scrollable: true,
                             style: {
