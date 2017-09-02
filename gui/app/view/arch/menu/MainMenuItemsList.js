@@ -14,6 +14,10 @@ Ext.define('PENKNIFE.view.arch.menu.MainMenuItemsList',{
     },
 
     initialize: function() {
+        if (this.minimalMenu) {
+            PENKNIFE.globals.minimalMenu = this
+        }
+
         this.setItems([
             {
                 xtype: 'container',

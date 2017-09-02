@@ -20,7 +20,8 @@ class stdPKF {
                     createMenuMinimal: false
                 },
                 language: 'it',
-                tabletMenuWidth: 280
+                tabletMenuWidth: 280,
+                ADM: true
             }
         }
     }
@@ -88,4 +89,5 @@ class stdPKF {
             'background-color': colors[randomColor]
         }
     }
+
 }

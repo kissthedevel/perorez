@@ -116,6 +116,9 @@ Ext.define('PENKNIFE.view.arch.Home',{
                             itemId: 'CntMainContent', reference: 'CntMainContent',
                             layout: 'card',
                             flex: 1,
+                            listeners: {
+                                activeItemChange: 'activeItemChangeCntMainContent'
+                            },
                             items: [
                                 {
                                     xtype: 'container',
@@ -125,6 +128,7 @@ Ext.define('PENKNIFE.view.arch.Home',{
                                         align: 'stretch'
                                     },
                                     flex: 1,
+                                    livelloNavigazione: 0,
                                     scrollable: true/* ,
                                     listeners: {
                                         element: 'element',
@@ -144,6 +148,7 @@ Ext.define('PENKNIFE.view.arch.Home',{
                                         align: 'stretch'
                                     },
                                     flex: 1,
+                                    livelloNavigazione: 1,
                                     scrollable: true
                                 },
                                 {
@@ -154,6 +159,7 @@ Ext.define('PENKNIFE.view.arch.Home',{
                                         align: 'stretch'
                                     },
                                     flex: 1,
+                                    livelloNavigazione: 2,
                                     scrollable: true
                                 }
                             ]

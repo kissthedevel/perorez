@@ -40,6 +40,11 @@ Ext.define('PENKNIFE.view.arch.menu.HamburgerMenuController', {
         loggedHamCnt.add(Ext.create('PENKNIFE.view.arch.menu.MainMenuItemsList'))
         loggedHamCnt.show()
 
+        loggedHamCnt.add(Ext.create('PENKNIFE.view.arch.menu.MainMenuItemsOther', {
+            controllerHome: this.getView().controllerHome,
+            controllerHamburger: this
+        }))
+
         Ext.resumeLayouts()
     },
 

@@ -4,9 +4,11 @@ Ext.define('PENKNIFE.view.arch.HomeController', {
 
     tapHamburgerIcon: function(th) {
         if (!this.overlayHamburger) {
-            this.overlay = Ext.Viewport.add(Ext.create('PENKNIFE.view.arch.menu.HamburgerMenu'))
+            this.overlayHamburger = Ext.Viewport.add(Ext.create('PENKNIFE.view.arch.menu.HamburgerMenu', {
+                controllerHome: this
+            }))
         }
-        this.overlay.show()
+        this.overlayHamburger.show()
     },
     tapBtnChina: function(th) {
         PENKNIFE.globals.language = 'zh_CN'
@@ -15,6 +17,36 @@ Ext.define('PENKNIFE.view.arch.HomeController', {
     tapBtnItaly: function(th) {
         PENKNIFE.globals.language = 'it'
         PENKNIFE.lang._localize(Ext.Viewport.query('[localized]'))
+    },
+
+    activeItemChangeCntMainContent: function(sender, value, oldValue) {
+        if (PENKNIFE.globals.minimalMenu) {
+            PENKNIFE.globals.minimalMenu.up('toolbar').setHidden(value.getItemId() !== 'LevelHome')
+        }
+        /**
+         * Se si passa da un livello piu' basso,
+         * si eliminare contenuto livello di provenienza
+         */
+        if (value.livelloNavigazione < oldValue.livelloNavigazione) {
+            /**
+             * nascondo eventuale FAB videata di provenienza
+             */
+            if (oldValue.down().FAB) {
+                Ext.Viewport.remove(Ext.ComponentQuery.query('button[FAB_id=FAB_tilesList]')[0])
+            }
+            oldValue.removeAll(true)
+        }
+
+        /**
+         * nascondo eventuale FAB videata di provenienza
+         */
+        if (oldValue.down() && oldValue.down().FAB) {
+            Ext.ComponentQuery.query('button[FAB_id=FAB_tilesList]')[0].el.dom.style.display = 'none'
+        }
+
+        if (value.down().FAB) {
+            Ext.ComponentQuery.query('button[FAB_id=FAB_tilesList]')[0].el.dom.style.display = ''
+        }
     },
     
     init: function() {

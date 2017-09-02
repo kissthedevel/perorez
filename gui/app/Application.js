@@ -17,7 +17,9 @@ Ext.define('PENKNIFE.Application', {
         PENKNIFE.lang = new langPKF()
         PENKNIFE.std = new stdPKF()
         PENKNIFE.std.initGlobals()
-        PENKNIFE.std.createHomeView()        
+        PENKNIFE.std.createHomeView()
+        
+        Ext.fly('backdrop').destroy()        
     },
 
     onAppUpdate: function () {

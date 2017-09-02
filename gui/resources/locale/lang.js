@@ -125,6 +125,21 @@ class langPKF {
         this.dictionary['en']['SEI_GIA_ISCRITTOKEY'] = `Are you already a member?`
         this.dictionary['it']['SEI_GIA_ISCRITTO'] = `sei già iscritto?`
         this.dictionary['zh_CN']['SEI_GIA_ISCRITTO'] = `你已经注册了吗？`
+        
+        /**
+         * @description LE_MIE_AZIENDE
+         */
+        this.dictionary['en']['LE_MIE_AZIENDE'] = `My Companies`
+        this.dictionary['it']['LE_MIE_AZIENDE'] = `Le mie Aziende`
+        this.dictionary['zh_CN']['LE_MIE_AZIENDE'] = `我的公司`
+
+        /**
+         * @description INSERISCI_AZIENDA
+         */
+        this.dictionary['en']['INSERISCI_AZIENDA'] = `Enter Company`
+        this.dictionary['it']['INSERISCI_AZIENDA'] = `Inserisci Azienda`
+        this.dictionary['zh_CN']['INSERISCI_AZIENDA'] = `进入公司`
+
 
 
         /**
@@ -151,7 +166,10 @@ class langPKF {
                     case 'html':
                         el.setHtml(this._translate(el.localizedKey))
                         break;
-                
+                    case 'title':
+                        el.setTitle(this._translate(el.localizedKey))
+                        break;
+
                     default:
                         break;
                 }

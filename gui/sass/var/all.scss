@@ -21,6 +21,13 @@ $enable-font-awesome: dynamic(true);
 .close-icon {
     background-image: url("img/close.svg");
 }
+.left-arrow {
+    background-image: url("img/left-arrow.svg");
+}
+.lens-find {
+    background-image: url("img/magnifying-search-lenses-tool.svg");
+}
+
 
 .icon-advertising {
     background-image: url("img/megaphone.svg");
@@ -39,6 +46,9 @@ $enable-font-awesome: dynamic(true);
 }
 .icon-hand-shake {
     background-image: url("img/hand-shake.svg");
+}
+.icon-list {
+    background-image: url("img/list.svg");
 }
 
 
@@ -87,16 +97,6 @@ $enable-font-awesome: dynamic(true);
 .button-toolbar-light {
     background-color: #ffe082 !important;
     color: red !important;
-}
-
-.button-green {
-    background-color: #64dd17 !important;
-}
-.button-red {
-    background-color: #ff3d00 !important;
-}
-.button-text-red {
-    color: #ff3d00 !important;
 }
 
 
@@ -165,3 +165,18 @@ $enable-font-awesome: dynamic(true);
     margin-top: -5px !important;
     margin-bottom: -5px !important;
 }
+
+/*BUTTONS*/
+.button-green {
+    background-color: #64dd17 !important;
+}
+.button-red {
+    background-color: #ff3d00 !important;
+}
+.button-text-red {
+    color: #ff3d00 !important;
+}
+.button-text-dark {
+    color: #303C42 !important;
+}
+/*END buttons*/

@@ -19,7 +19,8 @@ Ext.define('PENKNIFE.view.arch.menu.TbMainMenuUnloggedTabletController', {
         cntLogged.down('#CntTbUserInfo').add(Ext.create('PENKNIFE.view.arch.UserInfo'))
         cntLogged.show()
         
-        ctrlHome.lookupReference('CntMainMenu').add(Ext.create('Ext.Toolbar', {
+        let cntMainMenu = ctrlHome.lookupReference('CntMainMenu')
+        cntMainMenu.add(Ext.create('Ext.Toolbar', {
             docked: 'bottom',
             items: [
                 Ext.create('PENKNIFE.view.arch.menu.ToolbarOthersMenu', {
@@ -28,6 +29,10 @@ Ext.define('PENKNIFE.view.arch.menu.TbMainMenuUnloggedTabletController', {
             ]
         }))
         this.view.up('toolbar').destroy()
+
+        cntMainMenu.add(Ext.create('PENKNIFE.view.arch.menu.MainMenuItemsOther', {
+            controllerHome: ctrlHome
+        }))
 
 
         Ext.resumeLayouts()

@@ -250,6 +250,12 @@
             "path": "${build.out.css.path}",
             "bundle": true,
             "exclude": ["fashion"]
+        },
+        {
+            "path": "resources/animate.css"
+        },
+        {
+            "path": "resources/FAB.css"
         }
     ],
 
