@@ -21,7 +21,8 @@ class stdPKF {
                 },
                 language: 'it',
                 tabletMenuWidth: 280,
-                ADM: true
+                ADM: true,
+                dimensionTiles: {}
             }
         }
     }
@@ -88,6 +89,12 @@ class stdPKF {
         return {
             'background-color': colors[randomColor]
         }
+    }
+
+    setGlobalsDimensionTiles(allTiles) {
+        allTiles.forEach( el => {
+            PENKNIFE.globals.dimensionTiles[el.tilecnt] = [el.element.getWidth(), el.element.getHeight()]
+        })
     }
 
 }

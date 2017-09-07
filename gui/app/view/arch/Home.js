@@ -127,6 +127,7 @@ Ext.define('PENKNIFE.view.arch.Home',{
                                         type: 'vbox',
                                         align: 'stretch'
                                     },
+                                    cls: 'background-gen',
                                     flex: 1,
                                     livelloNavigazione: 0,
                                     scrollable: true/* ,
@@ -148,6 +149,7 @@ Ext.define('PENKNIFE.view.arch.Home',{
                                         align: 'stretch'
                                     },
                                     flex: 1,
+                                    cls: 'background-gen',
                                     livelloNavigazione: 1,
                                     scrollable: true
                                 },
@@ -159,6 +161,7 @@ Ext.define('PENKNIFE.view.arch.Home',{
                                         align: 'stretch'
                                     },
                                     flex: 1,
+                                    cls: 'background-gen',
                                     livelloNavigazione: 2,
                                     scrollable: true
                                 }

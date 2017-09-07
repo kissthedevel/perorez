@@ -13,7 +13,7 @@ Ext.define('PENKNIFE.view.tiles.TilesList',{
     },
     flex: 1,
     scrollable: true,
-    cls: 'animated zoomInLeft',
+    cls: 'animated zoomInLeft  background-gen',
 
     items: [
         {

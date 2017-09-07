@@ -21,8 +21,7 @@ Ext.define('PENKNIFE.view.tiles.SchemaSingleController', {
         })) */  
         
         let modules = [
-            {
-                xtype: 'container',
+            Ext.create('Ext.Container', {
                 layout: {
                     type: 'hbox',
                     align: 'stretch'
@@ -30,8 +29,21 @@ Ext.define('PENKNIFE.view.tiles.SchemaSingleController', {
                 flex: 4/24,
                 style: PENKNIFE.std.getRandomColorsMaterial(),
                 tilecnt: '6x4',
-                html: '6x4'
-            },
+                html: '6x4',
+                listeners: {
+                    painted: th => {
+                        if (Ext.Object.isEmpty(PENKNIFE.globals.dimensionTiles)) {
+                            /**
+                             * imposto variabile globals con le attuali misure delle tiles
+                             * nalle home, solo per avere un riferimento alle dimensioni
+                             */
+                            th = Ext.getCmp(th.id)
+                            let levelHome = th.up('#LevelHome')
+                            PENKNIFE.std.setGlobalsDimensionTiles(levelHome.query('[tilecnt]'))
+                        }
+                    }
+                }
+            }),
             {
                 xtype: 'container',
                 layout: {
@@ -262,6 +274,7 @@ Ext.define('PENKNIFE.view.tiles.SchemaSingleController', {
         this.shuffleArray(modulesRight)
 
         modules.forEach( modLeft => this.lookupReference('LeftPanelTilesSchema').add(modLeft))
-        modulesRight.forEach( modRight => this.lookupReference('RightPanelTilesSchema').add(modRight))        
+        modulesRight.forEach( modRight => this.lookupReference('RightPanelTilesSchema').add(modRight))
+        
     }
 });

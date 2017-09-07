@@ -140,6 +140,97 @@ class langPKF {
         this.dictionary['it']['INSERISCI_AZIENDA'] = `Inserisci Azienda`
         this.dictionary['zh_CN']['INSERISCI_AZIENDA'] = `进入公司`
 
+        /**
+         * @description PER_COMINCIARE
+         */
+        this.dictionary['en']['PER_COMINCIARE'] = `To begin with...`
+        this.dictionary['it']['PER_COMINCIARE'] = `Per cominciare...`
+        this.dictionary['zh_CN']['PER_COMINCIARE'] = `开始...`
+        
+        /**
+         * @description NOME_AZIENDA
+         */
+        this.dictionary['en']['NOME_AZIENDA'] = `Company name`
+        this.dictionary['it']['NOME_AZIENDA'] = `Nome Azienda`
+        this.dictionary['zh_CN']['NOME_AZIENDA'] = `公司名称`
+        
+        /**
+         * @description SITO_WEB
+         */
+        this.dictionary['en']['SITO_WEB'] = `Website`
+        this.dictionary['it']['SITO_WEB'] = `Sito Web`
+        this.dictionary['zh_CN']['SITO_WEB'] = `网站`
+
+        /**
+         * @description COME_VUOI_APPARIRE
+         */
+        this.dictionary['en']['COME_VUOI_APPARIRE'] = `How do you want to appear?`
+        this.dictionary['it']['COME_VUOI_APPARIRE'] = `Come vuoi apparire?`
+        this.dictionary['zh_CN']['COME_VUOI_APPARIRE'] = `你想如何出现？`
+
+        /**
+         * @description DESCRIVI_AZIENDA
+         */
+        this.dictionary['en']['DESCRIVI_AZIENDA'] = `Describe the Company`
+        this.dictionary['it']['DESCRIVI_AZIENDA'] = `Descrivi l'Azienda`
+        this.dictionary['zh_CN']['DESCRIVI_AZIENDA'] = `描述公司`
+
+        /**
+         * @description DESCRIZIONE_IN_CINESE
+         */
+        this.dictionary['en']['DESCRIZIONE_IN_CINESE'] = `In Chinese`
+        this.dictionary['it']['DESCRIZIONE_IN_CINESE'] = `In lingua Cinese`
+        this.dictionary['zh_CN']['DESCRIZIONE_IN_CINESE'] = `用中文`
+        
+        /**
+         * @description DESCRIZIONE_IN_ITALIANO
+         */
+        this.dictionary['en']['DESCRIZIONE_IN_ITALIANO'] = `In Italian language`
+        this.dictionary['it']['DESCRIZIONE_IN_ITALIANO'] = `In lingua Italiana`
+        this.dictionary['zh_CN']['DESCRIZIONE_IN_ITALIANO'] = `在意大利语`
+        
+        /**
+         * @description DESCRIZIONE_IN_INGLESE
+         */
+        this.dictionary['en']['DESCRIZIONE_IN_INGLESE'] = `In English`
+        this.dictionary['it']['DESCRIZIONE_IN_INGLESE'] = `In lingua Inglese`
+        this.dictionary['zh_CN']['DESCRIZIONE_IN_INGLESE'] = `英文`
+
+        /**
+         * @description CARICA_IL_LOGO_AZIENDA
+         */
+        this.dictionary['en']['CARICA_IL_LOGO_AZIENDA'] = `Upload the logo`
+        this.dictionary['it']['CARICA_IL_LOGO_AZIENDA'] = `Carica il logo`
+        this.dictionary['zh_CN']['CARICA_IL_LOGO_AZIENDA'] = `上传徽标`
+
+        /**
+         * @description SCEGLI_COLORE_SFONDO
+         */
+        this.dictionary['en']['SCEGLI_COLORE_SFONDO'] = `Tile color`
+        this.dictionary['it']['SCEGLI_COLORE_SFONDO'] = `Colore Tile`
+        this.dictionary['zh_CN']['SCEGLI_COLORE_SFONDO'] = `彩色瓷砖`
+
+        /**
+         * @description SCEGLI_DIMENSIONI
+         */
+        this.dictionary['en']['SCEGLI_DIMENSIONI'] = `Choose size`
+        this.dictionary['it']['SCEGLI_DIMENSIONI'] = `Dimensioni`
+        this.dictionary['zh_CN']['SCEGLI_DIMENSIONI'] = `选择大小`
+
+        /**
+         * @description PREMI_BTN_DIM_SCEGLIERE_DIM
+         */
+        this.dictionary['en']['PREMI_BTN_DIM_SCEGLIERE_DIM'] = `Press the "Dimensions" button to choose the Tile size`
+        this.dictionary['it']['PREMI_BTN_DIM_SCEGLIERE_DIM'] = `Premi il pulsante "Dimensioni" per scegliere la grandezza Tile`
+        this.dictionary['zh_CN']['PREMI_BTN_DIM_SCEGLIERE_DIM'] = `按“尺寸”按钮选择“瓷砖尺寸”`
+
+        /**
+         * @description TILE_SECOND_LATENCY
+         */
+        this.dictionary['en']['TILE_SECOND_LATENCY'] = `How many "seconds" do you want to stay on home (min 10 - max 60)?`
+        this.dictionary['it']['TILE_SECOND_LATENCY'] = `Quanti "secondi" vuoi rimanere sulla home (min 10 - max 60)?`
+        this.dictionary['zh_CN']['TILE_SECOND_LATENCY'] = `你想留几个“秒”（最小10 - 最多60）？`
+
 
 
         /**
@@ -168,6 +259,9 @@ class langPKF {
                         break;
                     case 'title':
                         el.setTitle(this._translate(el.localizedKey))
+                        break;
+                    case 'label':
+                        el.setLabel(this._translate(el.localizedKey))
                         break;
 
                     default:

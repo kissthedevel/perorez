@@ -4,12 +4,20 @@
 
 $enable-font-awesome: dynamic(true);
 
+$highlight-color: red;
+
+
 /*overrides*/
 .x-mask {
     opacity: 0.5 !important;
     background-color: #546E7A !important;
 }
 /*end overrides*/
+
+
+.background-gen {
+    background-color: #ECEFF1 !important;
+}
 
 /*ICONS*/
 .penknife-logo {
@@ -51,9 +59,23 @@ $enable-font-awesome: dynamic(true);
     background-image: url("img/list.svg");
 }
 
+.icon-upload {
+    background-image: url("img/tiny-upload-symbol.svg");
+}
+.icon-pantone {
+    background-image: url("img/pantone.svg");
+}
+.icon-dimensions {
+    background-image: url("img/set-square.svg");
+}
+
 
 .btn-china-round,
+.btn-china-rect,
 .btn-italy-round,
+.btn-italy-rect,
+.btn-eng-round,
+.btn-eng-rect,
 .play-clip-round,
 .icon-logout-mini-white {
     background-repeat: no-repeat;
@@ -71,6 +93,10 @@ $enable-font-awesome: dynamic(true);
     background-image: url("img/italy-round.svg") !important;
     box-shadow: 0px 2px 3px #a60000;
 }
+.btn-eng-round {
+    background-image: url("img/eng-round.svg") !important;
+    box-shadow: 0px 2px 3px #a60000;
+}
 .play-clip-round {
     background-image: url("img/play.svg") !important;
 }
@@ -86,6 +112,17 @@ $enable-font-awesome: dynamic(true);
 }
 .icon-logout-mini-white {
     background-image: url("img/logout-mini-white.svg") !important;
+}
+
+
+.btn-china-rect {
+    background-image: url("img/china-rect.svg") !important;
+}
+.btn-italy-rect {
+    background-image: url("img/italy-rect.svg") !important;
+}
+.btn-eng-rect {
+    background-image: url("img/eng-rect.svg") !important;
 }
 
 
@@ -180,3 +217,38 @@ $enable-font-awesome: dynamic(true);
     color: #303C42 !important;
 }
 /*END buttons*/
+
+/*FIELDSET*/
+.x-form-fieldset-title {
+    font-size: 18px !important;
+    font-weight: bold !important;
+    color: #d80027 !important;
+}
+
+/*TEXTFIELD*/
+.input-gen-penknife {
+    background-color: white !important;
+}
+
+
+.txtfld-descazienda-phone .x-label-el {
+    margin-left: 40px;
+    margin-top: -19px;
+}
+.txtfld-descazienda-tablet .x-label-el {
+    margin-left: 40px;
+    margin-top: -19px;
+}
+
+.stretch-animation {
+    -webkit-transition: all 200ms ease-in;
+    -ms-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+}
+
+
+
+.color-red {
+    color: red !important;
+}
