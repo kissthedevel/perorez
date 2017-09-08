@@ -16,12 +16,10 @@ Ext.define('PENKNIFE.view.tiles.SchemaSingleController', {
     },
 
     init: function() {
-        /* this.lookupReference('ArchHome').add(Ext.create('Ext.Button', {
-            text: 'cippa'
-        })) */  
         
         let modules = [
-            Ext.create('Ext.Container', {
+            {
+                xtype: 'container',
                 layout: {
                     type: 'hbox',
                     align: 'stretch'
@@ -43,7 +41,7 @@ Ext.define('PENKNIFE.view.tiles.SchemaSingleController', {
                         }
                     }
                 }
-            }),
+            },
             {
                 xtype: 'container',
                 layout: {

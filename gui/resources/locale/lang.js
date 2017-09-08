@@ -231,6 +231,13 @@ class langPKF {
         this.dictionary['it']['TILE_SECOND_LATENCY'] = `Quanti "secondi" vuoi rimanere sulla home (min 10 - max 60)?`
         this.dictionary['zh_CN']['TILE_SECOND_LATENCY'] = `你想留几个“秒”（最小10 - 最多60）？`
 
+        /**
+         * @description SCEGLI_COLORE_TILE
+         */
+        this.dictionary['en']['SCEGLI_COLORE_TILE'] = `Choose Tile color`
+        this.dictionary['it']['SCEGLI_COLORE_TILE'] = `Scegli colore Tile`
+        this.dictionary['zh_CN']['SCEGLI_COLORE_TILE'] = `选择平铺颜色`
+
 
 
         /**

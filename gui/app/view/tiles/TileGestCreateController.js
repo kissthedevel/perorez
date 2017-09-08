@@ -56,6 +56,16 @@ Ext.define('PENKNIFE.view.tiles.TileGestCreateController', {
         }
     },
 
+    tapBtnBackgroundLogo: function(th) {
+        if (!this.overlayColorPalette) {
+            this.overlayColorPalette = Ext.Viewport.add(Ext.create('PENKNIFE.view.tiles.ColorPalette', {
+                controllerGest: this,
+                controllerHome: this.ctrlHome
+            }))
+        }
+        this.overlayColorPalette.show()
+    },
+
     init: function() {
         this.view = this.getView()
         this.ctrlHome = this.view.controllerHome

@@ -104,7 +104,7 @@ Ext.define('PENKNIFE.view.tiles.TileGestCreate',{
                             flex: 1,
                             maxWidth: !PENKNIFE.std.isPhone() ? 100 : null,
                             listeners: {
-                                //tap: 'tapBtnListMyCompanies'
+                                tap: 'tapBtnBackgroundLogo'
                             }
                         },
                         {
