@@ -11,7 +11,10 @@ Ext.define('PENKNIFE.view.arch.menu.HamburgerMenuController', {
     },
     showLoggedHamCnt: function(th) {
         let loggedHamBottomTb = this.lookupReference('LoggedHamBottomTb')
-        loggedHamBottomTb.add(Ext.create('PENKNIFE.view.arch.menu.ToolbarOthersMenu'))
+        loggedHamBottomTb.add(Ext.create('PENKNIFE.view.arch.menu.ToolbarOthersMenu', {
+            controllerHome: this.getView().controllerHome,
+            controllerHamburger: this
+        }))
         loggedHamBottomTb.show()
     },
 

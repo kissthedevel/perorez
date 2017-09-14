@@ -66,6 +66,22 @@ Ext.define('PENKNIFE.view.tiles.TileGestCreateController', {
         this.overlayColorPalette.show()
     },
 
+    tapBtnUploadLogo: function(th) {
+        Ext.Viewport.add(Ext.create('PENKNIFE.view.tiles.UploadLogo', {
+            controllerGestTile: this
+        })).show()
+    },
+
+    tapBtnDimensionsTile: function(th) {
+        if (!this.overlaySizePalette) {
+            this.overlaySizePalette = Ext.Viewport.add(Ext.create('PENKNIFE.view.tiles.TilesPalette', {
+                controllerGest: this,
+                controllerHome: this.ctrlHome
+            }))
+        }
+        this.overlaySizePalette.show()
+    },
+
     init: function() {
         this.view = this.getView()
         this.ctrlHome = this.view.controllerHome

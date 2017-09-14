@@ -29,12 +29,14 @@ Ext.define('PENKNIFE.view.arch.TbMainTabletOthers',{
                 {
                     xtype: 'button',
                     itemId: 'BtnTbContactUs', reference: 'BtnTbContactUs',
-                    //text: PENKNIFE.lang._translate(`CONTACT_US`),
                     localizedKey: `CONTACT_US`,
                     localized: 'text',
                     ui: 'action',
                     cls: 'button-toolbar-light',
-                    margin: '0 0 0 15'
+                    margin: '0 0 0 15',
+                    listeners: {
+                        tap: 'tapBtnTbContactUs'
+                    }
                 }
             ]
         },

@@ -65,9 +65,13 @@ Ext.define('PENKNIFE.view.arch.HomeController', {
             }))
         } else {
             let tbOthers = this.lookupReference('TbMainTablet_others')
-            tbOthers.add(Ext.create('PENKNIFE.view.arch.TbMainTabletOthers'))
+            tbOthers.add(Ext.create('PENKNIFE.view.arch.TbMainTabletOthers', {
+                controllerHome: this
+            }))
             let leftMenu = this.lookupReference('CntMainMenu')
-            leftMenu.add(Ext.create('PENKNIFE.view.arch.menu.MainMenuItemsList'))
+            leftMenu.add(Ext.create('PENKNIFE.view.arch.menu.MainMenuItemsList', {
+                controllerHome: this
+            }))
             leftMenu.add(Ext.create('Ext.Toolbar', {
                 docked: 'bottom',
                 layout: {

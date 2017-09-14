@@ -22,9 +22,13 @@ Ext.define('PENKNIFE.view.arch.menu.ToolbarOthersMenu',{
         },
         {
             xtype: 'button',
+            itemId: 'BtnSendMessage', reference: 'BtnSendMessage',
             cls: 'button-icon-24',
             iconCls: 'icon-send-message',
-            flex: 1
+            flex: 1,
+            listeners: {
+                tap: 'tapBtnSendMessage'
+            }
         },
         {
             xtype: 'button',

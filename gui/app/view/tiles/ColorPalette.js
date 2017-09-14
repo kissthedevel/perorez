@@ -69,7 +69,11 @@ Ext.define('PENKNIFE.view.tiles.ColorPalette',{
                     width: 32,
                     height: 32,
                     cls: 'container-round',
-                    margin: 10
+                    margin: 10,
+                    listeners: {
+                        element: 'element',
+                        tap: 'onChooseColor'
+                    }
                 }
             },
             items: [

@@ -238,6 +238,21 @@ class langPKF {
         this.dictionary['it']['SCEGLI_COLORE_TILE'] = `Scegli colore Tile`
         this.dictionary['zh_CN']['SCEGLI_COLORE_TILE'] = `选择平铺颜色`
 
+        /**
+         * @description SCEGLI_DIMENSIONI_TILE
+         */
+        this.dictionary['en']['SCEGLI_DIMENSIONI_TILE'] = `Choose Tile Size`
+        this.dictionary['it']['SCEGLI_DIMENSIONI_TILE'] = `Scegli dimensione Tile`
+        this.dictionary['zh_CN']['SCEGLI_DIMENSIONI_TILE'] = `选择瓷砖尺寸`
+
+        /**
+         * @description CARICA_LOGO_AZIENDA
+         */
+        this.dictionary['en']['CARICA_LOGO_AZIENDA'] = `Upload the Company logo`
+        this.dictionary['it']['CARICA_LOGO_AZIENDA'] = `Carica il logo dell'azienda`
+        this.dictionary['zh_CN']['CARICA_LOGO_AZIENDA'] = `上传公司标志`
+        
+
 
 
         /**
