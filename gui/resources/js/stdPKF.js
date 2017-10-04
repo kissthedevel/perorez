@@ -19,6 +19,7 @@ class stdPKF {
                 menus: {
                     createMenuMinimal: false
                 },
+                appLoaderCount: 0,
                 language: 'it',
                 tabletMenuWidth: 280,
                 ADM: true,

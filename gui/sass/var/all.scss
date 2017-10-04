@@ -14,6 +14,132 @@ $highlight-color: red;
 }
 /*end overrides*/
 
+/*AJAX LOADER*/
+.loaderAjax {
+	width: 100px;
+	height: 100px;
+	-webkit-perspective: 100px;
+	        perspective: 100px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -50px;
+	margin-left: -50px;
+    box-shadow: 0px 0px 1px white;
+    background-color: white;
+    border: 10px solid white;
+    border-radius: 10px;
+}
+
+.loader__tile {
+  display: block;
+  float: left;
+  width: 33.33%;
+  height: 33.33%;
+  -webkit-animation-name: flipflip;
+          animation-name: flipflip;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+  z-index: 0;
+}
+
+.loader__tile__1 {
+  background-color: #F44336;
+  border-radius: 5px;
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+
+.loader__tile__2 {
+  background-color: #FFCDD2;
+  border-radius: 5px;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+.loader__tile__3 {
+  background-color: #E57373;
+  border-radius: 5px;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+.loader__tile__4 {
+  background-color: #EF9A9A;
+  border-radius: 5px;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+
+.loader__tile__5 {
+  background-color: #D50000;
+  border-radius: 5px;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.loader__tile__6 {
+  background-color: #F44336;
+  border-radius: 5px;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+.loader__tile__7 {
+  background-color: #b30000;
+  border-radius: 5px;
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
+}
+
+.loader__tile__8 {
+  background-color: #ff3838;
+  border-radius: 5px;
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+
+.loader__tile__9 {
+  background-color: #ff8787;
+  border-radius: 5px;
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+}
+
+@-webkit-keyframes flipflip {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  30% {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+}
+
+@keyframes flipflip {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  40% {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+}
+/*FINE AJAX LOADER*/
+
+
+
+
 
 .background-gen {
     background-color: #ECEFF1 !important;
@@ -31,6 +157,9 @@ $highlight-color: red;
 }
 .left-arrow {
     background-image: url("img/left-arrow.svg");
+}
+.pen-confirm {
+    background-image: url("img/confirm.svg");
 }
 .lens-find {
     background-image: url("img/magnifying-search-lenses-tool.svg");

@@ -31,5 +31,14 @@ Ext.define('PENKNIFE.view.tiles.PanelTilesController', {
             }))            
         }
 
+        let allTiles = this.getView().query('[tilecnt]')
+        allTiles.forEach(function(tilecnt) {
+            tilecnt.setHtml('')
+            tilecnt.add(Ext.create('PENKNIFE.view.tiles.Tile', {
+                controllerPanelTiles: this,
+                tileSize: tilecnt.tilecnt
+            }))
+        })
+
     }
 });

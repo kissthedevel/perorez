@@ -30,6 +30,18 @@ Ext.define('PENKNIFE.view.tiles.TileGestCreate',{
                     listeners: {
                         tap: 'tapBACK_TileGestCreate'
                     }
+                },
+                {
+                    xtype: 'container',
+                    flex: 1
+                },
+                {
+                    xtype: 'button',
+                    itemId: 'CONFIRM_TileGestCreate', reference: 'CONFIRM_TileGestCreate',
+                    iconCls: 'pen-confirm',
+                    listeners: {
+                        tap: 'tapCONFIRM_TileGestCreate'
+                    }
                 }
             ]
         },
@@ -47,6 +59,11 @@ Ext.define('PENKNIFE.view.tiles.TileGestCreate',{
                     localizedKey: `PER_COMINCIARE`,
                     layout: PENKNIFE.std.isPhone() ? 'vbox' : 'hbox',
                     items: [
+                        {
+                            xtype: 'textfield',
+                            name: 'id',
+                            hidden: true
+                        },
                         {
                             xtype: 'textfield',
                             name: 'nomeazienda',
@@ -150,6 +167,25 @@ Ext.define('PENKNIFE.view.tiles.TileGestCreate',{
                                     },
                                     items: [
                                         {
+                                            xtype: 'container',
+                                            itemId: 'CntImageLogo', reference: 'CntImageLogo',
+                                            layout: {
+                                                type: 'vbox',
+                                                align: 'stretch'
+                                            },
+                                            height: '100%',
+                                            width: '100%',
+                                            hidden: true,
+                                            items: [
+                                                {
+                                                    xtype: 'image',
+                                                    itemId: 'ImageLogo', reference: 'ImageLogo',
+                                                    src: '',
+                                                    flex: 1
+                                                }
+                                            ]
+                                        },
+                                        {
                                             xtype: 'label',
                                             itemId: 'LabelTileSample', reference: 'LabelTileSample',
                                             localized: 'html',
@@ -170,6 +206,15 @@ Ext.define('PENKNIFE.view.tiles.TileGestCreate',{
                                             itemId: 'TileSample_Size', reference: 'TileSample_Size',
                                             name: 'tilesize',
                                             hidden: true
+                                        },
+                                        {
+                                            xtype: 'textfield',
+                                            itemId: 'TileLogo', reference: 'TileLogo',
+                                            name: 'tilelogo',
+                                            hidden: true,
+                                            listeners: {
+                                                change: 'changeTileLogo'
+                                            }
                                         }
                                     ],
                                     margin: '10 0 0 0',

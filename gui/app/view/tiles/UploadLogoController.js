@@ -6,23 +6,24 @@ Ext.define('PENKNIFE.view.tiles.UploadLogoController', {
         this.getView().destroy()
     },
 
-    changeFFLogo: function(th, newValue, oldValue) {
-        let form = this.lookupReference('Form_UploadLogo')
+    changeFFLogo: function(th) {
+        let form = this.lookupReference('Form_UploadLogo'),
+            controller = this
         form.submit({    
-            url: 'http://localhost',
-            waitMsg: 'Uploading Please Wait...',
+            waitMsg: 'Upload image...',
             method: 'POST',                    
             success: function (r, a) {
-                console.log('success message here')
+                controller.controllerGestTile.lookupReference('TileLogo').setValue(a.data[0])
+                controller.getView().destroy()
             },
             failure: function (r, a) {                    
-                console.log('failure message here')
+                console.log('upload logo error..')
             }
         })
     },
 
     init: function() {
         this.view = this.getView()
-        this.controllerGest = this.view.controllerGest
+        this.controllerGestTile = this.view.controllerGestTile
     }
 });

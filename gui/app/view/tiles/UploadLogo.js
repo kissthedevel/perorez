@@ -58,6 +58,9 @@ Ext.define('PENKNIFE.view.tiles.UploadLogo',{
                 pack: 'center'
             },
             flex: 1,
+            url: '../ws/company/uploadLogo.php',
+            fileUpload: true,
+            enableSubmissionForm: false,
             items: [
                 {
                     xtype: 'container',
@@ -70,7 +73,7 @@ Ext.define('PENKNIFE.view.tiles.UploadLogo',{
                         {
                             xtype: 'filefield',
                             itemId: 'FFLogo', reference: 'FFLogo',
-                            name: 'logoimage',
+                            name: 'userfile',
                             accept: 'image',
                             listeners: {
                                 change: 'changeFFLogo'

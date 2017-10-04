@@ -2,9 +2,46 @@ Ext.define('PENKNIFE.view.tiles.TileGestCreateController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.tiles-TileGestCreate',
 
-    tapBACK_TileGestCreate: function() {
+    tapBACK_TileGestCreate: function(update) {
         let levelFirst = this.ctrlHome.lookupReference('LevelFirst')
+        if (update) {
+            this.ctrlList.updateList()
+        }
         this.ctrlHome.lookupReference('CntMainContent').setActiveItem(levelFirst)
+    },
+
+    tapCONFIRM_TileGestCreate: function() {
+        if (!this.validateFields()) {
+            return false
+        }
+
+        let values = this.lookupReference('Form_TileGestCreate').getValues(),
+            record = values
+        
+        Ext.apply(record, {
+        	creator: 1	//TODO da getsire login
+        	
+        });
+        
+        Ext.Ajax.request({
+            url: '../ws/company/companySave.php',
+            params: Ext.JSON.encode(record),
+            success: response => {
+                var result = Ext.JSON.decode(response.responseText)
+                this.tapBACK_TileGestCreate(true)
+            },
+            failure: (conn, response, options, eOpts) => {
+            	var result = Ext.JSON.decode(response.responseText)
+            	alert(result.message)
+            }
+        });
+    },
+    validateFields: function() {
+        let validForm = false
+        //TODO gestire
+        validForm = true
+
+        return validForm
     },
 
     tabBtnsFieldsetLanguages: function(th) {
@@ -82,9 +119,17 @@ Ext.define('PENKNIFE.view.tiles.TileGestCreateController', {
         this.overlaySizePalette.show()
     },
 
+    changeTileLogo: function( th, newValue ) {
+        let imgLogo = this.lookupReference('ImageLogo')
+        this.lookupReference('LabelTileSample').setHidden(!Ext.isEmpty(newValue))
+        this.lookupReference('CntImageLogo').setHidden(Ext.isEmpty(newValue))
+        imgLogo.setSrc(`../imgrepo/companylogos/${newValue}`)
+    },
+
     init: function() {
         this.view = this.getView()
         this.ctrlHome = this.view.controllerHome
+        this.ctrlList = this.view.controllerList
 
         this.setLinguaggioAttivo('china')
 
