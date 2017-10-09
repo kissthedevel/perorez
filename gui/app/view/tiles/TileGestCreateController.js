@@ -19,8 +19,8 @@ Ext.define('PENKNIFE.view.tiles.TileGestCreateController', {
             record = values
         
         Ext.apply(record, {
-        	creator: 1	//TODO da getsire login
-        	
+        	creator: 1,	//TODO da getsire login
+        	elite: record.elite ? 1 : 0
         });
         
         Ext.Ajax.request({

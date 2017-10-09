@@ -14,9 +14,15 @@ Ext.define('PENKNIFE.Application', {
 
     launch: function () {
         // TODO - Launch the application
-        PENKNIFE.lang = new langPKF()
-        PENKNIFE.std = new stdPKF()
-        PENKNIFE.std.initGlobals()
+        /* PENKNIFE.lang = new langPKF()
+        PENKNIFE.std = new stdPKF() */
+        
+        stdPKF.initGlobals()
+        langPKF.initDictionary()
+        stdPKF.overrideExtComponent()
+
+        PENKNIFE.lang = langPKF
+        PENKNIFE.std = stdPKF
 
         //LOADER
         Ext.Ajax.on('beforerequest', function( conn, options, eOpts ) {
@@ -69,11 +75,12 @@ Ext.define('PENKNIFE.Application', {
                     PENKNIFE.globals.appLoader = false;
                 }
             }
-        	alert(response.responseText);
+        	//alert(response.responseText);
         });
         //END LOADER
 
-        PENKNIFE.std.createHomeView()
+        Ext.require('PENKNIFE.view.arch.Home')
+        stdPKF.createHomeView()
         
         Ext.fly('backdrop').destroy()        
     },

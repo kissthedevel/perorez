@@ -19,26 +19,29 @@
 
 	$data = json_decode( file_get_contents('php://input') );
     
-    //TODO controlli validita
+	//TODO controlli validita
+	
+	$idRecordForDescription = !$data -> id ? null : $data -> id;
 
 	if( !$data -> id ) {	//INSERT
 		$stmt = $conn->prepare(
 			"INSERT INTO company (
 				nomeazienda, website, tilecolor,
 				tilesize, tilelogo, latency,
-                creator
+                creator, elite
 			)
-			VALUES ( ?, ?, ?, ?, ?, ?, ? )"
+			VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )"
 		);
 		
-		$stmt->bind_param("sssssii",
+		$stmt->bind_param("sssssiii",
 			$data->nomeazienda, $data->website, $data->tilecolor,
             $data->tilesize, $data->tilelogo, $data->latency,
-            $data->creator
+            $data->creator, $data->elite
 		);
 		
 		if ($stmt->execute()) {
 			if ($stmt->insert_id) {
+				$idRecordForDescription = $stmt->insert_id;
 				array_push( $response->data, $stmt->insert_id);
 				$response->message = 'Inserimento eseguito con successo!';
 				$response->success = true;
@@ -50,6 +53,7 @@
 		
 		$stmt->close();
 	}else {	//UPDATE
+		$idRecordForDescription = $data -> id;
 // 		$sql = "UPDATE attivita
 // 				SET 
 // 					altezzamax = " . $data->altezzamax . ", altezzapart = " . $data->altezzapart . ", bpmmax = " . $data->bpmmax . ",
@@ -70,6 +74,59 @@
 // 		}
 		echo 'da gestire';
 	}
+
+	//sezione salvataggio descrizioni
+	if ($idRecordForDescription) {
+		$languages = array('zh', 'it', 'en');
+		$langFields = array($data->descrchina, $data->descritaly, $data->descrenglish);
+
+		for ($i=0; $i < 3; $i++) { 
+			$descriptionSelectSuccess = false;
+			$descriptionUpdate = false;
+
+			//verifico esistenza record
+			$stmt = $conn->prepare("
+				SELECT a.id
+				FROM descriptions a
+				WHERE a.id_company = ?
+				AND a.language = ?
+			");
+			$stmt->bind_param("is", $idRecordForDescription, $languages[$i]);
+
+			if ($stmt->execute()) {
+				$descriptionSelectSuccess = true;
+				$result = $stmt->get_result();
+				if ($result->num_rows > 0) {
+					$countRecord = 0;
+					while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+						$descriptionUpdate = $row['id'];
+					}
+				}
+			}
+			$stmt->close();
+			//FINE verifica esistenza record
+
+			if ($descriptionSelectSuccess) {
+				//se gia' esiste la descrizione si fa update ELSE insert
+				if ($descriptionUpdate) {
+					//TODO
+				} else {
+					//INSERT
+					$stmt = $conn->prepare(
+						"INSERT INTO descriptions (
+							id_company, language, description
+						)
+						VALUES ( ?, ?, ? )"
+					);					
+					$stmt->bind_param("iss", $idRecordForDescription, $languages[$i], $langFields[$i]);
+				}
+
+				$stmt->execute();
+				$stmt->close();
+			}
+		}
+	}
+
 
 	$conn->close();
 	echo json_encode($response);

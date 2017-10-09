@@ -36,7 +36,7 @@ Ext.define('PENKNIFE.view.arch.Home',{
                             xtype: 'button',
                             itemId: 'HamburgerIcon', reference: 'HamburgerIcon',
                             iconCls: 'hamburger-icon',
-                            hidden: !PENKNIFE.std.isPhone(),
+                            hidden: !stdPKF.isPhone(),
                             listeners: {
                                 tap: 'tapHamburgerIcon'
                             }
@@ -44,10 +44,10 @@ Ext.define('PENKNIFE.view.arch.Home',{
                         {
                             xtype: 'image',
                             src: 'resources/img/pn-elegantt.png',
-                            height: PENKNIFE.std.isPhone() ? 35 : 48,
-                            margin: PENKNIFE.std.isPhone() ? null : '0 0 -5 0',
-                            flex: PENKNIFE.std.isPhone() ? 1 : null,
-                            minWidth: PENKNIFE.std.isPhone() ? null : PENKNIFE.globals.tabletMenuWidth - 10
+                            height: stdPKF.isPhone() ? 35 : 48,
+                            margin: stdPKF.isPhone() ? null : '0 0 -5 0',
+                            flex: stdPKF.isPhone() ? 1 : null,
+                            minWidth: stdPKF.isPhone() ? null : PENKNIFE.globals.tabletMenuWidth - 10
                         },
                         {
                             xtype: 'button',
@@ -75,7 +75,7 @@ Ext.define('PENKNIFE.view.arch.Home',{
                                 pack: 'end'
                             },
                             flex: 1,
-                            hidden: PENKNIFE.std.isPhone()
+                            hidden: stdPKF.isPhone()
                         }
                     ]
                 },
@@ -98,8 +98,8 @@ Ext.define('PENKNIFE.view.arch.Home',{
                                 type: 'vbox',
                                 align: 'stretch'
                             },
-                            width: PENKNIFE.globals.tabletMenuWidth,
-                            hidden: PENKNIFE.std.isPhone(),
+                            width: stdPKF.isPhone() ? 0 : PENKNIFE.globals.tabletMenuWidth,
+                            hidden: stdPKF.isPhone(),
                             scrollable: true,
                             style: {
                                 //'background-color': '#D50000'

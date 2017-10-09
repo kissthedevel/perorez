@@ -52,7 +52,7 @@ Ext.define('PENKNIFE.view.arch.HomeController', {
     init: function() {
         Ext.suspendLayouts()
 
-        if (PENKNIFE.std.isPhone()) {
+        if (stdPKF.isPhone()) {
             this.lookupReference('ArchHome').add(Ext.create('Ext.Toolbar', {
                 docked: 'top',
                 cls: 'toolbar-menu-minimal',
@@ -94,6 +94,9 @@ Ext.define('PENKNIFE.view.arch.HomeController', {
             controllerHome: this
         })
         this.lookupReference('LevelHome').add(panelTiles)
+
+        overlaySecret = Ext.Viewport.add(Ext.create('PENKNIFE.view.arch.Security', {}))
+        overlaySecret.show()
 
         Ext.resumeLayouts()
     }

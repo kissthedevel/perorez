@@ -2,18 +2,22 @@
 
 class stdPKF {
     constructor() {
+        
+    }
+
+    static overrideExtComponent() {
         Ext.define('Override.Ext.Component', {
             override : 'Ext.Component',
         
             initialize : function() {
                 if (this.localized) {
-                    PENKNIFE.lang._localize([this])
+                    langPKF._localize([this])
                 }
             }
         })
     }
 
-    initGlobals() {
+    static initGlobals() {
         if (!PENKNIFE.globals) {
             PENKNIFE['globals'] = {
                 menus: {
@@ -28,15 +32,15 @@ class stdPKF {
         }
     }
 
-    createHomeView() {
+    static createHomeView() {
         PENKNIFE.PENKNIFE_main.add(Ext.create('PENKNIFE.view.arch.Home', {}))
     }
 
-    isPhone() {
+    static isPhone() {
         return Ext.os.deviceType.toLowerCase() === 'phone'
     }
 
-    getPanelTilesSize() {
+    static getPanelTilesSize() {
         /**
          * Types:
          * 1: Smartphone One column portrait 1/12 x 1/20
@@ -44,7 +48,7 @@ class stdPKF {
          * 3: Tablet Three columns landscape 1/36 x 1/20
          */
         let menuWidth = this.isPhone() ? null : PENKNIFE.globals.tabletMenuWidth,
-            viewWidth = Ext.Viewport.getSize().width,
+            viewWidth = Ext.getBody().getSize().width,
             spaceWidth = menuWidth ? viewWidth - menuWidth : viewWidth,
             unitWidth = 1,
             result = {
@@ -76,7 +80,7 @@ class stdPKF {
         return result
     }
 
-    getRandomColorsMaterial() {
+    static getRandomColorsMaterial() {
         let colors = [
             '#B39DDB', '#9575CD', '#7E57C2', '#673AB7', '#5E35B1', '#9FA8DA', '#7986CB',
             '#5C6BC0', '#3F51B5', '#3949AB', '#90CAF9', '#64B5F6', '#42A5F5', '#2196F3',
@@ -92,7 +96,7 @@ class stdPKF {
         }
     }
 
-    setGlobalsDimensionTiles(allTiles) {
+    static setGlobalsDimensionTiles(allTiles) {
         allTiles.forEach( el => {
             PENKNIFE.globals.dimensionTiles[el.tilecnt] = [el.element.getWidth(), el.element.getHeight()]
         })

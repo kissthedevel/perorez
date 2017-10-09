@@ -36,11 +36,30 @@
 				tilesize VARCHAR(15),
 				tilelogo VARCHAR(30),
 				latency INT(5),
+				elite BOOLEAN NULL DEFAULT NULL,
 
 				INDEX (id),
 				INDEX (creator),
 				INDEX (approved),
+				INDEX (elite),
 				INDEX (tilesize)
+			)";
+	if ($conn->query($sql) === TRUE) {
+		echo "Table company created successfully";
+	} else {
+		echo "Error creating table: " . $conn->error;
+	}
+
+	echo '<br>************************************************<br>';
+	// sql to create table
+	$sql = "CREATE TABLE descriptions (
+				id INT(7) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+				id_company INT(10) NOT NULL,
+				language VARCHAR(5) NOT NULL,
+				description VARCHAR(1000),
+
+				INDEX (id),
+				INDEX (id_company)
 			)";
 	if ($conn->query($sql) === TRUE) {
 		echo "Table company created successfully";

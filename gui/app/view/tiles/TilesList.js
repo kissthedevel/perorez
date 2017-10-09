@@ -55,7 +55,10 @@ Ext.define('PENKNIFE.view.tiles.TilesList',{
                             <img id='waiting-${Ext.id()}' src="resources/img/waiting-time-left.svg" height='24' width='24' style="float:left;">
                         </tpl>
                         <span style="margin-left:10px; font-size:18px;">{nomeazienda}</span>
-                        <img id='edit-${Ext.id()}' src="resources/img/edit.svg" height='24' width='24' style="float:right;">`,
+                        <img id='edit-${Ext.id()}' src="resources/img/edit.svg" height='24' width='24' style="float:right;">
+                        <tpl if="elite === 1">
+                            <img id='elite-${Ext.id()}' src="resources/img/star-yellow.svg" height='24' width='24' style="float:right; margin-right:10px;">
+                        </tpl>`,
             listeners: {
                 itemtap: 'itemtapListCompanyes'
             }

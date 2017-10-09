@@ -11,5 +11,5 @@ Ext.define('PENKNIFE.view.tiles.PanelTiles',{
         type: 'vbox',
         align: 'stretch'
     },
-    height: PENKNIFE.std.getPanelTilesSize().height
+    height: stdPKF.getPanelTilesSize().height
 });

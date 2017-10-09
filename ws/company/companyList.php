@@ -23,7 +23,7 @@
 			$offset = isset($_GET['offset']) ? $_GET['offset'] : 0;
 			
 			$stmt = $conn->prepare("
-				SELECT a.id, a.approved, a.nomeazienda
+				SELECT a.id, a.approved, a.nomeazienda, a.elite
 				FROM company a
 				WHERE a.creator = ?
 				ORDER BY a.approved ASC
@@ -43,6 +43,7 @@
 					$response->data[$countRecord]['id'] = $row['id'];
 					$response->data[$countRecord]['approved'] = $row['approved'];
 					$response->data[$countRecord]['nomeazienda'] = $row['nomeazienda'];
+					$response->data[$countRecord]['elite'] = $row['elite'];
 					$countRecord++;
 				}
 			}

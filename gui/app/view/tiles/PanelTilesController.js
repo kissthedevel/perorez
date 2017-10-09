@@ -14,7 +14,7 @@ Ext.define('PENKNIFE.view.tiles.PanelTilesController', {
             
         } */
 
-        let countPanelTiles =  PENKNIFE.std.getPanelTilesSize().type,
+        let countPanelTiles =  stdPKF.getPanelTilesSize().type,
             cntListPanels = Ext.create('Ext.Container', {
                 layout: {
                     type: 'hbox',

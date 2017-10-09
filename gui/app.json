@@ -206,14 +206,14 @@
             "path": "${framework.dir}/build/ext-modern-all-debug.js"
         },
         {
-            "path": "app.js",
-            "bundle": true
-        },
-        {
             "path": "resources/js/stdPKF.js"
         },
         {
             "path": "resources/locale/lang.js"
+        },
+        {
+            "path": "app.js",
+            "bundle": true
         }
     ],
 

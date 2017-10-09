@@ -2,6 +2,10 @@
 
 class langPKF {
     constructor() {
+        
+    }
+
+    static initDictionary() {
         /**
          * DICTIONARY
          */
@@ -252,6 +256,12 @@ class langPKF {
         this.dictionary['it']['CARICA_LOGO_AZIENDA'] = `Carica il logo dell'azienda`
         this.dictionary['zh_CN']['CARICA_LOGO_AZIENDA'] = `上传公司标志`
         
+        /**
+         * @description VUOI_DIVENTARE_ELITE
+         */
+        this.dictionary['en']['VUOI_DIVENTARE_ELITE'] = `Become a Super Partner`
+        this.dictionary['it']['VUOI_DIVENTARE_ELITE'] = `Diventa partner Super`
+        this.dictionary['zh_CN']['VUOI_DIVENTARE_ELITE'] = `成为超级合作伙伴`
 
 
 
@@ -264,11 +274,11 @@ class langPKF {
         
     }
 
-    _translate(string) {
+    static _translate(string) {
         return this.dictionary[PENKNIFE.globals.language][string] || string
     }
 
-    _localize(cmps) {
+    static _localize(cmps) {
         Ext.suspendLayouts()
         cmps.forEach( el => {
             if (el.localized) {

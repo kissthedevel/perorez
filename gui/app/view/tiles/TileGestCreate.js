@@ -57,7 +57,7 @@ Ext.define('PENKNIFE.view.tiles.TileGestCreate',{
                     xtype: 'fieldset',
                     localized: 'title',
                     localizedKey: `PER_COMINCIARE`,
-                    layout: PENKNIFE.std.isPhone() ? 'vbox' : 'hbox',
+                    layout: stdPKF.isPhone() ? 'vbox' : 'hbox',
                     items: [
                         {
                             xtype: 'textfield',
@@ -70,8 +70,8 @@ Ext.define('PENKNIFE.view.tiles.TileGestCreate',{
                             localized: 'label',
                             localizedKey: `NOME_AZIENDA`,
                             inputCls: 'input-gen-penknife',
-                            flex: PENKNIFE.std.isPhone() ? null : 1,
-                            margin: PENKNIFE.std.isPhone() ? null : '0 10 0 0'
+                            flex: stdPKF.isPhone() ? null : 1,
+                            margin: stdPKF.isPhone() ? null : '0 10 0 0'
                         },
                         {
                             xtype: 'textfield',
@@ -79,8 +79,8 @@ Ext.define('PENKNIFE.view.tiles.TileGestCreate',{
                             localized: 'label',
                             localizedKey: `SITO_WEB`,
                             inputCls: 'input-gen-penknife',
-                            flex: PENKNIFE.std.isPhone() ? null : 1,
-                            margin: PENKNIFE.std.isPhone() ? null : '0 0 0 10'
+                            flex: stdPKF.isPhone() ? null : 1,
+                            margin: stdPKF.isPhone() ? null : '0 0 0 10'
                         }
                     ]
                 },
@@ -98,6 +98,37 @@ Ext.define('PENKNIFE.view.tiles.TileGestCreate',{
                             xtype: 'container',
                             layout: {
                                 type: 'hbox',
+                                align: 'middle'
+                            },
+                            margin: '0 0 15 0',
+                            items: [
+                                {
+                                    xtype: 'image',
+                                    src: 'resources/img/star.svg',
+                                    height: 24,
+                                    width: 24
+                                },
+                                {
+                                    xtype: 'label',
+                                    cls: 'color-red',
+                                    style: {
+                                        'font-weight': 'bold'
+                                    },
+                                    margin: '5 10 0 10',
+                                    localized: 'html',            
+                                    localizedKey: `VUOI_DIVENTARE_ELITE`
+                                },
+                                {
+                                    xtype: 'togglefield',
+                                    name: 'elite',
+                                    margin: '5 0 0 0'
+                                }
+                            ]
+                        },
+                        {
+                            xtype: 'container',
+                            layout: {
+                                type: 'hbox',
                                 align: 'stretch'
                             },
                             items: [
@@ -111,7 +142,7 @@ Ext.define('PENKNIFE.view.tiles.TileGestCreate',{
                                     localizedKey: `CARICA_IL_LOGO_AZIENDA`,
                                     margin: 2,
                                     flex: 1,
-                                    maxWidth: !PENKNIFE.std.isPhone() ? 100 : null,
+                                    maxWidth: !stdPKF.isPhone() ? 100 : null,
                                     listeners: {
                                         tap: 'tapBtnUploadLogo'
                                     }
@@ -126,7 +157,7 @@ Ext.define('PENKNIFE.view.tiles.TileGestCreate',{
                                     localizedKey: `SCEGLI_COLORE_SFONDO`,
                                     margin: 2,
                                     flex: 1,
-                                    maxWidth: !PENKNIFE.std.isPhone() ? 100 : null,
+                                    maxWidth: !stdPKF.isPhone() ? 100 : null,
                                     listeners: {
                                         tap: 'tapBtnBackgroundLogo'
                                     }
@@ -141,7 +172,7 @@ Ext.define('PENKNIFE.view.tiles.TileGestCreate',{
                                     localizedKey: `SCEGLI_DIMENSIONI`,
                                     margin: 2,
                                     flex: 1,
-                                    maxWidth: !PENKNIFE.std.isPhone() ? 100 : null,
+                                    maxWidth: !stdPKF.isPhone() ? 100 : null,
                                     listeners: {
                                         tap: 'tapBtnDimensionsTile'
                                     }
@@ -154,7 +185,7 @@ Ext.define('PENKNIFE.view.tiles.TileGestCreate',{
                             layout: {
                                 type: 'hbox',
                                 align: 'stretch',
-                                pack: PENKNIFE.std.isPhone() ? 'center' : 'left'
+                                pack: stdPKF.isPhone() ? 'center' : 'left'
                             },
                             items: [
                                 {
@@ -235,8 +266,8 @@ Ext.define('PENKNIFE.view.tiles.TileGestCreate',{
                             minValue: 10,
                             maxValue: 60,
                             name: 'latency',
-                            maxWidth: PENKNIFE.std.isPhone() ? Ext.Viewport.getSize().width - 30 : 400,
-                            margin: !PENKNIFE.std.isPhone() ? '10 0 0 0' : null
+                            maxWidth: stdPKF.isPhone() ? Ext.getBody().getSize().width - 30 : 400,
+                            margin: !stdPKF.isPhone() ? '10 0 0 0' : null
                         }
                     ]
                 },
@@ -274,7 +305,7 @@ Ext.define('PENKNIFE.view.tiles.TileGestCreate',{
                                         pack: 'start'
                                     },
                                     flex: 1,
-                                    margin: PENKNIFE.std.isPhone() ? '0 0 15 0' : '0 0 22 0',
+                                    margin: stdPKF.isPhone() ? '0 0 15 0' : '0 0 22 0',
                                     items: [
                                         {
                                             xtype: 'button',
@@ -288,7 +319,7 @@ Ext.define('PENKNIFE.view.tiles.TileGestCreate',{
                                 },
                                 {
                                     xtype: 'textareafield',
-                                    cls: PENKNIFE.std.isPhone() ? 'txtfld-descazienda-phone input-gen-penknife' :
+                                    cls: stdPKF.isPhone() ? 'txtfld-descazienda-phone input-gen-penknife' :
                                                                      'txtfld-descazienda-tablet input-gen-penknife',
                                     localized: 'label',
                                     localizedKey: `DESCRIZIONE_IN_CINESE`,
@@ -336,7 +367,7 @@ Ext.define('PENKNIFE.view.tiles.TileGestCreate',{
                                 },
                                 {
                                     xtype: 'textareafield',
-                                    cls: PENKNIFE.std.isPhone() ? 'txtfld-descazienda-phone input-gen-penknife' :
+                                    cls: stdPKF.isPhone() ? 'txtfld-descazienda-phone input-gen-penknife' :
                                                                     'txtfld-descazienda-tablet input-gen-penknife',
                                     localized: 'label',
                                     localizedKey: `DESCRIZIONE_IN_ITALIANO`,
@@ -381,7 +412,7 @@ Ext.define('PENKNIFE.view.tiles.TileGestCreate',{
                                 },
                                 {
                                     xtype: 'textareafield',
-                                    cls: PENKNIFE.std.isPhone() ? 'txtfld-descazienda-phone input-gen-penknife' :
+                                    cls: stdPKF.isPhone() ? 'txtfld-descazienda-phone input-gen-penknife' :
                                                                     'txtfld-descazienda-tablet input-gen-penknife',
                                     localized: 'label',
                                     localizedKey: `DESCRIZIONE_IN_INGLESE`,
