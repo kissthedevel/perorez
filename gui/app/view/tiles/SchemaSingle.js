@@ -32,12 +32,15 @@ Ext.define('PENKNIFE.view.tiles.SchemaSingle',{
                         type: 'vbox',
                         align: 'stretch'
                     },
-                    flex: 1
-                },
+                    flex: 1,
+                    style: {
+                        'background-color': '#B71D1D'
+                    }
+                }
                 /**
                  * pannello di destra
                  */
-                {
+                /* {
                     xtype: 'container',
                     itemId: 'RightPanelTilesSchema', reference: 'RightPanelTilesSchema',
                     layout: {
@@ -45,7 +48,7 @@ Ext.define('PENKNIFE.view.tiles.SchemaSingle',{
                         align: 'stretch'
                     },
                     flex: 1
-                }
+                } */
             ]
         }
     ]

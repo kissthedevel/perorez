@@ -40,7 +40,8 @@ Ext.define('PENKNIFE.view.tiles.SchemaSingleController', {
                             stdPKF.setGlobalsDimensionTiles(levelHome.query('[tilecnt]'))
                         }
                     }
-                }
+                },
+                margin: 10
             },
             {
                 xtype: 'container',
@@ -93,7 +94,8 @@ Ext.define('PENKNIFE.view.tiles.SchemaSingleController', {
                         tilecnt: '3x4',
                         html: '3x4'
                     }
-                ]
+                ],
+                margin: 10
             },
             {
                 xtype: 'container',
@@ -104,7 +106,8 @@ Ext.define('PENKNIFE.view.tiles.SchemaSingleController', {
                 flex: 2/24,
                 style: stdPKF.getRandomColorsMaterial(),
                 tilecnt: '6x2',
-                html: '6x2'
+                html: '6x2',
+                margin: 10
             },
             {
                 xtype: 'container',
@@ -178,7 +181,8 @@ Ext.define('PENKNIFE.view.tiles.SchemaSingleController', {
                             }
                         ]
                     }
-                ]
+                ],
+                margin: 10
             },
             {
                 xtype: 'container',
@@ -252,7 +256,8 @@ Ext.define('PENKNIFE.view.tiles.SchemaSingleController', {
                             }
                         ]
                     }
-                ]
+                ],
+                margin: 10
             },
             {
                 xtype: 'container',
@@ -263,16 +268,17 @@ Ext.define('PENKNIFE.view.tiles.SchemaSingleController', {
                 flex: 2/24,
                 style: stdPKF.getRandomColorsMaterial(),
                 tilecnt: '6x2',
-                html: '6x2'
+                html: '6x2',
+                margin: 10
             }
-        ],
-        modulesRight = modules.slice(0)
+        ]
+        //modulesRight = modules.slice(0)
 
         this.shuffleArray(modules)
-        this.shuffleArray(modulesRight)
+        //this.shuffleArray(modulesRight)
 
         modules.forEach( modLeft => this.lookupReference('LeftPanelTilesSchema').add(modLeft))
-        modulesRight.forEach( modRight => this.lookupReference('RightPanelTilesSchema').add(modRight))
+        //modulesRight.forEach( modRight => this.lookupReference('RightPanelTilesSchema').add(modRight))
         
     }
 });
