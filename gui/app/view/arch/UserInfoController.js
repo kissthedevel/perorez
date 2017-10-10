@@ -4,7 +4,7 @@ Ext.define('PENKNIFE.view.arch.UserInfoController', {
 
     paintedUserInfo: function(th) {
         th.el.on('click', function() {
-            alert('TODO: aprire pannello gestione utente.')
+            //alert('TODO: aprire pannello gestione utente.')
         })
     },
 

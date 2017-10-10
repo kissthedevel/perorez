@@ -38,9 +38,9 @@ class langPKF {
         /**
          * @description SIGN_UP
          */
-        this.dictionary['en']['SIGN_UP'] = `Sign Up`
-        this.dictionary['it']['SIGN_UP'] = `Iscriviti`
-        this.dictionary['zh_CN']['SIGN_UP'] = `报名`
+        this.dictionary['en']['SIGN_UP'] = `Join the Club`
+        this.dictionary['it']['SIGN_UP'] = `Entra nel Club`
+        this.dictionary['zh_CN']['SIGN_UP'] = `加入俱乐部`
 
         /**
          * @description CONTACT_US
@@ -97,16 +97,16 @@ class langPKF {
         /**
          * @description VENDI_COMPRA_IMMOB_SHORT
          */
-        this.dictionary['en']['VENDI_COMPRA_IMMOB_SHORT'] = `Sell ​​/ Buy Real Estate`
+        this.dictionary['en']['VENDI_COMPRA_IMMOB_SHORT'] = `Chinese Social Media`
         //this.dictionary['it']['VENDI_COMPRA_IMMOB_SHORT'] = `Vendi / Compra Immobili`
-        this.dictionary['it']['VENDI_COMPRA_IMMOB_SHORT'] = `Mercato Immobiliare`
-        this.dictionary['zh_CN']['VENDI_COMPRA_IMMOB_SHORT'] = `出售/购买属性`
+        this.dictionary['it']['VENDI_COMPRA_IMMOB_SHORT'] = `Social Media Cinesi`
+        this.dictionary['zh_CN']['VENDI_COMPRA_IMMOB_SHORT'] = `中国社会媒体`
         /**
          * @description VENDI_COMPRA_IMMOB
          */
-        this.dictionary['en']['VENDI_COMPRA_IMMOB'] = `Sell ​​/ Buy Real Estate`
-        this.dictionary['it']['VENDI_COMPRA_IMMOB'] = `Vendi / Compra Immobili`
-        this.dictionary['zh_CN']['VENDI_COMPRA_IMMOB'] = `出售/购买属性`
+        this.dictionary['en']['VENDI_COMPRA_IMMOB'] = `Chinese Social Media to sell your products`
+        this.dictionary['it']['VENDI_COMPRA_IMMOB'] = `Social Media Cinesi per vendere i tuoi prodotti`
+        this.dictionary['zh_CN']['VENDI_COMPRA_IMMOB'] = `中国社交媒体出售您的产品`
 
         
         /**

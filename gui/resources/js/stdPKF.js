@@ -47,7 +47,7 @@ class stdPKF {
          * 2: Tablet Two columns landscape 1/24 x 1/20
          * 3: Tablet Three columns landscape 1/36 x 1/20
          */
-        let menuWidth = this.isPhone() ? null : PENKNIFE.globals.tabletMenuWidth,
+        let menuWidth = this.isPhone() ? null : 280,    //PENKNIFE.globals.tabletMenuWidth,
             viewWidth = Ext.getBody().getSize().width,
             spaceWidth = menuWidth ? viewWidth - menuWidth : viewWidth,
             unitWidth = 1,

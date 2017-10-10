@@ -30,7 +30,7 @@ Ext.define('PENKNIFE.view.tiles.TileController', {
             },
             failure: (conn, response, options, eOpts) => {
             	var result = Ext.JSON.decode(response.responseText)
-            	alert(result.message)
+            	console.log(result)
             }
         })
     },

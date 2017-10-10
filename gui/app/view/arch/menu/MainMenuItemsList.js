@@ -30,7 +30,8 @@ Ext.define('PENKNIFE.view.arch.menu.MainMenuItemsList',{
                     cls: 'toolbar-menu-minimal-buttons',
                     iconAlign: 'top',
                     flex: 1,
-                    localized: 'text'
+                    localized: 'text',
+                    margin: '10 0 10 0'
                 } : {
                     xtype: 'button',
                     cls: 'hamburger-menu-list-buttons button-icon-24',
