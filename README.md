@@ -16,3 +16,10 @@ my_position = function(position) {
 }
 
 navigator.geolocation.getCurrentPosition(my_position)
+
+
+
+//---Prevenire il tasto Back accidentale (solo su webapp)
+window.onbeforeunload = function() { 
+    return "Confermare uscita dal portale?"
+}
