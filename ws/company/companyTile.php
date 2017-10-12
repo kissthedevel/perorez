@@ -33,7 +33,23 @@
 		if ($stmt->execute()) {
 			$response->success = true;
 			$response->message = 'Ricerca eseguita con successo!';
-			$result = $stmt->get_result();
+			
+			/* bind variables to prepared statement */
+			mysqli_stmt_bind_result($stmt, $colId, $colTileColor, $colTileSize, $colTileLogo, $colLatency);
+			
+			/* fetch values */
+			$countRecord = 0;
+			while (mysqli_stmt_fetch($stmt)) {
+				$response->data[$countRecord]['id'] = $colId;
+				$response->data[$countRecord]['tilecolor'] = $colTileColor;
+				$response->data[$countRecord]['tilesize'] = $colTileSize;
+				$response->data[$countRecord]['tilelogo'] = $colTileLogo;
+				$response->data[$countRecord]['latency'] = $colLatency;
+				$countRecord++;
+			}
+			
+			
+			/*$result = $stmt->get_result();
 			// conteggio dei record
 			if ($result->num_rows > 0) {
 				$countRecord = 0;
@@ -45,7 +61,7 @@
 					$response->data[$countRecord]['latency'] = $row['latency'];
 					$countRecord++;
 				}
-			}
+			}*/
 		} else {
 			$response->success = false;
 			$response->message = "Error: " . $conn->error;

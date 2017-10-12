@@ -37,6 +37,23 @@ Ext.define('PENKNIFE.view.tiles.TilesListController', {
             })
         } else if (idTarget.indexOf('edit') != -1) {
             console.log('edit', record.get('nomeazienda'))
+        } else if (idTarget.indexOf('delete') != -1) {
+            Ext.Msg.confirm('Attenzione!', `Sei sicuro di voler eliminare "${record.get('nomeazienda')}"?`, ( buttonId, value, opt) => {
+                if( buttonId === 'yes' ) {
+                    Ext.Ajax.request({
+                        url: '../ws/company/companyDelete.php',
+                        method: 'GET',
+                        params: {
+                            id: record.get('id')
+                        },
+                        success: response => {
+                            this.updateList()
+                        },
+                        failure: (conn, response, options, eOpts) => {
+                        }
+                    })
+                }
+            })
         } else {
             //itemtap classico
         }

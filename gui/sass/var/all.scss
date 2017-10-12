@@ -164,6 +164,12 @@ $highlight-color: red;
 .lens-find {
     background-image: url("img/magnifying-search-lenses-tool.svg");
 }
+.like-none {
+    background-image: url("img/heart-outline.svg");
+}
+.context-menu {
+    background-image: url("img/context-menu.svg");
+}
 
 
 .icon-advertising {
@@ -324,6 +330,14 @@ $highlight-color: red;
 .label-user-city-toolbar-hamburger {
     color: #303c42;
     font-size: 12px;
+    margin-bottom: 0px !important;
+}
+
+.label-view-company-name {
+    font-size: 22px;
+    font-weight: bold;
+    color: #303c42;
+    font-style: oblique;
     margin-bottom: 0px !important;
 }
 

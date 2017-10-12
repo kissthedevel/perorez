@@ -20,5 +20,10 @@ Ext.define('PENKNIFE.view.tiles.Tile',{
             src: '',
             flex: 1
         }
-    ]
+    ],
+
+    listeners: {
+        element: 'element',
+        tap: 'getCompany'
+    }
 });

@@ -12,7 +12,7 @@ Ext.define('PENKNIFE.view.tiles.SchemaSingle',{
         align: 'stretch'
     },
     flex: 1,
-
+    
     items: [
         {
             xtype: 'container',
@@ -21,6 +21,9 @@ Ext.define('PENKNIFE.view.tiles.SchemaSingle',{
                 align: 'stretch'
             },
             flex: 1,
+            style: {
+                'background-color': '#B71D1D'
+            },
             items: [
                 /**
                  * pannello di sinistra
@@ -34,7 +37,8 @@ Ext.define('PENKNIFE.view.tiles.SchemaSingle',{
                     },
                     flex: 1,
                     style: {
-                        'background-color': '#B71D1D'
+                        'background-color': '#B71D1D',
+                        'border': 'none !important'
                     }
                 }
                 /**

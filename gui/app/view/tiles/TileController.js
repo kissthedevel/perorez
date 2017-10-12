@@ -16,6 +16,7 @@ Ext.define('PENKNIFE.view.tiles.TileController', {
                     let img = this.lookupReference('ImageLogo'),
                         cnt = img.up('container')
                     img.setSrc(`../imgrepo/companylogos/${result.data[0].tilelogo}`)
+                    this.idTileActual = result.data[0].id
                     cnt.setStyle({
                         'background-color': result.data[0].tilecolor
                     })
@@ -33,6 +34,23 @@ Ext.define('PENKNIFE.view.tiles.TileController', {
             	console.log(result)
             }
         })
+    },
+
+    getCompany: function() {
+        if( !this.ctrlHome ) {
+            this.ctrlHome = this.view.up('#LevelHome').lookupController()
+        }
+
+        let levelFirst = this.ctrlHome.lookupReference('LevelFirst'),
+            levelHome = this.ctrlHome.lookupReference('LevelHome')
+
+        this.ctrlHome.lookupReference('CntMainContent').setActiveItem(levelHome)
+        levelFirst.removeAll(true)
+        levelFirst.add(Ext.create('PENKNIFE.view.tiles.TileSimpleView', {
+            controllerHome: this.ctrlHome,
+            idTile: this.idTileActual
+        }))
+        this.ctrlHome.lookupReference('CntMainContent').setActiveItem(levelFirst)
     },
 
     init: function() {

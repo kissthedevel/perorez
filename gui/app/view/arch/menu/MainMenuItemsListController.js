@@ -3,7 +3,7 @@ Ext.define('PENKNIFE.view.arch.menu.MainMenuItemsListController', {
     alias: 'controller.arch-menu-MainMenuItemsList',
 
     tapTrovaAziendaItaliana: function(th) {
-        alert('1')
+        
     },
 
     init: function() {

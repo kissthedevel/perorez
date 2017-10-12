@@ -9,12 +9,9 @@ Ext.define('PENKNIFE.view.tiles.StoreTilesType', {
     ],
 
     data: [
-        { id: 31, descrizione: '3x1.5' },   //OK
-        { id: 32, descrizione: '3x2' },     //OK
-        { id: 33, descrizione: '3x3' },     //OK
-        { id: 34, descrizione: '3x4' },     //OK
-        { id: 62, descrizione: '6x2' },     //OK
-        { id: 63, descrizione: '6x3' },     //OK
-        { id: 64, descrizione: '6x4' }      //OK
+        { id: 124, descrizione: '12x4' },   //OKe
+        { id: 126, descrizione: '12x6' },   //OKe
+        { id: 63, descrizione: '6x3' },     //OKe
+        { id: 64, descrizione: '6x4' }      //OKe
     ]
 });

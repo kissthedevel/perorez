@@ -26,14 +26,15 @@ Ext.define('PENKNIFE.view.tiles.SchemaSingleController', {
                 },
                 flex: 4/24,
                 style: stdPKF.getRandomColorsMaterial(),
-                tilecnt: '6x4',
-                html: '6x4',
+                tilecnt: '12x4',
+                html: '12x4',
                 listeners: {
                     painted: th => {
                         if (Ext.Object.isEmpty(PENKNIFE.globals.dimensionTiles)) {
                             /**
                              * imposto variabile globals con le attuali misure delle tiles
                              * nalle home, solo per avere un riferimento alle dimensioni
+                             * E' SUFFICIENTE FARLO SOLO SU UNA TILE
                              */
                             th = Ext.getCmp(th.id)
                             let levelHome = th.up('#LevelHome')
@@ -58,30 +59,10 @@ Ext.define('PENKNIFE.view.tiles.SchemaSingleController', {
                             align: 'stretch'
                         },
                         flex: 1,
-                        items: [
-                            {
-                                xtype: 'container',
-                                layout: {
-                                    type: 'vbox',
-                                    align: 'stretch'
-                                },
-                                flex: 1,
-                                style: stdPKF.getRandomColorsMaterial(),
-                                tilecnt: '3x2',
-                                html: '3x2'
-                            },
-                            {
-                                xtype: 'container',
-                                layout: {
-                                    type: 'vbox',
-                                    align: 'stretch'
-                                },
-                                flex: 1,
-                                style: stdPKF.getRandomColorsMaterial(),
-                                tilecnt: '3x2',
-                                html: '3x2'
-                            }
-                        ]
+                        style: stdPKF.getRandomColorsMaterial(),
+                        margin: '0 10 0 0',
+                        tilecnt: '6x4',
+                        html: '6x4'
                     },
                     {
                         xtype: 'container',
@@ -91,8 +72,9 @@ Ext.define('PENKNIFE.view.tiles.SchemaSingleController', {
                         },
                         flex: 1,
                         style: stdPKF.getRandomColorsMaterial(),
-                        tilecnt: '3x4',
-                        html: '3x4'
+                        margin: '0 0 0 10',
+                        tilecnt: '6x4',
+                        html: '6x4'
                     }
                 ],
                 margin: 10
@@ -103,10 +85,10 @@ Ext.define('PENKNIFE.view.tiles.SchemaSingleController', {
                     type: 'vbox',
                     align: 'stretch'
                 },
-                flex: 2/24,
+                flex: 4/24,
                 style: stdPKF.getRandomColorsMaterial(),
-                tilecnt: '6x2',
-                html: '6x2',
+                tilecnt: '12x4',
+                html: '12x4',
                 margin: 10
             },
             {
@@ -124,6 +106,7 @@ Ext.define('PENKNIFE.view.tiles.SchemaSingleController', {
                             align: 'stretch'
                         },
                         flex: 1,
+                        margin: '0 10 0 0',
                         items: [
                             {
                                 xtype: 'container',
@@ -133,8 +116,9 @@ Ext.define('PENKNIFE.view.tiles.SchemaSingleController', {
                                 },
                                 flex: 1,
                                 style: stdPKF.getRandomColorsMaterial(),
-                                tilecnt: '3x3',
-                                html: '3x3'
+                                margin: '0 0 10 0',
+                                tilecnt: '6x3',
+                                html: '6x3'
                             },
                             {
                                 xtype: 'container',
@@ -144,8 +128,9 @@ Ext.define('PENKNIFE.view.tiles.SchemaSingleController', {
                                 },
                                 flex: 1,
                                 style: stdPKF.getRandomColorsMaterial(),
-                                tilecnt: '3x3',
-                                html: '3x3'
+                                margin: '10 0 0 0',
+                                tilecnt: '6x3',
+                                html: '6x3'
                             }
                         ]
                     },
@@ -156,6 +141,7 @@ Ext.define('PENKNIFE.view.tiles.SchemaSingleController', {
                             align: 'stretch'
                         },
                         flex: 1,
+                        margin: '0 0 0 10',
                         items: [
                             {
                                 xtype: 'container',
@@ -165,8 +151,9 @@ Ext.define('PENKNIFE.view.tiles.SchemaSingleController', {
                                 },
                                 flex: 1,
                                 style: stdPKF.getRandomColorsMaterial(),
-                                tilecnt: '3x3',
-                                html: '3x3'
+                                margin: '0 0 10 0',
+                                tilecnt: '6x3',
+                                html: '6x3'
                             },
                             {
                                 xtype: 'container',
@@ -176,8 +163,9 @@ Ext.define('PENKNIFE.view.tiles.SchemaSingleController', {
                                 },
                                 flex: 1,
                                 style: stdPKF.getRandomColorsMaterial(),
-                                tilecnt: '3x3',
-                                html: '3x3'
+                                margin: '10 0 0 0',
+                                tilecnt: '6x3',
+                                html: '6x3'
                             }
                         ]
                     }
@@ -200,75 +188,10 @@ Ext.define('PENKNIFE.view.tiles.SchemaSingleController', {
                         },
                         flex: 1,
                         style: stdPKF.getRandomColorsMaterial(),
-                        tilecnt: '6x3',
-                        html: '6x3'
-                    },
-                    {
-                        xtype: 'container',
-                        layout: {
-                            type: 'hbox',
-                            align: 'stretch'
-                        },
-                        flex: 1,
-                        items: [
-                            {
-                                xtype: 'container',
-                                layout: {
-                                    type: 'vbox',
-                                    align: 'stretch'
-                                },
-                                flex: 1,
-                                style: stdPKF.getRandomColorsMaterial(),
-                                tilecnt: '3x3',
-                                html: '3x3'
-                            },
-                            {
-                                xtype: 'container',
-                                layout: {
-                                    type: 'vbox',
-                                    align: 'stretch'
-                                },
-                                flex: 1,
-                                items: [
-                                    {
-                                        xtype: 'container',
-                                        layout: {
-                                            type: 'vbox',
-                                            align: 'stretch'
-                                        },
-                                        flex: 1,
-                                        style: stdPKF.getRandomColorsMaterial(),
-                                        tilecnt: '3x1.5',
-                                        html: '3x1.5'
-                                    },
-                                    {
-                                        xtype: 'container',
-                                        layout: {
-                                            type: 'vbox',
-                                            align: 'stretch'
-                                        },
-                                        flex: 1,
-                                        style: stdPKF.getRandomColorsMaterial(),
-                                        tilecnt: '3x1.5',
-                                        html: '3x1.5'
-                                    } 
-                                ]
-                            }
-                        ]
+                        tilecnt: '12x6',
+                        html: '12x6'
                     }
                 ],
-                margin: 10
-            },
-            {
-                xtype: 'container',
-                layout: {
-                    type: 'vbox',
-                    align: 'stretch'
-                },
-                flex: 2/24,
-                style: stdPKF.getRandomColorsMaterial(),
-                tilecnt: '6x2',
-                html: '6x2',
                 margin: 10
             }
         ]

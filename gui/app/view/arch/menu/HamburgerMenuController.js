@@ -9,6 +9,7 @@ Ext.define('PENKNIFE.view.arch.menu.HamburgerMenuController', {
     showHamburgerMenuPanel: function(th) {
         
     },
+
     showLoggedHamCnt: function(th) {
         let loggedHamBottomTb = this.lookupReference('LoggedHamBottomTb')
         loggedHamBottomTb.add(Ext.create('PENKNIFE.view.arch.menu.ToolbarOthersMenu', {
@@ -28,6 +29,9 @@ Ext.define('PENKNIFE.view.arch.menu.HamburgerMenuController', {
         this.lookupReference('UnloggedHamCnt').destroy()
         //distruggo cnt sign in
         this.lookupReference('CntHamSignIn').destroy()
+        //distruggo tb bottom sign up
+        this.ctrlHome.barSignUpBottom.destroy()
+
         /**
          * TODO
          * -creo il pannello dati utente
@@ -44,14 +48,39 @@ Ext.define('PENKNIFE.view.arch.menu.HamburgerMenuController', {
         loggedHamCnt.show()
 
         loggedHamCnt.add(Ext.create('PENKNIFE.view.arch.menu.MainMenuItemsOther', {
-            controllerHome: this.getView().controllerHome,
+            controllerHome: this.ctrlHome,
             controllerHamburger: this
         }))
+
+        
 
         Ext.resumeLayouts()
     },
 
+    tapContattaci: function( th ) {
+        this.tapCloseIconHamburger()
+
+        let levelFirst = this.ctrlHome.lookupReference('LevelFirst'),
+            levelHome = this.ctrlHome.lookupReference('LevelHome')
+
+        this.ctrlHome.lookupReference('CntMainContent').setActiveItem(levelHome)
+        levelFirst.removeAll(true)
+        levelFirst.add(Ext.create('PENKNIFE.view.contacts.ContactUs', {
+            controllerHome: this.ctrlHome
+        }))
+        this.ctrlHome.lookupReference('CntMainContent').setActiveItem(levelFirst)
+    },
+
+    tapNostriServizi: function(th) {
+        this.lookupReference('ContainerSloganHamburger').setHidden(true)
+        th.setHidden(true)
+
+        let cntNostriServizi = this.lookupReference('ContainerNostriServizi')
+        cntNostriServizi.add(Ext.create('PENKNIFE.view.arch.menu.MainMenuItemsList'))
+        cntNostriServizi.setHidden(false)
+    },
+
     init: function() {
-        
+        this.ctrlHome = this.getView().controllerHome
     }
 });

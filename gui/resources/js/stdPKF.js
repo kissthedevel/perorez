@@ -92,7 +92,8 @@ class stdPKF {
         randomColor = Ext.Number.randomInt(0, colors.length -1)
 
         return {
-            'background-color': colors[randomColor]
+            'background-color': colors[randomColor],
+            'box-shadow': '4px 4px #920000'
         }
     }
 

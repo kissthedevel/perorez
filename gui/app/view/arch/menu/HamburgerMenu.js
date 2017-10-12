@@ -95,7 +95,7 @@ Ext.define('PENKNIFE.view.arch.menu.HamburgerMenu',{
             },
             flex: 1,
             items: [
-                {
+                /* {
                     xtype: 'container',
                     layout: {
                         type: 'vbox',
@@ -112,6 +112,46 @@ Ext.define('PENKNIFE.view.arch.menu.HamburgerMenu',{
                             posterUrl: 'resources/img/play-button-silhouette.svg'
                         }
                     ]
+                }, */
+                {
+                    xtype: 'container',
+                    itemId: 'ContainerSloganHamburger', reference: 'ContainerSloganHamburger',
+                    layout: {
+                        type: 'vbox',
+                        align: 'middle',
+                        pack: 'center'
+                    },
+                    flex: 1,
+                    margin: '0 0 10 0',
+                    style: {
+                        'background-color': '#B71D1D'
+                    },
+                    items: [
+                        {
+                            xtype: 'image',
+                            src: 'resources/img/logo_penknife.png',
+                            height: 80,
+                            width: 80
+                        },
+                        {
+                            xtype: 'image',
+                            src: 'resources/img/pn-elegantt.png',
+                            height: 54,
+                            width: 150,
+                            margin: '20 0 0 0'
+                        }
+                    ]
+                },
+                {
+                    xtype: 'container',
+                    itemId: 'ContainerNostriServizi', reference: 'ContainerNostriServizi',
+                    layout: {
+                        type: 'vbox',
+                        align: 'stretch'
+                    },
+                    flex: 1,
+                    scrollable: true,
+                    hidden: true
                 },
                 {
                     xtype: 'container',
@@ -127,7 +167,10 @@ Ext.define('PENKNIFE.view.arch.menu.HamburgerMenu',{
                             cls: 'button-red',
                             margin: '0 10 10 10',
                             localized: 'text',
-                            localizedKey: `NOSTRI_SERVIZI`
+                            localizedKey: `NOSTRI_SERVIZI`,
+                            listeners: {
+                                tap: 'tapNostriServizi'
+                            }
                         },
                         {
                             xtype: 'button',
@@ -136,7 +179,10 @@ Ext.define('PENKNIFE.view.arch.menu.HamburgerMenu',{
                             cls: 'button-red',
                             margin: '0 10 10 10',
                             localized: 'text',
-                            localizedKey: `VUOI_SAPERNE_DI_PIU`
+                            localizedKey: `VUOI_SAPERNE_DI_PIU`,
+                            listeners: {
+                                tap: 'tapContattaci'
+                            }
                         },
                         {
                             xtype: 'button',

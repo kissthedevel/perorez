@@ -53,7 +53,8 @@ Ext.define('PENKNIFE.view.arch.HomeController', {
         Ext.suspendLayouts()
 
         if (stdPKF.isPhone()) {
-            this.lookupReference('ArchHome').add(Ext.create('Ext.Toolbar', {
+            let archHome = this.lookupReference('ArchHome')
+            archHome.add(Ext.create('Ext.Toolbar', {
                 docked: 'top',
                 cls: 'toolbar-menu-minimal',
                 items: [
@@ -61,6 +62,22 @@ Ext.define('PENKNIFE.view.arch.HomeController', {
                         minimalMenu: true,
                         flex: 1
                     })
+                ]
+            }))
+
+            this.barSignUpBottom = archHome.add(Ext.create('Ext.Toolbar', {
+                docked: 'bottom',
+                cls: 'toolbar-menu-minimal',
+                items: [
+                    {
+                        xtype: 'button',
+                        flex: 1,
+                        ui: 'action',
+                        cls: 'button-green button-sign-up-big',
+                        margin: 10,
+                        localized: 'text',
+                        localizedKey: `SIGN_UP`
+                    }
                 ]
             }))
         } else {

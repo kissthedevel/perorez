@@ -17,51 +17,34 @@
 		$response->message = "Error: " . $conn->connect_error;
 	} 
 	
-	if ( isset($_GET['creator']) || isset($_GET['id']) ) {
-		if ( isset($_GET['creator']) ) {
-			
-			$offset = isset($_GET['offset']) ? $_GET['offset'] : 0;
-			
-			$stmt = $conn->prepare("
-				SELECT a.id, a.approved, a.nomeazienda, a.elite
-				FROM company a
-				WHERE a.creator = ?
-				ORDER BY a.approved ASC
-				LIMIT 1000 OFFSET ?
-			");
-			$stmt->bind_param("ii", $_GET['creator'], $offset);
-		}
+	if ( isset($_GET['id']) ) {
+		
+		$stmt = $conn->prepare("
+			SELECT a.id, a.creator, a.join_date, a.nomeazienda, a.website, a.tilelogo, a.elite
+			FROM company a
+			WHERE a.id = ?
+		");
+		$stmt->bind_param("i", $_GET['id']);
 		
 		if ($stmt->execute()) {
 			$response->success = true;
 			$response->message = 'Ricerca eseguita con successo!';
 			
 			/* bind variables to prepared statement */
-			mysqli_stmt_bind_result($stmt, $colId, $colApproved, $colNomeAzienda, $colElite);
+			mysqli_stmt_bind_result($stmt, $colId, $colCreator, $colJoinDate, $colNomeAzienda, $colWebsite, $colTileLogo, $colElite);
 			
 			/* fetch values */
 			$countRecord = 0;
 			while (mysqli_stmt_fetch($stmt)) {
 				$response->data[$countRecord]['id'] = $colId;
-				$response->data[$countRecord]['approved'] = $colApproved;
+				$response->data[$countRecord]['creator'] = $colCreator;
+				$response->data[$countRecord]['join_date'] = $colJoinDate;
 				$response->data[$countRecord]['nomeazienda'] = $colNomeAzienda;
+				$response->data[$countRecord]['website'] = $colWebsite;
+				$response->data[$countRecord]['tilelogo'] = $colTileLogo;
 				$response->data[$countRecord]['elite'] = $colElite;
 				$countRecord++;
 			}
-			
-			
-			/*$result = $stmt->get_result();
-			// conteggio dei record
-			if ($result->num_rows > 0) {
-				$countRecord = 0;
-				while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-					$response->data[$countRecord]['id'] = $row['id'];
-					$response->data[$countRecord]['approved'] = $row['approved'];
-					$response->data[$countRecord]['nomeazienda'] = $row['nomeazienda'];
-					$response->data[$countRecord]['elite'] = $row['elite'];
-					$countRecord++;
-				}
-			}*/
 		} else {
 			$response->success = false;
 			$response->message = "Error: " . $conn->error;

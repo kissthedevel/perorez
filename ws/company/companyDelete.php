@@ -17,14 +17,20 @@
 		$response->message = "Error: " . $conn->connect_error;
 	} 
 	
-	if ( isset($_GET['id']) && isset($_GET['approved']) && isset($_GET['approver']) ) {
+	if ( isset($_GET['id']) ) {
 		$stmt = $conn->prepare("
-			UPDATE company
-			SET approved = ?, approver = ?, join_date = ?
+			DELETE FROM company
 			WHERE id = ?
 		");
-		$stmt->bind_param("iisi", $_GET['approved'], $_GET['approver'], date("Y-m-d H:i:s"), $_GET['id']);
-		$stmt->execute();
+		$stmt->bind_param("i", $_GET['id']);
+
+		if ($stmt->execute()) {
+			$response->message = 'Eliminazione eseguita!';
+			$response->success = true;
+		} else {
+			$response->success = false;
+			$response->message = "Error: " . $conn->error;
+		}
 		$stmt->close();
 	}
 

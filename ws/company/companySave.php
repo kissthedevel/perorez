@@ -95,13 +95,23 @@
 
 			if ($stmt->execute()) {
 				$descriptionSelectSuccess = true;
-				$result = $stmt->get_result();
+
+				/* bind variables to prepared statement */
+				mysqli_stmt_bind_result($stmt, $colId);
+				
+				/* fetch values */
+				while (mysqli_stmt_fetch($stmt)) {
+					$descriptionUpdate = $colId;
+				}
+
+
+				/*$result = $stmt->get_result();
 				if ($result->num_rows > 0) {
 					$countRecord = 0;
 					while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
 						$descriptionUpdate = $row['id'];
 					}
-				}
+				}*/
 			}
 			$stmt->close();
 			//FINE verifica esistenza record

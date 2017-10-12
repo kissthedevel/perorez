@@ -22,6 +22,10 @@ Ext.define('PENKNIFE.view.tiles.TileGestCreateController', {
         	creator: 1,	//TODO da getsire login
         	elite: record.elite ? 1 : 0
         });
+
+        if (!record.tilesize) {
+            record.tilesize = '6x4'
+        }
         
         Ext.Ajax.request({
             url: '../ws/company/companySave.php',
@@ -134,7 +138,7 @@ Ext.define('PENKNIFE.view.tiles.TileGestCreateController', {
         this.setLinguaggioAttivo('china')
 
         let ts = this.lookupReference('TileSample')
-        ts.setHeight(PENKNIFE.globals.dimensionTiles['6x3'][1])
-        ts.setWidth(PENKNIFE.globals.dimensionTiles['6x3'][0])
+        ts.setHeight(PENKNIFE.globals.dimensionTiles['6x4'][1])
+        ts.setWidth(PENKNIFE.globals.dimensionTiles['6x4'][0])
     }
 });
