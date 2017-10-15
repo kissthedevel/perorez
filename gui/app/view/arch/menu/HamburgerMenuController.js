@@ -31,6 +31,10 @@ Ext.define('PENKNIFE.view.arch.menu.HamburgerMenuController', {
         this.lookupReference('CntHamSignIn').destroy()
         //distruggo tb bottom sign up
         this.ctrlHome.barSignUpBottom.destroy()
+        //distruggo intro istituzionali
+        this.ctrlHome.demoIntroIstitut.destroy()
+        //visualizzo panel Tiles
+        this.ctrlHome.panelTiles.setHidden(false)
 
         /**
          * TODO

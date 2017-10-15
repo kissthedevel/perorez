@@ -81,6 +81,27 @@ Ext.define('PENKNIFE.Application', {
 
         Ext.require('PENKNIFE.view.arch.Home')
         stdPKF.createHomeView()
+
+        /**
+         * detect della lingua in base alla geolocalizzazione
+         * lancio traduzione automatica in base al paese
+         */
+        let my_position = position => {
+            let lat = position.coords.latitude,
+                lon = position.coords.longitude,
+                PENPOSITION = 'zh_CN'
+            
+            if (lon <= 18.5 && lon >= 6.7) {
+                PENPOSITION = 'it'
+            } else if (lon <= 134.7 && lon >= 73.9) {
+                PENPOSITION = 'zh_CN'
+            }
+
+            PENKNIFE.globals.language = PENPOSITION
+            PENKNIFE.lang._localize(Ext.Viewport.query('[localized]'))
+        }
+        navigator.geolocation.getCurrentPosition(my_position)
+        
         
         Ext.fly('backdrop').destroy()        
     },

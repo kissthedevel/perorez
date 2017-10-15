@@ -111,6 +111,23 @@ Ext.define('PENKNIFE.view.arch.HomeController', {
             controllerHome: this
         })
         this.lookupReference('LevelHome').add(panelTiles)
+        panelTiles.setHidden(true)
+        this.panelTiles = panelTiles
+
+        this.demoIntroIstitut = Ext.create('PENKNIFE.view.arch.DemoIntroIstitut', {
+            //height: Ext.getBody().getSize().height,
+            style: {
+                'background-color': '#B71D1D'
+            }
+        })
+        this.lookupReference('LevelHome').add(this.demoIntroIstitut)
+
+        this.lookupReference('LevelHome').add(Ext.create('PENKNIFE.view.arch.InfoLegali', {
+            style: {
+                'background-color': '#830000'
+            },
+            controllerHome: this
+        }))
 
         overlaySecret = Ext.Viewport.add(Ext.create('PENKNIFE.view.arch.Security', {}))
         overlaySecret.show()

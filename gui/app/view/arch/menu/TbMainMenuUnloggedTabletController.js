@@ -14,6 +14,12 @@ Ext.define('PENKNIFE.view.arch.menu.TbMainMenuUnloggedTabletController', {
         //distruggo unlogged panel
         let cntTabOthers = ctrlHome.lookupReference('TbMainTablet_others')
         cntTabOthers.down('#CntUnlogged').destroy()
+
+        //distruggo intro istituzionali
+        ctrlHome.demoIntroIstitut.destroy()
+        //visualizzo panel Tiles
+        ctrlHome.panelTiles.setHidden(false)
+
         //TODO impostare info utente
         let cntLogged = cntTabOthers.down('#CntLogged')
         cntLogged.down('#CntTbUserInfo').add(Ext.create('PENKNIFE.view.arch.UserInfo'))

@@ -263,7 +263,38 @@ class langPKF {
         this.dictionary['it']['VUOI_DIVENTARE_ELITE'] = `Diventa partner Super`
         this.dictionary['zh_CN']['VUOI_DIVENTARE_ELITE'] = `成为超级合作伙伴`
 
+        /*INVIATO FIN QUI*/
 
+        /**
+         * @description LAB_COPYRIGHT
+         */
+        this.dictionary['en']['LAB_COPYRIGHT'] = `copyright © Penknife Investment srl`
+        this.dictionary['it']['LAB_COPYRIGHT'] = `copyright © Penknife Investment srl`
+        this.dictionary['zh_CN']['LAB_COPYRIGHT'] = `版权 © Penknife Investment srl`
+        
+        /**
+         * @description SEDE_LEGALE
+         */
+        this.dictionary['en']['SEDE_LEGALE'] = `Registered office`
+        this.dictionary['it']['SEDE_LEGALE'] = `Sede legale`
+        this.dictionary['zh_CN']['SEDE_LEGALE'] = `法定座位`
+
+        /**
+         * @description PRIVACY_POLICY
+         */
+        this.dictionary['en']['PRIVACY_POLICY'] = `Privacy policy`
+        this.dictionary['it']['PRIVACY_POLICY'] = `Privacy policy`
+        this.dictionary['zh_CN']['PRIVACY_POLICY'] = `隐私政策`
+
+        /**
+         * @description COOKIE_POLICY
+         */
+        this.dictionary['en']['COOKIE_POLICY'] = `Cookie policy`
+        this.dictionary['it']['COOKIE_POLICY'] = `Cookie policy`
+        this.dictionary['zh_CN']['COOKIE_POLICY'] = `Cookie政策`
+        
+        
+        
 
         /**
          * @description KEY
