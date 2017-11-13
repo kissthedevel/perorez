@@ -192,7 +192,10 @@ Ext.define('PENKNIFE.view.arch.menu.HamburgerMenu',{
                             height: 80,
                             margin: '0 10 10 10',
                             localized: 'text',
-                            localizedKey: `SIGN_UP`
+                            localizedKey: `SIGN_UP`,
+                            listeners: {
+                                tap: 'tapBtnHamSignUp'
+                            }
                         }
                     ]
                 }

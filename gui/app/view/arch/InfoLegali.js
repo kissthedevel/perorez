@@ -133,9 +133,9 @@ Ext.define('PENKNIFE.view.arch.InfoLegali',{
                         {
                             xtype: 'button',
                             cls: 'buttons-privacy-cookie',
-                            /* listeners: {
-                                tap: 'tapBtnUnloggedTabletSignIn'
-                            }, */
+                            listeners: {
+                                tap: 'tapBtnPrivacyPolicy'
+                            },
                             flex: stdPKF.isPhone() ? 1 : null,
                             localized: 'text',
                             localizedKey: `PRIVACY_POLICY`

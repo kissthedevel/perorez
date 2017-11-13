@@ -5,43 +5,54 @@ Ext.define('PENKNIFE.view.arch.menu.TbMainMenuUnloggedTabletController', {
     tapBtnUnloggedTabletSignIn: function(th) {
         this.view = this.getView()
 
-        /**
-         * TODO da fare sul success della chiamata al login
-         */
-        Ext.suspendLayouts()
-
-        let ctrlHome = this.view.controllerHome
-        //distruggo unlogged panel
-        let cntTabOthers = ctrlHome.lookupReference('TbMainTablet_others')
-        cntTabOthers.down('#CntUnlogged').destroy()
-
-        //distruggo intro istituzionali
-        ctrlHome.demoIntroIstitut.destroy()
-        //visualizzo panel Tiles
-        ctrlHome.panelTiles.setHidden(false)
-
-        //TODO impostare info utente
-        let cntLogged = cntTabOthers.down('#CntLogged')
-        cntLogged.down('#CntTbUserInfo').add(Ext.create('PENKNIFE.view.arch.UserInfo'))
-        cntLogged.show()
+        let login = Ext.create('PENKNIFE.view.auth.LogIn', {
+            controllerHome: this.ctrlHome,
+            callbackLogin: () => {
+                /**
+                 * TODO da fare sul success della chiamata al login
+                 */
+                Ext.suspendLayouts()
         
-        let cntMainMenu = ctrlHome.lookupReference('CntMainMenu')
-        cntMainMenu.add(Ext.create('Ext.Toolbar', {
-            docked: 'bottom',
-            items: [
-                Ext.create('PENKNIFE.view.arch.menu.ToolbarOthersMenu', {
+                let ctrlHome = this.view.controllerHome
+                //distruggo unlogged panel
+                let cntTabOthers = ctrlHome.lookupReference('TbMainTablet_others')
+                cntTabOthers.down('#CntUnlogged').destroy()
+        
+                //distruggo intro istituzionali
+                ctrlHome.demoIntroIstitut.destroy()
+                //visualizzo panel Tiles
+                ctrlHome.panelTiles.setHidden(false)
+        
+                //TODO impostare info utente
+                let cntLogged = cntTabOthers.down('#CntLogged')
+                cntLogged.down('#CntTbUserInfo').add(Ext.create('PENKNIFE.view.arch.UserInfo'))
+                cntLogged.show()
+                
+                let cntMainMenu = ctrlHome.lookupReference('CntMainMenu')
+                cntMainMenu.add(Ext.create('Ext.Toolbar', {
+                    docked: 'bottom',
+                    items: [
+                        Ext.create('PENKNIFE.view.arch.menu.ToolbarOthersMenu', {
+                            controllerHome: ctrlHome
+                        })
+                    ]
+                }))
+                this.view.up('toolbar').destroy()
+        
+                cntMainMenu.add(Ext.create('PENKNIFE.view.arch.menu.MainMenuItemsOther', {
                     controllerHome: ctrlHome
-                })
-            ]
-        }))
-        this.view.up('toolbar').destroy()
+                }))
+        
+                Ext.resumeLayouts()
+            }
+        })
+        login.show()
+    },
 
-        cntMainMenu.add(Ext.create('PENKNIFE.view.arch.menu.MainMenuItemsOther', {
-            controllerHome: ctrlHome
-        }))
-
-
-        Ext.resumeLayouts()
+    tapBtnUnloggedTabletSignUp: function(th) {
+        Ext.create('PENKNIFE.view.auth.PreSignUp', {
+            controllerHome: this.view.controllerHome
+        }).show()
     },
 
     init: function() {

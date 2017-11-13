@@ -292,6 +292,77 @@ class langPKF {
         this.dictionary['en']['COOKIE_POLICY'] = `Cookie policy`
         this.dictionary['it']['COOKIE_POLICY'] = `Cookie policy`
         this.dictionary['zh_CN']['COOKIE_POLICY'] = `Cookie政策`
+
+        /**
+         * @description COOKIE_SHORT
+         */
+        this.dictionary['en']['COOKIE_SHORT'] = `Penknife Investment uses cookies. Continuing to surf the site, you implicitly accept our use of cookies. For details, read our cookie policy.`
+        this.dictionary['it']['COOKIE_SHORT'] = `Penknife Investment usa i cookie. Continuando a navigare nel sito, accetti implicitamente il nostro uso dei cookie. Per dettagli, leggi la nostra politica sui cookie.`
+        this.dictionary['zh_CN']['COOKIE_SHORT'] = `Penknife投资使用饼干。 继续浏览网站，您隐含地接受我们使用Cookie。 详情请参阅我们的Cookie政策。`
+        
+        /**
+         * @description USERNAME
+         */
+        this.dictionary['en']['USERNAME'] = `Username`
+        this.dictionary['it']['USERNAME'] = `Username`
+        this.dictionary['zh_CN']['USERNAME'] = `用户名`
+
+        /**
+         * @description PASSWORD
+         */
+        this.dictionary['en']['PASSWORD'] = `Password`
+        this.dictionary['it']['PASSWORD'] = `Password`
+        this.dictionary['zh_CN']['PASSWORD'] = `密码`
+
+        /**
+         * @description NON_SEI_ANCORA_ISCRITTO
+         */
+        this.dictionary['en']['NON_SEI_ANCORA_ISCRITTO'] = `Not yet registered?`
+        this.dictionary['it']['NON_SEI_ANCORA_ISCRITTO'] = `Non sei ancora iscritto?`
+        this.dictionary['zh_CN']['NON_SEI_ANCORA_ISCRITTO'] = `尚未注册？`
+
+        /**
+         * @description OPPURE
+         */
+        this.dictionary['en']['OPPURE'] = `or`
+        this.dictionary['it']['OPPURE'] = `oppure`
+        this.dictionary['zh_CN']['OPPURE'] = `或`
+
+        /**
+         * @description ANNULLA
+         */
+        this.dictionary['en']['ANNULLA'] = `Cancel`
+        this.dictionary['it']['ANNULLA'] = `Annulla`
+        this.dictionary['zh_CN']['ANNULLA'] = `取消`
+
+        /**
+         * @description PREMIUM_MEMBER
+         */
+        this.dictionary['en']['PREMIUM_MEMBER'] = `Premium`
+        this.dictionary['it']['PREMIUM_MEMBER'] = `Premium`
+        this.dictionary['zh_CN']['PREMIUM_MEMBER'] = `高级会员`
+
+        /**
+         * @description CLASSIC_MEMBER
+         */
+        this.dictionary['en']['CLASSIC_MEMBER'] = `Classic`
+        this.dictionary['it']['CLASSIC_MEMBER'] = `Classic`
+        this.dictionary['zh_CN']['CLASSIC_MEMBER'] = `经典/免费`
+
+        /**
+         * @description SLOGAN_PREMIUM
+         */
+        this.dictionary['en']['SLOGAN_PREMIUM'] = `Get the most out of Penknife, boost your business!`
+        this.dictionary['it']['SLOGAN_PREMIUM'] = `Ottieni il massimo da Penknife, potenzia il tuo Business!`
+        this.dictionary['zh_CN']['SLOGAN_PREMIUM'] = `充分利用铅笔刀，提高您的业务！`
+
+        /**
+         * @description SLOGAN_CLASSIC
+         */
+        this.dictionary['en']['SLOGAN_CLASSIC'] = `Discover the Penknife world, simple, fast .. Free`
+        this.dictionary['it']['SLOGAN_CLASSIC'] = `Scopri il mondo Penknife, semplice, rapido..Free`
+        this.dictionary['zh_CN']['SLOGAN_CLASSIC'] = `发现铅笔刀世界，简单，快速..免费`
+
         
         
         

@@ -23,7 +23,10 @@ Ext.define('PENKNIFE.view.arch.menu.TbMainMenuUnloggedTablet',{
             height: 80,
             margin: '0 10 10 10',
             localized: 'text',
-            localizedKey: `SIGN_UP`
+            localizedKey: `SIGN_UP`,
+            listeners: {
+                tap: 'tapBtnUnloggedTabletSignUp'
+            }
         },
         {
             xtype: 'container',

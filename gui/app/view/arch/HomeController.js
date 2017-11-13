@@ -76,7 +76,10 @@ Ext.define('PENKNIFE.view.arch.HomeController', {
                         cls: 'button-green button-sign-up-big',
                         margin: 10,
                         localized: 'text',
-                        localizedKey: `SIGN_UP`
+                        localizedKey: `SIGN_UP`,
+                        handler: th => Ext.create('PENKNIFE.view.auth.PreSignUp', {
+                            controllerHome: this
+                        }).show()
                     }
                 ]
             }))
@@ -129,8 +132,11 @@ Ext.define('PENKNIFE.view.arch.HomeController', {
             controllerHome: this
         }))
 
-        overlaySecret = Ext.Viewport.add(Ext.create('PENKNIFE.view.arch.Security', {}))
-        overlaySecret.show()
+        cookieLaw = Ext.Viewport.add(Ext.create('PENKNIFE.view.privacy.CookieLaw', {}))
+        cookieLaw.show()
+
+        /* overlaySecret = Ext.Viewport.add(Ext.create('PENKNIFE.view.arch.Security', {}))
+        overlaySecret.show() */
 
         Ext.resumeLayouts()
     }
