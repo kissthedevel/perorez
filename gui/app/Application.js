@@ -93,8 +93,12 @@ Ext.define('PENKNIFE.Application', {
             
             if (lon <= 18.5 && lon >= 6.7) {
                 PENPOSITION = 'it'
+                PENKNIFE.globals.PENPOSITION = 'IT'
             } else if (lon <= 134.7 && lon >= 73.9) {
                 PENPOSITION = 'zh_CN'
+                PENKNIFE.globals.PENPOSITION = 'CN'
+            } else {
+                PENKNIFE.globals.PENPOSITION = null
             }
 
             PENKNIFE.globals.language = PENPOSITION

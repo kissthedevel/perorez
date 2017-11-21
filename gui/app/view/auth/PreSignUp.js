@@ -65,7 +65,10 @@ Ext.define('PENKNIFE.view.auth.PreSignUp',{
                             iconCls: 'premium-member-big',
                             iconAlign: 'top',
                             localized: 'text',
-                            localizedKey: `PREMIUM_MEMBER`
+                            localizedKey: `PREMIUM_MEMBER`,
+                            listeners: {
+                                tap: 'tapButtonPremium'
+                            }
                         },
                         {
                             xtype: 'button',
@@ -76,7 +79,10 @@ Ext.define('PENKNIFE.view.auth.PreSignUp',{
                             iconCls: 'classic-member-big',
                             iconAlign: 'top',
                             localized: 'text',
-                            localizedKey: `CLASSIC_MEMBER`
+                            localizedKey: `CLASSIC_MEMBER`,
+                            listeners: {
+                                tap: 'tapButtonClassic'
+                            }
                         }
                     ]
                 },

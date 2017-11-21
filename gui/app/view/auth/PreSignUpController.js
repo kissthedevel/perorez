@@ -3,12 +3,10 @@ Ext.define('PENKNIFE.view.auth.PreSignUpController', {
     alias: 'controller.auth-PreSignUp',
 
     tapCloseIcon: function(th) {
-        this.getView().destroy()
+        this.view.destroy()
     },
 
     tapBtnSignIn: function(th) {
-        this.view = this.getView()
-        
         let login = Ext.create('PENKNIFE.view.auth.LogIn', {
             controllerHome: this.view.controllerHome,
             callbackLogin: () => {
@@ -21,7 +19,25 @@ Ext.define('PENKNIFE.view.auth.PreSignUpController', {
         this.view.destroy()
     },
 
+    startSignUp: function(type) {
+        let signup = Ext.create('PENKNIFE.view.auth.SignUp', {
+            controllerHome: this.view.controllerHome,
+            signType: type
+        })
+
+        this.view.hide()
+        signup.show()
+        this.view.destroy()
+    },
+
+    tapButtonPremium: function(th) {
+        this.startSignUp('premium')
+    },
+    tapButtonClassic: function(th) {
+        this.startSignUp('classic')
+    },
+
     init: function() {
-        
+        this.view = this.getView()
     }
 });

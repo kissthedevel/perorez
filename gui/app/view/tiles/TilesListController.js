@@ -69,6 +69,7 @@ Ext.define('PENKNIFE.view.tiles.TilesListController', {
 
         store.load({
             params: {
+                disableLoadMask: true,
                 creator: 1
             },
             callback: (records, operation, success) => {

@@ -49,6 +49,7 @@ Ext.define('PENKNIFE.view.tiles.TilesList',{
             flex: 1,
             store: Ext.create('PENKNIFE.view.tiles.TilesListStore'),
             disableSelection: true,
+            loadingText: false,
             itemTpl:   `<tpl if="approved === 1">
                             <img id='approved-${Ext.id()}' src="resources/img/approved.svg" height='24' width='24' style="float:left;">
                         <tpl else>

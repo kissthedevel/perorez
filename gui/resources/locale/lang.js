@@ -363,6 +363,153 @@ class langPKF {
         this.dictionary['it']['SLOGAN_CLASSIC'] = `Scopri il mondo Penknife, semplice, rapido..Free`
         this.dictionary['zh_CN']['SLOGAN_CLASSIC'] = `发现铅笔刀世界，简单，快速..免费`
 
+        /**
+         * @description CONFERMA_ISCRIZIONE
+         */
+        this.dictionary['en']['CONFERMA_ISCRIZIONE'] = `Confirm registration`
+        this.dictionary['it']['CONFERMA_ISCRIZIONE'] = `Conferma iscrizione`
+        this.dictionary['zh_CN']['CONFERMA_ISCRIZIONE'] = `确认注册`
+
+        /**
+         * @description ISCRIZIONE_PREMIUM
+         */
+        this.dictionary['en']['ISCRIZIONE_PREMIUM'] = `Premium membership`
+        this.dictionary['it']['ISCRIZIONE_PREMIUM'] = `Iscrizione Premium`
+        this.dictionary['zh_CN']['ISCRIZIONE_PREMIUM'] = `高级会员`
+
+        /**
+         * @description ISCRIZIONE_CLASSIC
+         */
+        this.dictionary['en']['ISCRIZIONE_CLASSIC'] = `Classical Inscription`
+        this.dictionary['it']['ISCRIZIONE_CLASSIC'] = `Iscrizione Classic`
+        this.dictionary['zh_CN']['ISCRIZIONE_CLASSIC'] = `古典题字`
+
+        /**
+         * @description EMAIL
+         */
+        this.dictionary['en']['EMAIL'] = `Email`
+        this.dictionary['it']['EMAIL'] = `Email`
+        this.dictionary['zh_CN']['EMAIL'] = `电子邮件`
+
+        /**
+         * @description SCEGLI_PASSWORD
+         */
+        this.dictionary['en']['SCEGLI_PASSWORD'] = `Choose Password`
+        this.dictionary['it']['SCEGLI_PASSWORD'] = `Scegli Password`
+        this.dictionary['zh_CN']['SCEGLI_PASSWORD'] = `选择密码`
+
+        /**
+         * @description RIPETI_PASSWORD
+         */
+        this.dictionary['en']['RIPETI_PASSWORD'] = `Repeat the password`
+        this.dictionary['it']['RIPETI_PASSWORD'] = `Ripeti Password`
+        this.dictionary['zh_CN']['RIPETI_PASSWORD'] = `重复密码`
+
+        /**
+         * @description PRESENTATI
+         */
+        this.dictionary['en']['PRESENTATI'] = `Appear`
+        this.dictionary['it']['PRESENTATI'] = `Presentati`
+        this.dictionary['zh_CN']['PRESENTATI'] = `提交`
+
+        /**
+         * @description NOME
+         */
+        this.dictionary['en']['NOME'] = `Name`
+        this.dictionary['it']['NOME'] = `Nome`
+        this.dictionary['zh_CN']['NOME'] = `名`
+
+        /**
+         * @description COGNOME
+         */
+        this.dictionary['en']['COGNOME'] = `Surname`
+        this.dictionary['it']['COGNOME'] = `Cognome`
+        this.dictionary['zh_CN']['COGNOME'] = `姓`
+
+        /**
+         * @description INFORMAZIONI_PREMIUM
+         */
+        this.dictionary['en']['INFORMAZIONI_PREMIUM'] = `Premium Information`
+        this.dictionary['it']['INFORMAZIONI_PREMIUM'] = `Informazioni Premium`
+        this.dictionary['zh_CN']['INFORMAZIONI_PREMIUM'] = `优质信息`
+
+        /**
+         * @description DISPONIBILE_INVESTIRE
+         */
+        this.dictionary['en']['DISPONIBILE_INVESTIRE'] = `Availability to invest`
+        this.dictionary['it']['DISPONIBILE_INVESTIRE'] = `Disponibilità ad investire`
+        this.dictionary['zh_CN']['DISPONIBILE_INVESTIRE'] = `可用性投资`
+
+        /**
+         * @description SESSO
+         */
+        this.dictionary['en']['SESSO'] = `Gender`
+        this.dictionary['it']['SESSO'] = `Sesso`
+        this.dictionary['zh_CN']['SESSO'] = `性别`
+
+        /**
+         * @description DATANASCITA
+         */
+        this.dictionary['en']['DATANASCITA'] = `Date of birth`
+        this.dictionary['it']['DATANASCITA'] = `Data di nascita`
+        this.dictionary['zh_CN']['DATANASCITA'] = `出生日期`
+
+        /**
+         * @description NTELEFONO
+         */
+        this.dictionary['en']['NTELEFONO'] = `Telephone number`
+        this.dictionary['it']['NTELEFONO'] = `Telefono`
+        this.dictionary['zh_CN']['NTELEFONO'] = `电话号码`
+
+        /**
+         * @description NAZIONE
+         */
+        this.dictionary['en']['NAZIONE'] = `Country`
+        this.dictionary['it']['NAZIONE'] = `Nazione`
+        this.dictionary['zh_CN']['NAZIONE'] = `国家`
+
+        /**
+         * @description CITTA
+         */
+        this.dictionary['en']['CITTA'] = `City`
+        this.dictionary['it']['CITTA'] = `Città`
+        this.dictionary['zh_CN']['CITTA'] = `城市`
+
+        /**
+         * @description AZIENDA
+         */
+        this.dictionary['en']['AZIENDA'] = `Company`
+        this.dictionary['it']['AZIENDA'] = `Azienda`
+        this.dictionary['zh_CN']['AZIENDA'] = `公司`
+
+        /**
+         * @description SETTORE
+         */
+        this.dictionary['en']['SETTORE'] = `Scope`
+        this.dictionary['it']['SETTORE'] = `Settore`
+        this.dictionary['zh_CN']['SETTORE'] = `范围`
+
+        /**
+         * @description RUOLO
+         */
+        this.dictionary['en']['RUOLO'] = `Business role`
+        this.dictionary['it']['RUOLO'] = `Ruolo aziendale`
+        this.dictionary['zh_CN']['RUOLO'] = `企业角色`
+
+        /**
+         * @description FATTURATO
+         */
+        this.dictionary['en']['FATTURATO'] = `Revenue`
+        this.dictionary['it']['FATTURATO'] = `Fatturato`
+        this.dictionary['zh_CN']['FATTURATO'] = `营业额`
+
+        /**
+         * @description PATRIMONIO
+         */
+        this.dictionary['en']['PATRIMONIO'] = `Assets`
+        this.dictionary['it']['PATRIMONIO'] = `Patrimonio`
+        this.dictionary['zh_CN']['PATRIMONIO'] = `遗产`
+
         
         
         
