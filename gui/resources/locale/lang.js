@@ -510,6 +510,34 @@ class langPKF {
         this.dictionary['it']['PATRIMONIO'] = `Patrimonio`
         this.dictionary['zh_CN']['PATRIMONIO'] = `遗产`
 
+        /**
+         * @description COMPLIMENTI
+         */
+        this.dictionary['en']['COMPLIMENTI'] = `Congratulations!`
+        this.dictionary['it']['COMPLIMENTI'] = `Complimenti!`
+        this.dictionary['zh_CN']['COMPLIMENTI'] = `恭喜！`
+        
+        /**
+         * @description ATTENZIONE
+         */
+        this.dictionary['en']['ATTENZIONE'] = `Warning!`
+        this.dictionary['it']['ATTENZIONE'] = `Attenzione!`
+        this.dictionary['zh_CN']['ATTENZIONE'] = `警告！`
+        
+        /**
+         * @description ACCOUNT_ESISTENTE
+         */
+        this.dictionary['en']['ACCOUNT_ESISTENTE'] = `Existing account!`
+        this.dictionary['it']['ACCOUNT_ESISTENTE'] = `Account già esistente!`
+        this.dictionary['zh_CN']['ACCOUNT_ESISTENTE'] = `现有账户！`
+                
+        /**
+         * @description REGISTRAZIONE_SUCCESSO
+         */
+        this.dictionary['en']['REGISTRAZIONE_SUCCESSO'] = `Successfully registered!`
+        this.dictionary['it']['REGISTRAZIONE_SUCCESSO'] = `Registrazione effettuata con successo!`
+        this.dictionary['zh_CN']['REGISTRAZIONE_SUCCESSO'] = `成功注册！`
+        
         
         
         

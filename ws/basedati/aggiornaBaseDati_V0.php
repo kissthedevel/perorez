@@ -67,5 +67,44 @@
 		echo "Error creating table: " . $conn->error;
 	}
 	
+	echo '<br>************************************************<br>';
+	// sql to create table
+	$sql = "CREATE TABLE users (
+				id INT(7) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+				timestamp_reg DATETIME NOT NULL,
+				timestamp_disattiva DATETIME,
+				attivo BOOLEAN NULL DEFAULT NULL,
+				administrator BOOLEAN NULL DEFAULT NULL,
+				account_type VARCHAR(1) NOT NULL,
+				check_datipers BOOLEAN NULL DEFAULT NULL,
+				check_privacy BOOLEAN NULL DEFAULT NULL,
+				username VARCHAR(50),
+				email VARCHAR(50) NOT NULL,
+				password VARCHAR(50) NOT NULL,
+				nome VARCHAR(50) NOT NULL,
+				cognome VARCHAR(50) NOT NULL,
+				sesso VARCHAR(1),
+				datanascita DATETIME,
+				telefono VARCHAR(50),
+				nazione VARCHAR(10),
+				citta VARCHAR(50),
+				azienda VARCHAR(100),
+				settore INT(5),
+				ruolo INT(5),
+				fatturato INT(5),
+				patrimonio INT(5),
+				investitore BOOLEAN NULL DEFAULT NULL,
+
+				INDEX (id),
+				INDEX (email),
+				INDEX (username),
+				INDEX (attivo)
+			)";
+	if ($conn->query($sql) === TRUE) {
+		echo "Table users created successfully";
+	} else {
+		echo "Error creating table: " . $conn->error;
+	}
+
 	$conn->close();
 ?>

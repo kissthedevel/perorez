@@ -246,7 +246,7 @@ Ext.define('PENKNIFE.view.auth.SignUp',{
                                             labelCls: 'pkf-label-bold-13',
                                             inputCls: 'input-gen-penknife',
                                             margin: '0 0 0 10',
-                                            name: 'premium_azienda',
+                                            name: 'azienda',
                                             flex: 1
                                         }
                                     ]
@@ -277,7 +277,7 @@ Ext.define('PENKNIFE.view.auth.SignUp',{
                                                     localizedKey: `SETTORE`,
                                                     labelCls: 'pkf-label-bold-13',
                                                     inputCls: 'input-gen-penknife',
-                                                    name: 'premium-settore',
+                                                    name: 'settore',
                                                     //store: Ext.create('PENKNIFE.view.auth.CountriesStore'),
                                                     displayField: 'valore',
                                                     valueField: 'codice',
@@ -307,7 +307,7 @@ Ext.define('PENKNIFE.view.auth.SignUp',{
                                                     localizedKey: `RUOLO`,
                                                     labelCls: 'pkf-label-bold-13',
                                                     inputCls: 'input-gen-penknife',
-                                                    name: 'premium-ruolo',
+                                                    name: 'ruolo',
                                                     //store: Ext.create('PENKNIFE.view.auth.CountriesStore'),
                                                     displayField: 'valore',
                                                     valueField: 'codice',
@@ -344,7 +344,7 @@ Ext.define('PENKNIFE.view.auth.SignUp',{
                                                     localizedKey: `FATTURATO`,
                                                     labelCls: 'pkf-label-bold-13',
                                                     inputCls: 'input-gen-penknife',
-                                                    name: 'premium-fatturato',
+                                                    name: 'fatturato',
                                                     //store: Ext.create('PENKNIFE.view.auth.CountriesStore'),
                                                     displayField: 'valore',
                                                     valueField: 'codice',
@@ -374,7 +374,7 @@ Ext.define('PENKNIFE.view.auth.SignUp',{
                                                     localizedKey: `PATRIMONIO`,
                                                     labelCls: 'pkf-label-bold-13',
                                                     inputCls: 'input-gen-penknife',
-                                                    name: 'premium-patrimonio',
+                                                    name: 'patrimonio',
                                                     //store: Ext.create('PENKNIFE.view.auth.CountriesStore'),
                                                     displayField: 'valore',
                                                     valueField: 'codice',
@@ -411,7 +411,7 @@ Ext.define('PENKNIFE.view.auth.SignUp',{
                                         },
                                         {
                                             xtype: 'togglefield',
-                                            name: 'premium_investire',
+                                            name: 'investitore',
                                             margin: '5 0 0 0'
                                         }
                                     ]
@@ -446,6 +446,9 @@ Ext.define('PENKNIFE.view.auth.SignUp',{
                     localizedKey: `CONFERMA_ISCRIZIONE`,
                     style: {
                         color: 'white'
+                    },
+                    listeners: {
+                        tap: 'tapSignUp'
                     }
                 }
             ]
