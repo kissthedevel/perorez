@@ -56,6 +56,12 @@ Ext.define('PENKNIFE.view.auth.SignUpController', {
                         () => window.location.reload()
                     )
 
+                    /**
+                     * distruggo pulsante per evitare script
+                     * malevoli che scatenino richieste multiple.
+                     */
+                    th.destroy()
+
                 } else {
                     Ext.Msg.alert(langPKF._translate('ATTENZIONE'), langPKF._translate(result.message))
                 }

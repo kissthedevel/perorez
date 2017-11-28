@@ -537,7 +537,22 @@ class langPKF {
         this.dictionary['en']['REGISTRAZIONE_SUCCESSO'] = `Successfully registered!`
         this.dictionary['it']['REGISTRAZIONE_SUCCESSO'] = `Registrazione effettuata con successo!`
         this.dictionary['zh_CN']['REGISTRAZIONE_SUCCESSO'] = `成功注册！`
+
+        /**
+         * @description EMAIL_PWD_ERRATO
+         */
+        this.dictionary['en']['EMAIL_PWD_ERRATO'] = `Email or Password Wrong ..`
+        this.dictionary['it']['EMAIL_PWD_ERRATO'] = `Email o Password errati..`
+        this.dictionary['zh_CN']['EMAIL_PWD_ERRATO'] = `电子邮件或密码错误..`
+
+        /**
+         * @description ACCESSO_EFFETTUATO
+         */
+        this.dictionary['en']['ACCESSO_EFFETTUATO'] = `Logged in!`
+        this.dictionary['it']['ACCESSO_EFFETTUATO'] = `Accesso effettuato!`
+        this.dictionary['zh_CN']['ACCESSO_EFFETTUATO'] = `登录！`
         
+
         
         
         

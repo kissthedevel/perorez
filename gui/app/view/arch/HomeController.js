@@ -135,6 +135,27 @@ Ext.define('PENKNIFE.view.arch.HomeController', {
         cookieLaw = Ext.Viewport.add(Ext.create('PENKNIFE.view.privacy.CookieLaw', {}))
         cookieLaw.show()
 
+        /**
+         * verifica sessione
+         */
+        Ext.Ajax.request({
+            url: '../ws/auth/verifysession.php',
+            params: {},
+            success: response => {
+                let result = Ext.JSON.decode(response.responseText)
+                //TODO tradurre messaggio
+                if ( result.success && result.data.length > 0 ) {
+                    
+                } else {
+                    Ext.Msg.alert(langPKF._translate('ATTENZIONE'), langPKF._translate(result.message))
+                }
+            },
+            failure: (conn, response, options, eOpts) => {
+            	let result = Ext.JSON.decode(response.responseText)
+                Ext.Msg.alert(langPKF._translate('ATTENZIONE'), langPKF._translate(result.message))
+            }
+        })
+
         /* overlaySecret = Ext.Viewport.add(Ext.create('PENKNIFE.view.arch.Security', {}))
         overlaySecret.show() */
 

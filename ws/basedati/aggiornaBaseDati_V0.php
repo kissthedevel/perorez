@@ -80,7 +80,7 @@
 				check_privacy BOOLEAN NULL DEFAULT NULL,
 				username VARCHAR(50),
 				email VARCHAR(50) NOT NULL,
-				password VARCHAR(50) NOT NULL,
+				password VARCHAR(100) NOT NULL,
 				nome VARCHAR(50) NOT NULL,
 				cognome VARCHAR(50) NOT NULL,
 				sesso VARCHAR(1),
