@@ -573,9 +573,59 @@ class langPKF {
         this.dictionary['it']['CONTATTACI_INSERIRE_TUA_AZIENDA'] = `Contattaci per inserire la tua Azienda!`
         this.dictionary['zh_CN']['CONTATTACI_INSERIRE_TUA_AZIENDA'] = `联系我们进入你的公司！`
 
+        /**
+         * @description NOMINATIVO
+         */
+        this.dictionary['en']['NOMINATIVO'] = `Name and surname`
+        this.dictionary['it']['NOMINATIVO'] = `Nome e Cognome`
+        this.dictionary['zh_CN']['NOMINATIVO'] = `名字和姓氏`
+
+        /**
+         * @description OGGETTO_RICHIESTA
+         */
+        this.dictionary['en']['OGGETTO_RICHIESTA'] = `Subject Required`
+        this.dictionary['it']['OGGETTO_RICHIESTA'] = `Oggetto richiesta`
+        this.dictionary['zh_CN']['OGGETTO_RICHIESTA'] = `主题必需`
+
+        /**
+         * @description MESSAGGIO
+         */
+        this.dictionary['en']['MESSAGGIO'] = `Message`
+        this.dictionary['it']['MESSAGGIO'] = `Messaggio`
+        this.dictionary['zh_CN']['MESSAGGIO'] = `信息`
         
+        /**
+         * @description INVIA_MESSAGGIO
+         */
+        this.dictionary['en']['INVIA_MESSAGGIO'] = `Send Message`
+        this.dictionary['it']['INVIA_MESSAGGIO'] = `Invia messaggio`
+        this.dictionary['zh_CN']['INVIA_MESSAGGIO'] = `发送消息`
+
+        /**
+         * @description COMPILARE_CAMPI_ALL
+         */
+        this.dictionary['en']['COMPILARE_CAMPI_ALL'] = `Fill in all the fields ..`
+        this.dictionary['it']['COMPILARE_CAMPI_ALL'] = `Compilare tutti i campi..`
+        this.dictionary['zh_CN']['COMPILARE_CAMPI_ALL'] = `填写所有的字段..`
+
+        /**
+         * @description MESSAGGIO_INVIATO
+         */
+        this.dictionary['en']['MESSAGGIO_INVIATO'] = `Mail sent successfully!`
+        this.dictionary['it']['MESSAGGIO_INVIATO'] = `Mail inviata correttamente!`
+        this.dictionary['zh_CN']['MESSAGGIO_INVIATO'] = `邮件发送正确！`
+
+        /**
+         * @description MESSAGGIO_FALLITO
+         */
+        this.dictionary['en']['MESSAGGIO_FALLITO'] = `Send message failed, try again ..`
+        this.dictionary['it']['MESSAGGIO_FALLITO'] = `Invio messaggio fallito, riprovare..`
+        this.dictionary['zh_CN']['MESSAGGIO_FALLITO'] = `发送信息失败，请再试一次。`
         
+
+
         
+
 
         /**
          * @description KEY
