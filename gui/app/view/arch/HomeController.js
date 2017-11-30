@@ -4,12 +4,16 @@ Ext.define('PENKNIFE.view.arch.HomeController', {
 
     tapHamburgerIcon: function(th) {
         if (!this.overlayHamburger) {
-            this.overlayHamburger = Ext.Viewport.add(Ext.create('PENKNIFE.view.arch.menu.HamburgerMenu', {
-                controllerHome: this
-            }))
+            this.createMenuHamburger()
         }
         this.overlayHamburger.show()
     },
+    createMenuHamburger: function() {
+        this.overlayHamburger = Ext.Viewport.add(Ext.create('PENKNIFE.view.arch.menu.HamburgerMenu', {
+            controllerHome: this
+        }))
+    },
+
     tapBtnChina: function(th) {
         PENKNIFE.globals.language = 'zh_CN'
         PENKNIFE.lang._localize(Ext.Viewport.query('[localized]'))
@@ -104,6 +108,8 @@ Ext.define('PENKNIFE.view.arch.HomeController', {
                     })
                 ]
             }))
+
+            this.leftMenuTablet = leftMenu
         }
 
         /**
@@ -136,18 +142,52 @@ Ext.define('PENKNIFE.view.arch.HomeController', {
         cookieLaw.show()
 
         /**
-         * verifica sessione
+         * inizializzo store user log
+         */
+        Ext.require('PENKNIFE.view.auth.UserSimple')
+        PENKNIFE.globals.storeUserSimple = Ext.create('PENKNIFE.view.auth.UserSimple')
+
+        /**
+         * verifica sessione per log-in automatico
          */
         Ext.Ajax.request({
             url: '../ws/auth/verifysession.php',
             params: {},
             success: response => {
                 let result = Ext.JSON.decode(response.responseText)
-                //TODO tradurre messaggio
+                
+                /**
+                 * se l'utente risulta in sessione si procede ad effettuare
+                 * la chiamata di login
+                 */
                 if ( result.success && result.data.length > 0 ) {
-                    
-                } else {
-                    Ext.Msg.alert(langPKF._translate('ATTENZIONE'), langPKF._translate(result.message))
+                    Ext.Ajax.request({
+                        url: '../ws/auth/signin.php',
+                        params: Ext.JSON.encode({
+                            email: result.data[0].email,
+                            password: result.data[0].password
+                        }),
+                        success: response => {
+                            let result = Ext.JSON.decode(response.responseText)
+            
+                            if ( result.success && result.data.length > 0 ) {
+                                /**
+                                 * inserisco utente loggato nello store userSimple
+                                 */
+                                PENKNIFE.globals.storeUserSimple.insert(0, result.data[0])
+
+                                if (stdPKF.isPhone()) {
+                                    this.createMenuHamburger()
+                                    let ctrlHamburger = this.overlayHamburger.lookupController()
+                                    ctrlHamburger.callbackLogin()
+                                } else {
+                                    let menuTablet = this.leftMenuTablet.down('#CntTbMainMenuUnloggedTablet'),
+                                        ctrlMenuTablet = menuTablet.lookupController()
+                                    ctrlMenuTablet.callbackLogin()
+                                }
+                            }
+                        }
+                    })
                 }
             },
             failure: (conn, response, options, eOpts) => {

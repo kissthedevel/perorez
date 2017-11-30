@@ -551,7 +551,27 @@ class langPKF {
         this.dictionary['en']['ACCESSO_EFFETTUATO'] = `Logged in!`
         this.dictionary['it']['ACCESSO_EFFETTUATO'] = `Accesso effettuato!`
         this.dictionary['zh_CN']['ACCESSO_EFFETTUATO'] = `登录！`
+
+        /**
+         * @description ABBANDONARE_PENKNIFE
+         */
+        this.dictionary['en']['ABBANDONARE_PENKNIFE'] = `Are you sure you want to leave PENKNIFE?`
+        this.dictionary['it']['ABBANDONARE_PENKNIFE'] = `Sei sicuro di voler uscire da Penknife?`
+        this.dictionary['zh_CN']['ABBANDONARE_PENKNIFE'] = `你确定要离开PENKNIFE吗？`
         
+        /**
+         * @description VUOI_SAPERNE_PIU
+         */
+        this.dictionary['en']['VUOI_SAPERNE_PIU'] = `Would you like to know more?`
+        this.dictionary['it']['VUOI_SAPERNE_PIU'] = `Vuoi saperne di più?`
+        this.dictionary['zh_CN']['VUOI_SAPERNE_PIU'] = `你想知道更多？`
+        
+        /**
+         * @description CONTATTACI_INSERIRE_TUA_AZIENDA
+         */
+        this.dictionary['en']['CONTATTACI_INSERIRE_TUA_AZIENDA'] = `Contact us to enter your company!`
+        this.dictionary['it']['CONTATTACI_INSERIRE_TUA_AZIENDA'] = `Contattaci per inserire la tua Azienda!`
+        this.dictionary['zh_CN']['CONTATTACI_INSERIRE_TUA_AZIENDA'] = `联系我们进入你的公司！`
 
         
         

@@ -3,16 +3,24 @@ Ext.define('PENKNIFE.view.arch.menu.MainMenuItemsOtherController', {
     alias: 'controller.arch-menu-MainMenuItemsOther',
 
     tapBtnListMyCompanies: function(th) {
-        if (this.ctrlHam) {
-            this.ctrlHam.tapCloseIconHamburger()
+        let administrator = PENKNIFE.globals.storeUserSimple.getData().items[0].data['administrator']
+        if (administrator) {
+            if (this.ctrlHam) {
+                this.ctrlHam.tapCloseIconHamburger()
+            }
+    
+            let levelFirst = this.ctrlHome.lookupReference('LevelFirst')
+            levelFirst.removeAll(true)
+            levelFirst.add(Ext.create('PENKNIFE.view.tiles.TilesList', {
+                controllerHome: this.ctrlHome
+            }))
+            this.ctrlHome.lookupReference('CntMainContent').setActiveItem(levelFirst)
+        } else {
+            let title = langPKF._translate('VUOI_SAPERNE_PIU'),
+                message = langPKF._translate('CONTATTACI_INSERIRE_TUA_AZIENDA')
+            Ext.Msg.alert( title, message)
         }
-
-        let levelFirst = this.ctrlHome.lookupReference('LevelFirst')
-        levelFirst.removeAll(true)
-        levelFirst.add(Ext.create('PENKNIFE.view.tiles.TilesList', {
-            controllerHome: this.ctrlHome
-        }))
-        this.ctrlHome.lookupReference('CntMainContent').setActiveItem(levelFirst)
+        
     },
 
     init: function() {

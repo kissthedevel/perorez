@@ -76,7 +76,7 @@
 			);
 			
 			$dateNow = date("Y-m-d H:i:s");
-			$attivoDefault = 0;
+			$attivoDefault = 1;	//TODO cambiare
 			$administratorDefault = 0;
 
 			$stmt->bind_param("siisiisssssssssssiiiii",

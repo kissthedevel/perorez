@@ -171,7 +171,10 @@ Ext.define('PENKNIFE.view.auth.SignUp',{
                                             inputCls: 'input-gen-penknife',
                                             flex: stdPKF.isPhone() ? null : 1,
                                             margin: stdPKF.isPhone() ? null : '0 0 0 10',
-                                            name: 'datanascita'
+                                            name: 'datanascita',
+                                            listeners: {
+                                                initialize: th => th.getPicker().setYearFrom(1920)
+                                            }
                                         }
                                     ]
                                 },

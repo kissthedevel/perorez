@@ -19,48 +19,65 @@ Ext.define('PENKNIFE.view.arch.menu.HamburgerMenuController', {
         loggedHamBottomTb.show()
     },
 
+    callbackLogin: function() {
+        Ext.suspendLayouts()
+        
+        //distruggo unlogged panel
+        this.lookupReference('UnloggedHamCnt').destroy()
+        //distruggo cnt sign in
+        this.lookupReference('CntHamSignIn').destroy()
+        //distruggo tb bottom sign up
+        this.ctrlHome.barSignUpBottom.destroy()
+
+        let administrator = PENKNIFE.globals.storeUserSimple.getData().items[0].data['administrator']
+        if (administrator) {
+            //distruggo intro istituzionali
+            this.ctrlHome.demoIntroIstitut.destroy()
+            //visualizzo panel Tiles
+            this.ctrlHome.panelTiles.setHidden(false)
+        } else {
+            /**
+             * TODO: rimuovere
+             * visualizzo partners temporanei
+             */
+            this.ctrlHome.demoIntroIstitut.down('#CntPartners').setHidden(false)
+        }
+
+
+        /**
+         * -creo il pannello dati utente
+         * -popolo il pannello dati utente
+         */
+        let CntHamUser = this.lookupReference('CntHamUserData'),
+            viewUserInfo = CntHamUser.add(Ext.create('PENKNIFE.view.arch.UserInfo')),
+            ctrlUserInfo = viewUserInfo.lookupController(),
+            recUser = PENKNIFE.globals.storeUserSimple.getData().items[0].data,
+            nominativo = `${recUser.nome} ${recUser.cognome}`
+
+        ctrlUserInfo.lookupReference('LblUserToolbar').setHtml(nominativo)
+        ctrlUserInfo.lookupReference('LblUserCityToolbar').setHtml(recUser.citta)
+        CntHamUser.show()
+
+        /**
+         * creo e inserisco il componente lista pulsanti
+         */
+        let loggedHamCnt = this.lookupReference('LoggedHamCnt')
+        loggedHamCnt.add(Ext.create('PENKNIFE.view.arch.menu.MainMenuItemsList'))
+        loggedHamCnt.show()
+
+        loggedHamCnt.add(Ext.create('PENKNIFE.view.arch.menu.MainMenuItemsOther', {
+            controllerHome: this.ctrlHome,
+            controllerHamburger: this
+        }))
+
+        Ext.resumeLayouts()
+    },
+
     tapBtnHamSignIn: function(th) {
+        this.getView().hide()
         let login = Ext.create('PENKNIFE.view.auth.LogIn', {
             controllerHome: this.ctrlHome,
-            callbackLogin: () => {
-                /**
-                 * TODO da fare sul success della chiamata al login
-                 */
-                Ext.suspendLayouts()
-        
-                //distruggo unlogged panel
-                this.lookupReference('UnloggedHamCnt').destroy()
-                //distruggo cnt sign in
-                this.lookupReference('CntHamSignIn').destroy()
-                //distruggo tb bottom sign up
-                this.ctrlHome.barSignUpBottom.destroy()
-                //distruggo intro istituzionali
-                this.ctrlHome.demoIntroIstitut.destroy()
-                //visualizzo panel Tiles
-                this.ctrlHome.panelTiles.setHidden(false)
-        
-                /**
-                 * TODO
-                 * -creo il pannello dati utente
-                 * -popolo il pannello dati utente
-                 */
-                let CntHamUser = this.lookupReference('CntHamUserData')
-                CntHamUser.add(Ext.create('PENKNIFE.view.arch.UserInfo'))
-                CntHamUser.show()
-                /**
-                 * creo e inserisco il componente lista pulsanti
-                 */
-                let loggedHamCnt = this.lookupReference('LoggedHamCnt')
-                loggedHamCnt.add(Ext.create('PENKNIFE.view.arch.menu.MainMenuItemsList'))
-                loggedHamCnt.show()
-        
-                loggedHamCnt.add(Ext.create('PENKNIFE.view.arch.menu.MainMenuItemsOther', {
-                    controllerHome: this.ctrlHome,
-                    controllerHamburger: this
-                }))                
-        
-                Ext.resumeLayouts()
-            }
+            callbackLogin: this.callbackLogin
         })
         login.show()
     },

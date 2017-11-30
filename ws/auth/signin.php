@@ -34,11 +34,17 @@
 		$errorQuery = false;
 		$passwordHashed = '';
 		
-		$stmtExist = $conn->prepare(
+		/*$stmtExist = $conn->prepare(
 			"SELECT id, email, password, attivo, administrator, account_type, nome, cognome, citta
 				FROM users
 				WHERE email = ?
-				AND attivo = 1 ");
+				AND attivo = 1 ");*/
+		$stmtExist = $conn->prepare(
+			"SELECT	id, 			email,			 password, 		attivo,
+					administrator, 	account_type,	 nome, 			cognome,
+					citta, 			nazione
+				FROM users
+				WHERE email = ? ");
 		$stmtExist->bind_param("s", $email);
 
 		if ( $stmtExist->execute() ) {
@@ -56,14 +62,15 @@
 				$colAccountType,
 				$colNome,
 				$colCognome,
-				$colCitta
+				$colCitta,
+				$colNazione
 			);
 			/* fetch values */
 			$countEmail = 0;
 			while ( mysqli_stmt_fetch($stmtExist) ) {
 				$response->data[$countEmail]['id'] = $colId;
 				$response->data[$countEmail]['email'] = $colEmail;
-				$response->data[$countEmail]['password'] = $password;
+				//$response->data[$countEmail]['password'] = $password;
 				$passwordHashed = $colPassword;
 				$response->data[$countEmail]['attivo'] = $colAttivo;
 				$response->data[$countEmail]['administrator'] = $colAdministrator;
@@ -71,6 +78,7 @@
 				$response->data[$countEmail]['nome'] = $colNome;
 				$response->data[$countEmail]['cognome'] = $colCognome;
 				$response->data[$countEmail]['citta'] = $colCitta;
+				$response->data[$countEmail]['nazione'] = $colNazione;
 
 				$countEmail++;
 				$accountAlreadyExist = true;

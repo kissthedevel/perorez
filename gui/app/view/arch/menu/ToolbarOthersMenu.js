@@ -32,9 +32,13 @@ Ext.define('PENKNIFE.view.arch.menu.ToolbarOthersMenu',{
         },
         {
             xtype: 'button',
+            itemId: 'BtnLogout', reference: 'BtnLogout',
             cls: 'button-icon-24',
             iconCls: 'icon-logout-hamburger',
-            flex: 1
+            flex: 1,
+            listeners: {
+                tap: 'tapBtnLogout'
+            }
         }
     ]
 });

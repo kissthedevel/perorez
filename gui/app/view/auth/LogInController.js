@@ -19,7 +19,7 @@ Ext.define('PENKNIFE.view.auth.LogInController', {
             email: this.lookupReference('SecUser').getValue(),
             password: this.lookupReference('SecPw').getValue()
         }
-                
+
         Ext.Ajax.request({
             url: '../ws/auth/signin.php',
             params: Ext.JSON.encode(record),
@@ -31,6 +31,24 @@ Ext.define('PENKNIFE.view.auth.LogInController', {
                         langPKF._translate('COMPLIMENTI'),
                         langPKF._translate(result.message)
                     )
+
+                    /**
+                     * inserisco utente loggato nello store userSimple
+                     */
+                    PENKNIFE.globals.storeUserSimple.insert(0, result.data[0])
+
+                    //this.getView().callbackLogin()
+                    let ctrlHome = this.getView().controllerHome
+                    if (stdPKF.isPhone()) {
+                        ctrlHome.createMenuHamburger()
+                        let ctrlHamburger = ctrlHome.overlayHamburger.lookupController()
+                        ctrlHamburger.callbackLogin()
+                    } else {
+                        let menuTablet = ctrlHome.leftMenuTablet.down('#CntTbMainMenuUnloggedTablet'),
+                            ctrlMenuTablet = menuTablet.lookupController()
+                        ctrlMenuTablet.callbackLogin()
+                    }
+                    this.getView().destroy()
 
                 } else {
                     Ext.Msg.alert(langPKF._translate('ATTENZIONE'), langPKF._translate(result.message))

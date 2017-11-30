@@ -61,7 +61,10 @@ Ext.define('PENKNIFE.view.arch.TbMainTabletOthers',{
                 },
                 {
                     xtype: 'button',
-                    cls: 'icon-logout-mini-white'
+                    cls: 'icon-logout-mini-white',
+                    listeners: {
+                        tap: 'tapBtnLogout'
+                    }
                 }
             ]
         }
