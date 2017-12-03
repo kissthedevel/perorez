@@ -281,8 +281,8 @@ Ext.define('PENKNIFE.view.auth.SignUp',{
                                                     labelCls: 'pkf-label-bold-13',
                                                     inputCls: 'input-gen-penknife',
                                                     name: 'settore',
-                                                    //store: Ext.create('PENKNIFE.view.auth.CountriesStore'),
-                                                    displayField: 'valore',
+                                                    store: Ext.create('PENKNIFE.view.auth.Settori'),
+                                                    displayField: 'valoreIT',
                                                     valueField: 'codice',
                                                     flex: 1,
                                                     margin: '0 0 0 10'
@@ -311,8 +311,8 @@ Ext.define('PENKNIFE.view.auth.SignUp',{
                                                     labelCls: 'pkf-label-bold-13',
                                                     inputCls: 'input-gen-penknife',
                                                     name: 'ruolo',
-                                                    //store: Ext.create('PENKNIFE.view.auth.CountriesStore'),
-                                                    displayField: 'valore',
+                                                    store: Ext.create('PENKNIFE.view.auth.Ruoli'),
+                                                    displayField: 'valoreIT',
                                                     valueField: 'codice',
                                                     flex: 1,
                                                     margin: '0 0 0 10'
@@ -348,8 +348,8 @@ Ext.define('PENKNIFE.view.auth.SignUp',{
                                                     labelCls: 'pkf-label-bold-13',
                                                     inputCls: 'input-gen-penknife',
                                                     name: 'fatturato',
-                                                    //store: Ext.create('PENKNIFE.view.auth.CountriesStore'),
-                                                    displayField: 'valore',
+                                                    store: Ext.create('PENKNIFE.view.auth.Fatturato'),
+                                                    displayField: 'valoreIT',
                                                     valueField: 'codice',
                                                     flex: 1,
                                                     margin: '0 0 0 10'
@@ -378,8 +378,8 @@ Ext.define('PENKNIFE.view.auth.SignUp',{
                                                     labelCls: 'pkf-label-bold-13',
                                                     inputCls: 'input-gen-penknife',
                                                     name: 'patrimonio',
-                                                    //store: Ext.create('PENKNIFE.view.auth.CountriesStore'),
-                                                    displayField: 'valore',
+                                                    store: Ext.create('PENKNIFE.view.auth.Patrimonio'),
+                                                    displayField: 'valoreIT',
                                                     valueField: 'codice',
                                                     flex: 1,
                                                     margin: '0 0 0 10'

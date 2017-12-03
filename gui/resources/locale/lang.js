@@ -621,6 +621,41 @@ class langPKF {
         this.dictionary['en']['MESSAGGIO_FALLITO'] = `Send message failed, try again ..`
         this.dictionary['it']['MESSAGGIO_FALLITO'] = `Invio messaggio fallito, riprovare..`
         this.dictionary['zh_CN']['MESSAGGIO_FALLITO'] = `发送信息失败，请再试一次。`
+
+        /**
+         * @description NOME_OBBLIGATORIO
+         */
+        this.dictionary['en']['NOME_OBBLIGATORIO'] = `Field Name required`
+        this.dictionary['it']['NOME_OBBLIGATORIO'] = `Campo Nome obbligatorio`
+        this.dictionary['zh_CN']['NOME_OBBLIGATORIO'] = `字段名称必需`
+
+        /**
+         * @description EMAIL_OBBLIGATORIO
+         */
+        this.dictionary['en']['EMAIL_OBBLIGATORIO'] = `Email field required`
+        this.dictionary['it']['EMAIL_OBBLIGATORIO'] = `Campo Email obbligatorio`
+        this.dictionary['zh_CN']['EMAIL_OBBLIGATORIO'] = `电子邮件字段必填`
+
+        /**
+         * @description PASSWORD_OBBLIGATORIO
+         */
+        this.dictionary['en']['PASSWORD_OBBLIGATORIO'] = `Password field required`
+        this.dictionary['it']['PASSWORD_OBBLIGATORIO'] = `Campo Password obbligatorio`
+        this.dictionary['zh_CN']['PASSWORD_OBBLIGATORIO'] = `需要密码字段`
+
+        /**
+         * @description TELEFONO_OBBLIGATORIO
+         */
+        this.dictionary['en']['TELEFONO_OBBLIGATORIO'] = `Telephone field required`
+        this.dictionary['it']['TELEFONO_OBBLIGATORIO'] = `Campo Telefono obbligatorio`
+        this.dictionary['zh_CN']['TELEFONO_OBBLIGATORIO'] = `需要电话领域`
+
+        /**
+         * @description COGNOME_OBBLIGATORIO
+         */
+        this.dictionary['en']['COGNOME_OBBLIGATORIO'] = `Field Required last name`
+        this.dictionary['it']['COGNOME_OBBLIGATORIO'] = `Campo Cognome obbligatorio`
+        this.dictionary['zh_CN']['COGNOME_OBBLIGATORIO'] = `字段必填姓氏`
         
 
 
