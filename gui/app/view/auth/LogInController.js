@@ -21,7 +21,7 @@ Ext.define('PENKNIFE.view.auth.LogInController', {
         }
 
         Ext.Ajax.request({
-            url: '../ws/auth/signin.php',
+            url: `${PENKNIFEwsDomain}ws/auth/signin.php`,
             params: Ext.JSON.encode(record),
             success: response => {
                 let result = Ext.JSON.decode(response.responseText)

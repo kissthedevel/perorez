@@ -151,7 +151,7 @@ Ext.define('PENKNIFE.view.arch.HomeController', {
          * verifica sessione per log-in automatico
          */
         Ext.Ajax.request({
-            url: '../ws/auth/verifysession.php',
+            url: `${PENKNIFEwsDomain}ws/auth/verifysession.php`,
             params: {},
             success: response => {
                 let result = Ext.JSON.decode(response.responseText)
@@ -162,7 +162,7 @@ Ext.define('PENKNIFE.view.arch.HomeController', {
                  */
                 if ( result.success && result.data.length > 0 ) {
                     Ext.Ajax.request({
-                        url: '../ws/auth/signin.php',
+                        url: `${PENKNIFEwsDomain}ws/auth/signin.php`,
                         params: Ext.JSON.encode({
                             email: result.data[0].email,
                             password: result.data[0].password

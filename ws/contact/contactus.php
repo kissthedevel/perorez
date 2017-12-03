@@ -42,7 +42,7 @@
 		$msg .= "Content-Type: text/plain; charset=\"iso-8859-1\"\n";
 		$msg .= "Content-Transfer-Encoding: 8bit\n\n";
 		$msg .= "\n";
-		$msg .= "<b>Mittente: </b>" . $data->nominativo . "\n\n";
+		$msg .= "Mittente: " . $data->nominativo . "\n\n";
 		$msg .= $data->messaggio;
 			
 		// Boundary di terminazione multipart/alternative

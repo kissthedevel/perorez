@@ -21,7 +21,7 @@ Ext.define('PENKNIFE.view.arch.TbMainTabletOthersController', {
         Ext.Msg.confirm(langPKF._translate('ATTENZIONE'), langPKF._translate('ABBANDONARE_PENKNIFE'), ( buttonId, value, opt) => {
             if( buttonId === 'yes' ) {
                 Ext.Ajax.request({
-                    url: '../ws/auth/logout.php',
+                    url: `${PENKNIFEwsDomain}ws/auth/logout.php`,
                     params: Ext.JSON.encode({}),
                     success: response => {
                         let result = Ext.JSON.decode(response.responseText)

@@ -27,7 +27,7 @@ Ext.define('PENKNIFE.view.contacts.ContactUsController', {
         })
         
         Ext.Ajax.request({
-            url: '../ws/contact/contactus.php',
+            url: `${PENKNIFEwsDomain}ws/contact/contactus.php`,
             params: Ext.JSON.encode(record),
             success: response => {
                 let result = Ext.JSON.decode(response.responseText)

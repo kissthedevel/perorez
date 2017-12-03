@@ -95,6 +95,57 @@
 					array_push( $response->data, $stmt->insert_id);
 					$response->message = 'REGISTRAZIONE_SUCCESSO';
 					$response->success = true;
+
+					//______________________________
+					//*****************************||
+					//*****INVIO mail con dati*****||
+					//*****************************||
+					error_reporting(E_ALL);
+
+					// Genera un boundary
+					$mail_boundary = "=_NextPart_" . md5(uniqid(time()));
+					
+					$to = $email;
+					$sender = "penknife@penknifeinvestment.com";
+					$subject = "PENKNIFE Investment || Registrazione Effettuata! - Registration completed ";
+											
+					$headers = "From: $sender\n";
+					$headers .= "MIME-Version: 1.0\n";
+					$headers .= "Content-Type: multipart/alternative;\n\tboundary=\"$mail_boundary\"\n";
+					$headers .= "X-Mailer: PHP " . phpversion();
+						
+					// Corpi del messaggio nei due formati testo e HTML
+					$text_msg = "messaggio in formato testo";
+					$html_msg = "<b>messaggio</b> in formato <p><a href='http://www.aruba.it'>html</a><br><img src=\"http://hosting.aruba.it/image_top/top_01.gif\" border=\"0\"></p>";
+						
+					// Costruisci il corpo del messaggio da inviare
+					$msg = "This is a multi-part message in MIME format.\n\n";
+					$msg .= "--$mail_boundary\n";
+					$msg .= "Content-Type: text/plain; charset=\"iso-8859-1\"\n";
+					$msg .= "Content-Transfer-Encoding: 8bit\n\n";
+					$msg .= "\n";
+
+					//MESSAGGIO ITALIANO
+					$msg .= "Caro " . $data->nome . " " . $data->cognome . ", complimenti per essere entrato a far parte del mondo PENKNIFE!\n\n";
+					$msg .= "Di seguito i tuoi dati personali per accedere alla piattaforma.\n\n";
+					$msg .= "Email: \t\t ". $email . "\n";
+					$msg .= "Password: \t\t ". $password . "\n\n\n";
+					$msg .= "-------------------------------------------------------------------------\n\n";
+
+					//MESSAGGIO CINESE
+					$msg .= "亲爱的 " . $data->nome . " " . $data->cognome . "，恭喜您加入PENKNIFE世界！ \n\n";
+					$msg .= "以下是您访问该平台的个人信息。 \n\n";
+					$msg .= "电子邮件： \t\t ". $email . "\n";
+					$msg .= "密码： \t\t ". $password . "\n\n\n";
+					$msg .= "-------------------------------------------------------------------------\n\n";
+						
+					// Boundary di terminazione multipart/alternative
+					$msg .= "\n--$mail_boundary--\n";						
+					// Imposta il Return-Path (funziona solo su hosting Windows)
+					ini_set("sendmail_from", $sender);
+					mail($to, $subject, $msg, $headers, "-f$sender");
+					//*****************************||
+					//*****************************||
 				}
 			} else {
 				$response->success = false;

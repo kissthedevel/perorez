@@ -9,7 +9,7 @@ Ext.define('PENKNIFE.view.tiles.TileSimpleViewController', {
 
     loadData: function(id) {
         Ext.Ajax.request({
-            url: '../ws/company/companyGet.php',
+            url: `${PENKNIFEwsDomain}ws/company/companyGet.php`,
             method: 'GET',
             params: {
                 id: id

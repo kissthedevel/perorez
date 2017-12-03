@@ -58,7 +58,7 @@ Ext.define('PENKNIFE.view.tiles.UploadLogo',{
                 pack: 'center'
             },
             flex: 1,
-            url: '../ws/company/uploadLogo.php',
+            url: `${PENKNIFEwsDomain}ws/company/uploadLogo.php`,
             fileUpload: true,
             enableSubmissionForm: false,
             items: [

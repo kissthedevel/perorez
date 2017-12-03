@@ -21,7 +21,7 @@ Ext.define('PENKNIFE.view.tiles.TilesListController', {
         } else if (idTarget.indexOf('waiting') != -1) {
             store.findRecord('id', record.get('id'), 0, false, false, true).set('approved', 1)
             Ext.Ajax.request({
-                url: '../ws/company/companyApprove.php',
+                url: `${PENKNIFEwsDomain}ws/company/companyApprove.php`,
                 method: 'GET',
                 params: {
                     disableLoadMask: true,
@@ -41,7 +41,7 @@ Ext.define('PENKNIFE.view.tiles.TilesListController', {
             Ext.Msg.confirm('Attenzione!', `Sei sicuro di voler eliminare "${record.get('nomeazienda')}"?`, ( buttonId, value, opt) => {
                 if( buttonId === 'yes' ) {
                     Ext.Ajax.request({
-                        url: '../ws/company/companyDelete.php',
+                        url: `${PENKNIFEwsDomain}ws/company/companyDelete.php`,
                         method: 'GET',
                         params: {
                             id: record.get('id')

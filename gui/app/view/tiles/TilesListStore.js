@@ -5,10 +5,13 @@ Ext.define('PENKNIFE.view.tiles.TilesListStore', {
 
     proxy: {
         type: 'ajax',
-        url: '../ws/company/companyList.php',
+        url: `${PENKNIFEwsDomain}ws/company/companyList.php`,
         reader: {
             type: 'json',
             rootProperty: 'data'
         }
+    },
+    initialize: th => {
+        debugger
     }
 });

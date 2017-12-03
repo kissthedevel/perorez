@@ -28,7 +28,7 @@ Ext.define('PENKNIFE.view.tiles.TileGestCreateController', {
         }
         
         Ext.Ajax.request({
-            url: '../ws/company/companySave.php',
+            url: `${PENKNIFEwsDomain}ws/company/companySave.php`,
             params: Ext.JSON.encode(record),
             success: response => {
                 var result = Ext.JSON.decode(response.responseText)

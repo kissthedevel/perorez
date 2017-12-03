@@ -4,7 +4,7 @@ Ext.define('PENKNIFE.view.tiles.TileController', {
 
     callNewTile: function() {
         Ext.Ajax.request({
-            url: '../ws/company/companyTile.php',
+            url: `${PENKNIFEwsDomain}ws/company/companyTile.php`,
             method: 'GET',
             params: {
                 disableLoadMask: true,
