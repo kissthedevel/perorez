@@ -660,16 +660,16 @@ class langPKF {
         /**
          * @description DIVENTA_MEMBRO
          */
-        this.dictionary['en']['DIVENTA_MEMBRO'] = `translation`
-        this.dictionary['it']['DIVENTA_MEMBRO'] = `-----------------------Diventa Membro!!`
-        this.dictionary['zh_CN']['DIVENTA_MEMBRO'] = `翻译`
+        this.dictionary['en']['DIVENTA_MEMBRO'] = `Become a member !!`
+        this.dictionary['it']['DIVENTA_MEMBRO'] = `Diventa Membro!!`
+        this.dictionary['zh_CN']['DIVENTA_MEMBRO'] = `成为会员！`
 
         /**
          * @description ISCRIVITI_PER_CERCARE_AZIENDA
          */
-        this.dictionary['en']['ISCRIVITI_PER_CERCARE_AZIENDA'] = `translation`
-        this.dictionary['it']['ISCRIVITI_PER_CERCARE_AZIENDA'] = `------------------------Iscriviti per trovare il partner ideale!`
-        this.dictionary['zh_CN']['ISCRIVITI_PER_CERCARE_AZIENDA'] = `翻译`
+        this.dictionary['en']['ISCRIVITI_PER_CERCARE_AZIENDA'] = `Sign up to find the perfect partner!`
+        this.dictionary['it']['ISCRIVITI_PER_CERCARE_AZIENDA'] = `Iscriviti per trovare il partner ideale!`
+        this.dictionary['zh_CN']['ISCRIVITI_PER_CERCARE_AZIENDA'] = `注册找到完美的合作伙伴！`
         
 
 

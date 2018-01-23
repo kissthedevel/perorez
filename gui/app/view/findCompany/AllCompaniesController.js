@@ -26,13 +26,17 @@ Ext.define('PENKNIFE.controller.findCompany.AllCompaniesController', {
                         width: PENKNIFE.globals.dimensionTiles[tile.tilesize][0],
                         height: PENKNIFE.globals.dimensionTiles[tile.tilesize][1],
                         margin: '0 0 20 0',
-                        flex: null
+                        flex: null,
+                        fromFirstLevel: true,
+                        style: {
+                            'box-shadow': 'rgb(146, 0, 0) 4px 4px'
+                        }
                     }))
-
+                    
                     let img = tileCmp.lookup('ImageLogo'),
                         cnt = img.up('container')
                     img.setSrc(`../imgrepo/companylogos/${tile.tilelogo}`)
-                    this.idTileActual = tile.id
+                    tileCmp.lookupController().idTileActual = tile.id
                     cnt.setStyle({
                         'background-color': Ext.isEmpty(tile.tilecolor) ? 'white' : tile.tilecolor
                     })

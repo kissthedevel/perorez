@@ -18,20 +18,30 @@
 	} 
 	
 	if ( isset($_GET['id']) ) {
-		
+		$language = isset($_GET['lang']) ? $_GET['lang'] : 'en';
+
 		$stmt = $conn->prepare("
-			SELECT a.id, a.creator, a.join_date, a.nomeazienda, a.website, a.tilelogo, a.elite
+			SELECT a.id, a.creator, a.join_date, a.nomeazienda, a.website, a.tilelogo, a.elite, d.description
 			FROM company a
+			LEFT JOIN descriptions d ON a.id = d.id_company AND d.language = ?
 			WHERE a.id = ?
 		");
-		$stmt->bind_param("i", $_GET['id']);
+		$stmt->bind_param("si", $language, $_GET['id']);
 		
 		if ($stmt->execute()) {
 			$response->success = true;
 			$response->message = 'Ricerca eseguita con successo!';
 			
 			/* bind variables to prepared statement */
-			mysqli_stmt_bind_result($stmt, $colId, $colCreator, $colJoinDate, $colNomeAzienda, $colWebsite, $colTileLogo, $colElite);
+			mysqli_stmt_bind_result($stmt,
+									$colId,
+									$colCreator,
+									$colJoinDate,
+									$colNomeAzienda,
+									$colWebsite,
+									$colTileLogo,
+									$colElite,
+									$colDescription);
 			
 			/* fetch values */
 			$countRecord = 0;
@@ -43,6 +53,7 @@
 				$response->data[$countRecord]['website'] = $colWebsite;
 				$response->data[$countRecord]['tilelogo'] = $colTileLogo;
 				$response->data[$countRecord]['elite'] = $colElite;
+				$response->data[$countRecord]['description'] = $colDescription;
 				$countRecord++;
 			}
 		} else {

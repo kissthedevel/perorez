@@ -3,8 +3,11 @@ Ext.define('PENKNIFE.view.tiles.TileSimpleViewController', {
     alias: 'controller.tiles-TileSimpleView',
 
     tapBACK_TileSimpleView: function() {
-        let levelHome = this.ctrlHome.lookupReference('LevelHome')
-        this.ctrlHome.lookupReference('CntMainContent').setActiveItem(levelHome)
+        let cntMainContent = this.ctrlHome.lookupReference('CntMainContent'),
+            livelloNavigazione = this.getView().up('[levelContainer]').livelloNavigazione
+            levelTo = cntMainContent.query(`[livelloNavigazione=${livelloNavigazione-1}]`)[0]
+
+        cntMainContent.setActiveItem(levelTo)
     },
 
     loadData: function(id) {
@@ -12,13 +15,15 @@ Ext.define('PENKNIFE.view.tiles.TileSimpleViewController', {
             url: `${PENKNIFEwsDomain}ws/company/companyGet.php`,
             method: 'GET',
             params: {
-                id: id
+                id: id,
+                lang: PENKNIFE.globals.language === 'zh_CN' ? 'zh' : PENKNIFE.globals.language
             },
             success: response => {
                 var result = Ext.JSON.decode(response.responseText)
                 if (!Ext.isEmpty(result.data)) {
                     this.lookupReference('LabelNameCompany').setHtml(result.data[0].nomeazienda)
-
+                    this.lookupReference('DescriptionCompany').setHtml(result.data[0].description)
+                    
                     let img = this.lookupReference('ImageLogo')
                     img.setSrc(`../imgrepo/companylogos/${result.data[0].tilelogo}`)
                 }

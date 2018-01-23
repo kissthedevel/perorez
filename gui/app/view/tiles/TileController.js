@@ -37,20 +37,32 @@ Ext.define('PENKNIFE.view.tiles.TileController', {
     },
 
     getCompany: function() {
+        let levelFrom = this.view.fromFirstLevel ? '#LevelFirst' : '#LevelHome'
+
         if( !this.ctrlHome ) {
-            this.ctrlHome = this.view.up('#LevelHome').lookupController()
+            this.ctrlHome = this.view.up( levelFrom ).lookupController()
         }
 
         let levelFirst = this.ctrlHome.lookupReference('LevelFirst'),
-            levelHome = this.ctrlHome.lookupReference('LevelHome')
+            levelHome = this.ctrlHome.lookupReference('LevelHome'),
+            levelSecond = this.ctrlHome.lookupReference('LevelSecond'),
+            cntMainContent = this.ctrlHome.lookupReference('CntMainContent')
 
-        this.ctrlHome.lookupReference('CntMainContent').setActiveItem(levelHome)
-        levelFirst.removeAll(true)
-        levelFirst.add(Ext.create('PENKNIFE.view.tiles.TileSimpleView', {
+        cntMainContent.setActiveItem(this.view.fromFirstLevel ? levelFirst : levelHome)
+
+        let tileSimpleView = Ext.create('PENKNIFE.view.tiles.TileSimpleView', {
             controllerHome: this.ctrlHome,
             idTile: this.idTileActual
-        }))
-        this.ctrlHome.lookupReference('CntMainContent').setActiveItem(levelFirst)
+        })
+        if (this.view.fromFirstLevel) {
+            levelSecond.removeAll(true)
+            levelSecond.add(tileSimpleView)
+        } else {
+            levelFirst.removeAll(true)
+            levelFirst.add(tileSimpleView)
+        }
+
+        cntMainContent.setActiveItem( this.view.fromFirstLevel ? levelSecond : levelFirst )
     },
 
     init: function() {

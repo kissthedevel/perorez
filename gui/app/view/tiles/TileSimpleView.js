@@ -55,6 +55,7 @@ Ext.define('PENKNIFE.view.tiles.TileSimpleView',{
                 align: 'center'
             },
             margin: '10 0 0 0',
+            flex: 1,
             items: [
                 {
                     xtype: 'container',
@@ -90,6 +91,26 @@ Ext.define('PENKNIFE.view.tiles.TileSimpleView',{
                     xtype: 'label',
                     itemId: 'LabelNameCompany', reference: 'LabelNameCompany',
                     cls: 'label-view-company-name'
+                },
+                {
+                    xtype: 'container',
+                    layout: {
+                        type: 'fit'
+                    },
+                    width: stdPKF.isPhone() ? '90%' : '70%',
+                    flex: 1,
+                    margin: '15 0 10 0',
+                    scrollable: true,
+                    items: [
+                        {
+                            xtype: 'container',
+                            itemId: 'DescriptionCompany', reference: 'DescriptionCompany',
+                            flex: 1,
+                            style: {
+                                'text-align': 'justify'
+                            }
+                        }
+                    ]
                 }
             ]
         }

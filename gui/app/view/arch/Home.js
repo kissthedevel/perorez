@@ -130,6 +130,7 @@ Ext.define('PENKNIFE.view.arch.Home',{
                                     },
                                     cls: 'background-gen',
                                     flex: 1,
+                                    levelContainer: true,
                                     livelloNavigazione: 0,
                                     scrollable: true/* ,
                                     listeners: {
@@ -151,6 +152,7 @@ Ext.define('PENKNIFE.view.arch.Home',{
                                     },
                                     flex: 1,
                                     cls: 'background-gen',
+                                    levelContainer: true,
                                     livelloNavigazione: 1,
                                     scrollable: true
                                 },
@@ -163,6 +165,7 @@ Ext.define('PENKNIFE.view.arch.Home',{
                                     },
                                     flex: 1,
                                     cls: 'background-gen',
+                                    levelContainer: true,
                                     livelloNavigazione: 2,
                                     scrollable: true
                                 }
