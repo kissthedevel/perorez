@@ -58,7 +58,9 @@ Ext.define('PENKNIFE.view.tiles.TileController', {
         this.ctrlPanelTiles = this.view.controllerPanelTiles
         this.tileSize = this.view.tileSize
 
-        this.callNewTile()
+        if (!this.view.disableAutoUpdate) {
+            this.callNewTile()
+        }
     },
 
     destroy: function() {

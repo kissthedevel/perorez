@@ -27,6 +27,7 @@ Ext.define('PENKNIFE.view.arch.HomeController', {
         if (PENKNIFE.globals.minimalMenu) {
             PENKNIFE.globals.minimalMenu.up('toolbar').setHidden(value.getItemId() !== 'LevelHome')
         }
+
         /**
          * Se si passa da un livello piu' basso,
          * si eliminare contenuto livello di provenienza
@@ -63,6 +64,7 @@ Ext.define('PENKNIFE.view.arch.HomeController', {
                 cls: 'toolbar-menu-minimal',
                 items: [
                     Ext.create('PENKNIFE.view.arch.menu.MainMenuItemsList', {
+                        controllerHome: this,
                         minimalMenu: true,
                         flex: 1
                     })

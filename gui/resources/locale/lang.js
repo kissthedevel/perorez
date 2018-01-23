@@ -656,6 +656,20 @@ class langPKF {
         this.dictionary['en']['COGNOME_OBBLIGATORIO'] = `Field Required last name`
         this.dictionary['it']['COGNOME_OBBLIGATORIO'] = `Campo Cognome obbligatorio`
         this.dictionary['zh_CN']['COGNOME_OBBLIGATORIO'] = `字段必填姓氏`
+
+        /**
+         * @description DIVENTA_MEMBRO
+         */
+        this.dictionary['en']['DIVENTA_MEMBRO'] = `translation`
+        this.dictionary['it']['DIVENTA_MEMBRO'] = `-----------------------Diventa Membro!!`
+        this.dictionary['zh_CN']['DIVENTA_MEMBRO'] = `翻译`
+
+        /**
+         * @description ISCRIVITI_PER_CERCARE_AZIENDA
+         */
+        this.dictionary['en']['ISCRIVITI_PER_CERCARE_AZIENDA'] = `translation`
+        this.dictionary['it']['ISCRIVITI_PER_CERCARE_AZIENDA'] = `------------------------Iscriviti per trovare il partner ideale!`
+        this.dictionary['zh_CN']['ISCRIVITI_PER_CERCARE_AZIENDA'] = `翻译`
         
 
 

@@ -62,7 +62,10 @@ Ext.define('PENKNIFE.view.arch.menu.HamburgerMenuController', {
          * creo e inserisco il componente lista pulsanti
          */
         let loggedHamCnt = this.lookupReference('LoggedHamCnt')
-        loggedHamCnt.add(Ext.create('PENKNIFE.view.arch.menu.MainMenuItemsList'))
+        loggedHamCnt.add(Ext.create('PENKNIFE.view.arch.menu.MainMenuItemsList', {
+            controllerHome: this.ctrlHome,
+            controllerHamburger: this
+        }))
         loggedHamCnt.show()
 
         loggedHamCnt.add(Ext.create('PENKNIFE.view.arch.menu.MainMenuItemsOther', {

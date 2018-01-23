@@ -98,6 +98,11 @@ Ext.define('PENKNIFE.view.auth.SignUpController', {
             message.push(langPKF._translate('COGNOME_OBBLIGATORIO'))
         }
 
+        /**
+         * TODO FIXME
+         * Controllare che le due password siano identiche
+         */
+
         if (message.length > 0) {
             validForm = false
             let msgEach = ``
