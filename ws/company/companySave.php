@@ -54,25 +54,35 @@
 		$stmt->close();
 	}else {	//UPDATE
 		$idRecordForDescription = $data -> id;
-// 		$sql = "UPDATE attivita
-// 				SET 
-// 					altezzamax = " . $data->altezzamax . ", altezzapart = " . $data->altezzapart . ", bpmmax = " . $data->bpmmax . ",
-// 					bpmmedia = " . $data->bpmmedia . ", climatemperatura = " . $data->climatemperatura . ", climatempo = " . $data->climatempo . ",
-// 					climavento = " . $data->climavento . ", data = " . $data->data . ", ora = " . $data->ora . ",
-// 					dislivellomen = " . $data->dislivellomen . ", dislivellopos = " . $data->dislivellopos . ", distanzaattivita = " . $data->distanzaattivita . ",
-// 					distsalita = " . $data->distsalita . ", isgara = " . $data->isgara . ", kcal = " . $data->kcal . ",
-// 					tempogara = " . $data->tempogara . ", tempoattivita = " . $data->tempoattivita . ", tempozonacardio = " . $data->tempozonacardio . ",
-// 					nomegara = " . $data->nomegara . ", noteattivita = " . $data->noteattivita . ", pendenzamax = " . $data->pendenzamax . ",
-// 					pendenzamed = " . $data->pendenzamed . ", posassoluto = " . $data->posassoluto . ", poscategoria = " . $data->poscategoria . ",
-// 					sport = " . $data->sport . ", totclassificati = " . $data->totclassificati . ", velmax = " . $data->velmax . ",
-// 					velmedia = " . $data->velmedia . ", idatleta = " . $data->idatleta . "
-// 				WHERE id = " . $data->id . " ";
-// 		if ($conn->query($sql) === TRUE) {
-// 			echo "New record updated successfully";
-// 		} else {
-// 			echo "Error: " . $sql . "<br>" . $conn->error;
-// 		}
-		echo 'da gestire';
+
+		$stmtUpdate = $conn->prepare(
+			"UPDATE company 
+				SET
+					nomeazienda = ?,
+					website = ?,
+					tilecolor = ?,
+					tilesize = ?,
+					tilelogo = ?,
+					latency = ?,
+					elite = ?
+				WHERE id = ?
+		");
+		
+		$stmtUpdate->bind_param("sssssiii",
+			$data->nomeazienda, $data->website, $data->tilecolor,
+            $data->tilesize, $data->tilelogo, $data->latency,
+            $data->elite, $idRecordForDescription
+		);
+		
+		if ($stmtUpdate->execute()) {
+			$response->message = 'Modifica eseguita con successo!';
+			$response->success = true;
+		} else {
+			$response->success = false;
+			$response->message = "Error: " . $conn->error;
+		}
+		
+		$stmtUpdate->close();
 	}
 
 	//sezione salvataggio descrizioni
@@ -104,14 +114,6 @@
 					$descriptionUpdate = $colId;
 				}
 
-
-				/*$result = $stmt->get_result();
-				if ($result->num_rows > 0) {
-					$countRecord = 0;
-					while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-						$descriptionUpdate = $row['id'];
-					}
-				}*/
 			}
 			$stmt->close();
 			//FINE verifica esistenza record
@@ -119,7 +121,16 @@
 			if ($descriptionSelectSuccess) {
 				//se gia' esiste la descrizione si fa update ELSE insert
 				if ($descriptionUpdate) {
-					//TODO
+					//UPDATE
+					$stmt = $conn->prepare(
+						"UPDATE descriptions 
+							SET description = ?
+							WHERE id = ?
+					");
+					
+					$stmt->bind_param("si",
+						$langFields[$i], $descriptionUpdate
+					);
 				} else {
 					//INSERT
 					$stmt = $conn->prepare(

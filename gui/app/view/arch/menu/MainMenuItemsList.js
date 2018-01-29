@@ -3,7 +3,9 @@ Ext.define('PENKNIFE.view.arch.menu.MainMenuItemsList',{
     extend: 'Ext.Container',
     
     requires: [
-        'PENKNIFE.view.arch.menu.MainMenuItemsListController'
+        'PENKNIFE.view.arch.menu.MainMenuItemsListController',
+        'PENKNIFE.view.findCompany.AllCompanies',
+        'PENKNIFE.view.projects.ProjectsList'
     ],
 
     controller: 'arch-menu-MainMenuItemsList',
@@ -54,9 +56,11 @@ Ext.define('PENKNIFE.view.arch.menu.MainMenuItemsList',{
                         }
                     },
                     {
-                        //text: PENKNIFE.lang._translate(`PRESENTA_PRG_INNOVAT${this.minimalMenu ? '_SHORT' : ''}`),
                         localizedKey: `PRESENTA_PRG_INNOVAT${this.minimalMenu ? '_SHORT' : ''}`,
-                        iconCls: `icon-light-bulb ${this.minimalMenu ? 'toolbar-menu-minimal-button-icon' : ''}`
+                        iconCls: `icon-light-bulb ${this.minimalMenu ? 'toolbar-menu-minimal-button-icon' : ''}`,
+                        listeners: {
+                            tap: 'tapInsertProjects'
+                        }
                     },
                     {
                         //text: PENKNIFE.lang._translate(`VENDI_COMPRA_IMMOB${this.minimalMenu ? '_SHORT' : ''}`),

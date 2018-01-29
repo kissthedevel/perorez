@@ -1,11 +1,11 @@
-Ext.define('PENKNIFE.view.tiles.TileGestCreate',{
+Ext.define('PENKNIFE.view.projects.ProjectGestCreate',{
     extend: 'Ext.Container',
 
     requires: [
-        'PENKNIFE.view.tiles.TileGestCreateController'
+        'PENKNIFE.view.projects.ProjectGestCreateController'
     ],
 
-    controller: 'tiles-TileGestCreate',
+    controller: 'projects-ProjectGestCreate',
     
     layout: {
         type: 'vbox',
@@ -230,21 +230,18 @@ Ext.define('PENKNIFE.view.tiles.TileGestCreate',{
                                             xtype: 'textfield',
                                             itemId: 'TileSample_Color', reference: 'TileSample_Color',
                                             name: 'tilecolor',
-                                            hidden: true,
-                                            value: null
+                                            hidden: true
                                         },
                                         {
                                             xtype: 'textfield',
                                             itemId: 'TileSample_Size', reference: 'TileSample_Size',
                                             name: 'tilesize',
-                                            hidden: true,
-                                            value: null
+                                            hidden: true
                                         },
                                         {
                                             xtype: 'textfield',
                                             itemId: 'TileLogo', reference: 'TileLogo',
                                             name: 'tilelogo',
-                                            value: null,
                                             hidden: true,
                                             listeners: {
                                                 change: 'changeTileLogo'

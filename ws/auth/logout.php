@@ -8,9 +8,10 @@
 	}
 	$response = new PENKNIFEResponse;
 	
-	if (isset($_COOKIE["member_email"]) && isset($_COOKIE["member_password"])) {
+	if (isset($_COOKIE["member_email"]) && isset($_COOKIE["member_password"])  && isset($_COOKIE["member_id"])) {
 		setcookie("member_email", "");
 		setcookie("member_password", "");
+		setcookie("member_id", "");
 
 		$response->success = true;
 		$response->message = 'COOKIES_EMPTY';

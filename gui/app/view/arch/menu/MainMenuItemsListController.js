@@ -26,6 +26,30 @@ Ext.define('PENKNIFE.view.arch.menu.MainMenuItemsListController', {
         this.ctrlHome.lookupReference('CntMainContent').setActiveItem(levelFirst)
     },
 
+    tapInsertProjects(th) {
+        if (PENKNIFE.globals.storeUserSimple.getCount() === 0) {
+            let title = langPKF._translate('DIVENTA_MEMBRO'),
+            message = langPKF._translate('ISCRIVITI_INSERT_PROJECT')
+            Ext.Msg.alert( title, message)
+            return false
+        }
+
+        if (this.ctrlHome.overlayHamburger) {
+            let ctrlHamburger = this.ctrlHome.overlayHamburger.lookupController()
+            ctrlHamburger.tapCloseIconHamburger()
+        }        
+        
+        let levelFirst = this.ctrlHome.lookupReference('LevelFirst'),
+            levelHome = this.ctrlHome.lookupReference('LevelHome')
+
+        this.ctrlHome.lookupReference('CntMainContent').setActiveItem(levelHome)
+        levelFirst.removeAll(true)
+        levelFirst.add(Ext.create('PENKNIFE.view.projects.ProjectsList', {
+            controllerHome: this.ctrlHome
+        }))
+        this.ctrlHome.lookupReference('CntMainContent').setActiveItem(levelFirst)
+    },
+
     init: function() {
         this.view = this.getView()
         this.ctrlHome = this.view.controllerHome

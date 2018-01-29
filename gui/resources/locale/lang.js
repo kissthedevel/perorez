@@ -670,6 +670,20 @@ class langPKF {
         this.dictionary['en']['ISCRIVITI_PER_CERCARE_AZIENDA'] = `Sign up to find the perfect partner!`
         this.dictionary['it']['ISCRIVITI_PER_CERCARE_AZIENDA'] = `Iscriviti per trovare il partner ideale!`
         this.dictionary['zh_CN']['ISCRIVITI_PER_CERCARE_AZIENDA'] = `注册找到完美的合作伙伴！`
+
+        /**
+         * @description I_MIEI_PROGETTI
+         */
+        this.dictionary['en']['I_MIEI_PROGETTI'] = `My Projects`
+        this.dictionary['it']['I_MIEI_PROGETTI'] = `I miei Progetti`
+        this.dictionary['zh_CN']['I_MIEI_PROGETTI'] = `我的项目`
+
+        /**
+         * @description ISCRIVITI_INSERT_PROJECT
+         */
+        this.dictionary['en']['ISCRIVITI_INSERT_PROJECT'] = `Sign up to present your project!`
+        this.dictionary['it']['ISCRIVITI_INSERT_PROJECT'] = `Iscriviti per presentare il tuo progetto!`
+        this.dictionary['zh_CN']['ISCRIVITI_INSERT_PROJECT'] = `注册以呈现您的项目！`
         
 
 

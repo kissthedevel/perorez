@@ -1,7 +1,7 @@
-Ext.define('PENKNIFE.view.tiles.TilesListStore', {
+Ext.define('PENKNIFE.view.projects.ProjectsListStore', {
     extend: 'Ext.data.Store',
 
-    alias: 'view.tiles.TilesListStore',
+    alias: 'view.projects.ProjectsListStore',
 
     proxy: {
         type: 'ajax',

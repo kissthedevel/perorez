@@ -1,5 +1,6 @@
 <?php
 	require_once('../parameters.php');
+	require_once('../functions.php');
 
 	class PENKNIFEResponse {
 		var $success;
@@ -7,6 +8,12 @@
 		var $data = [];
 	}
 	$response = new PENKNIFEResponse;
+	
+	$administrator = 0;
+	if (isset($_GET['creator'])) {
+		$functions = new penknifeFunctions;
+		$administrator = $functions->isAdministrator($_GET['creator']);
+	}
 	
 	// Create connection
 	$conn = new mysqli(SERVERNAME, USERNAME_DB, PWD_DB, DBNAMEMAIN);
@@ -22,14 +29,25 @@
 			
 			$offset = isset($_GET['offset']) ? $_GET['offset'] : 0;
 			
-			$stmt = $conn->prepare("
-				SELECT a.id, a.approved, a.nomeazienda, a.elite
-				FROM company a
-				WHERE a.creator = ?
-				ORDER BY a.approved ASC
-				LIMIT 1000 OFFSET ?
-			");
-			$stmt->bind_param("ii", $_GET['creator'], $offset);
+			if ($administrator) {
+				$stmt = $conn->prepare("
+					SELECT a.id, a.approved, a.nomeazienda, a.elite
+					FROM company a
+					ORDER BY a.approved ASC
+					LIMIT 1000 OFFSET ?
+				");
+				$stmt->bind_param("i", $offset);
+			} else {
+				$stmt = $conn->prepare("
+					SELECT a.id, a.approved, a.nomeazienda, a.elite
+					FROM company a
+					WHERE a.creator = ?
+					ORDER BY a.approved ASC
+					LIMIT 1000 OFFSET ?
+				");
+				$stmt->bind_param("ii", $_GET['creator'], $offset);
+			}
+			
 		}
 		
 		if ($stmt->execute()) {

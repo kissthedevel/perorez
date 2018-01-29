@@ -1,12 +1,13 @@
-Ext.define('PENKNIFE.view.tiles.TilesList',{
+Ext.define('PENKNIFE.view.projects.ProjectsList',{
     extend: 'Ext.Container',
 
     requires: [
-        'PENKNIFE.view.tiles.TilesListController',
-        'PENKNIFE.view.tiles.TilesListStore'
+        'PENKNIFE.view.projects.ProjectsListController',
+        'PENKNIFE.view.projects.ProjectsListStore',
+        'PENKNIFE.view.projects.ProjectGestCreate'
     ],
 
-    controller: 'tiles-TilesList',
+    controller: 'projects-ProjectsList',
     
     layout: {
         type: 'vbox',
@@ -19,17 +20,17 @@ Ext.define('PENKNIFE.view.tiles.TilesList',{
     items: [
         {
             xtype: 'toolbar',
-            itemId: 'ToolbarTilesList', reference: 'ToolbarTilesList',
+            itemId: 'ToolbarProjectsList', reference: 'ToolbarProjectsList',
             docked: 'top',
             localized: 'title',
-            localizedKey: `LE_MIE_AZIENDE`,
+            localizedKey: `I_MIEI_PROGETTI`,
             items: [
                 {
                     xtype: 'button',
-                    itemId: 'BACK_TilesList', reference: 'BACK_TilesList',
+                    itemId: 'BACK_ProjectsList', reference: 'BACK_ProjectsList',
                     iconCls: 'left-arrow',
                     listeners: {
-                        tap: 'tapBACK_TilesList'
+                        tap: 'tapBACK_ProjectsList'
                     }
                 },
                 {
@@ -38,16 +39,16 @@ Ext.define('PENKNIFE.view.tiles.TilesList',{
                 },
                 {
                     xtype: 'button',
-                    itemId: 'FIND_TilesList', reference: 'FIND_TilesList',
+                    itemId: 'FIND_ProjectsList', reference: 'FIND_ProjectsList',
                     iconCls: 'lens-find'
                 }
             ]
         },
         {
             xtype: 'list',
-            itemId: 'ListCompanyes', reference: 'ListCompanyes',
+            itemId: 'ListProjects', reference: 'ListProjects',
             flex: 1,
-            store: Ext.create('PENKNIFE.view.tiles.TilesListStore'),
+            store: Ext.create('PENKNIFE.view.projects.ProjectsListStore'),
             disableSelection: true,
             loadingText: false,
             itemTpl:   `<tpl if="approved === 1">
@@ -56,15 +57,13 @@ Ext.define('PENKNIFE.view.tiles.TilesList',{
                             <img id='waiting-${Ext.id()}' src="resources/img/waiting-time-left.svg" height='24' width='24' style="float:left;">
                         </tpl>
                         <span style="margin-left:10px; font-size:18px;">{nomeazienda}</span>
-                        <tpl if="administrator === 1">
-                            <img id='delete-${Ext.id()}' src="resources/img/rubbish-bin-delete-button.svg" height='24' width='24' style="float:right;">
-                        </tpl>
+                        <img id='delete-${Ext.id()}' src="resources/img/rubbish-bin-delete-button.svg" height='24' width='24' style="float:right;">
                         <img id='edit-${Ext.id()}' src="resources/img/edit.svg" height='24' width='24' style="float:right; margin-right:10px;">
                         <tpl if="elite === 1">
                             <img id='elite-${Ext.id()}' src="resources/img/star-yellow.svg" height='24' width='24' style="float:right; margin-right:10px;">
                         </tpl>`,
             listeners: {
-                itemtap: 'itemtapListCompanyes'
+                //itemtap: 'itemtapListProjects'
             }
         }
     ]

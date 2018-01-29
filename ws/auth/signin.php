@@ -89,6 +89,7 @@
 					$response->message = 'ACCESSO_EFFETTUATO';
 					setcookie("member_email", $email);
 					setcookie("member_password", $password);
+					setcookie("member_id", $response->data[0]['id']);
 				} else {
 					$response->success = false;
 					$response->message = "EMAIL_PWD_ERRATO";

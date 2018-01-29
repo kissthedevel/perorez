@@ -1,6 +1,6 @@
-Ext.define('PENKNIFE.view.tiles.TileGestCreateController', {
+Ext.define('PENKNIFE.view.projects.ProjectGestCreateController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.tiles-TileGestCreate',
+    alias: 'controller.projects-ProjectGestCreate',
 
     tapBACK_TileGestCreate: function(update) {
         let levelFirst = this.ctrlHome.lookupReference('LevelFirst')
@@ -18,13 +18,8 @@ Ext.define('PENKNIFE.view.tiles.TileGestCreateController', {
         let values = this.lookupReference('Form_TileGestCreate').getValues(),
             record = values
         
-        if (!this.view.updateCompany) {
-            Ext.apply(record, {
-                creator: PENKNIFE.globals.storeUserSimple.getData().items[0].get('id')
-            });
-        }
-
         Ext.apply(record, {
+        	creator: 1,	//TODO da getsire login
         	elite: record.elite ? 1 : 0
         });
 
@@ -135,36 +130,6 @@ Ext.define('PENKNIFE.view.tiles.TileGestCreateController', {
         imgLogo.setSrc(`../imgrepo/companylogos/${newValue}`)
     },
 
-    loadCompany( idCompany ) {
-        Ext.Ajax.request({
-            url: `${PENKNIFEwsDomain}ws/company/companyGetExtended.php`,
-            method: 'GET',
-            params: {
-                id: idCompany
-            },
-            success: response => {
-                let result = Ext.JSON.decode(response.responseText)
-                if ( result.success && result.data.length > 0 ) {
-                    this.lookupReference('Form_TileGestCreate').setValues(result.data[0])
-
-                    this.lookupReference('TileSample').setStyle({
-                        'background-color': this.lookupReference('TileSample_Color').getValue()
-                    })
-
-                    let valueSize = this.lookupReference('TileSample_Size').getValue(),
-                        tileSample = this.lookupReference('TileSample')
-                    tileSample.setWidth(PENKNIFE.globals.dimensionTiles[valueSize][0])
-                    tileSample.setHeight(PENKNIFE.globals.dimensionTiles[valueSize][1])
-                    tileSample.down('label').setHtml(valueSize)
-                }
-            },
-            failure: (conn, response, options, eOpts) => {
-            	let result = Ext.JSON.decode(response.responseText)
-                Ext.Msg.alert(langPKF._translate('ATTENZIONE'), langPKF._translate(result.message))
-            }
-        })
-    },
-
     init: function() {
         this.view = this.getView()
         this.ctrlHome = this.view.controllerHome
@@ -175,9 +140,5 @@ Ext.define('PENKNIFE.view.tiles.TileGestCreateController', {
         let ts = this.lookupReference('TileSample')
         ts.setHeight(PENKNIFE.globals.dimensionTiles['6x4'][1])
         ts.setWidth(PENKNIFE.globals.dimensionTiles['6x4'][0])
-
-        if (this.view.updateCompany) {
-            this.loadCompany(this.view.updateCompany)
-        }
     }
 });

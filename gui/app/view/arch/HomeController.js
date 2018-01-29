@@ -28,6 +28,11 @@ Ext.define('PENKNIFE.view.arch.HomeController', {
             PENKNIFE.globals.minimalMenu.up('toolbar').setHidden(value.getItemId() !== 'LevelHome')
         }
 
+        let fabsList = [
+            'tilesList',
+            'projectsList'
+        ]
+
         /**
          * Se si passa da un livello piu' basso,
          * si eliminare contenuto livello di provenienza
@@ -37,7 +42,13 @@ Ext.define('PENKNIFE.view.arch.HomeController', {
              * nascondo eventuale FAB videata di provenienza
              */
             if (oldValue.down().FAB) {
-                Ext.Viewport.remove(Ext.ComponentQuery.query('button[FAB_id=FAB_tilesList]')[0])
+                let fabOldLevel = null
+                fabsList.forEach( fabname => {
+                    fabOldLevel = Ext.ComponentQuery.query(`button[FAB_id=FAB_${fabname}]`)
+                    if (fabOldLevel.length > 0) {
+                        Ext.Viewport.remove(fabOldLevel[0])
+                    }
+                })
             }
             oldValue.removeAll(true)
         }
@@ -46,11 +57,23 @@ Ext.define('PENKNIFE.view.arch.HomeController', {
          * nascondo eventuale FAB videata di provenienza
          */
         if (oldValue.down() && oldValue.down().FAB) {
-            Ext.ComponentQuery.query('button[FAB_id=FAB_tilesList]')[0].el.dom.style.display = 'none'
+            let fabOldLevel = null
+            fabsList.forEach( fabname => {
+                fabOldLevel = Ext.ComponentQuery.query(`button[FAB_id=FAB_${fabname}]`)
+                if (fabOldLevel.length > 0) {
+                    fabOldLevel[0].el.dom.style.display = 'none'
+                }
+            })
         }
 
         if (value.down().FAB) {
-            Ext.ComponentQuery.query('button[FAB_id=FAB_tilesList]')[0].el.dom.style.display = ''
+            let fabOldLevel = null
+            fabsList.forEach( fabname => {
+                fabOldLevel = Ext.ComponentQuery.query(`button[FAB_id=FAB_${fabname}]`)
+                if (fabOldLevel.length > 0) {
+                    fabOldLevel[0].el.dom.style.display = ''
+                }
+            })
         }
     },
     
@@ -122,7 +145,21 @@ Ext.define('PENKNIFE.view.arch.HomeController', {
             controllerHome: this
         })
         this.lookupReference('LevelHome').add(panelTiles)
-        panelTiles.setHidden(true)
+        /**
+         * TODO:
+         * RIMUOVERE QUANDO VERRANNO RIMOSSE LE INFO ISTITUZIONALI
+         * questo viene fatto per dare il tempo di creare le tiles
+         * e prelevare le dimensioni da modello
+         */
+        Ext.defer( () => {
+            let storeUser = PENKNIFE.globals.storeUserSimple
+            if ( storeUser && storeUser.getCount() > 0) {
+                panelTiles.setHidden(storeUser.getData().items[0].get('administrator') !== 1)
+            } else {
+                panelTiles.setHidden(true)
+            }
+        }, 500)
+        /* panelTiles.setHidden(true) */
         this.panelTiles = panelTiles
 
         this.demoIntroIstitut = Ext.create('PENKNIFE.view.arch.DemoIntroIstitut', {
@@ -177,6 +214,16 @@ Ext.define('PENKNIFE.view.arch.HomeController', {
                                  * inserisco utente loggato nello store userSimple
                                  */
                                 PENKNIFE.globals.storeUserSimple.insert(0, result.data[0])
+
+                                if (result.data[0].administrator === 1) {
+                                    /**
+                                     * TODO:
+                                     * RIMUOVERE QUANDO VERRANNO RIMOSSE LE INFO ISTITUZIONALI
+                                     * questo viene fatto per dare il tempo di creare le tiles
+                                     * e prelevare le dimensioni da modello
+                                     */
+                                    panelTiles.setHidden(false)
+                                }
 
                                 if (stdPKF.isPhone()) {
                                     this.createMenuHamburger()

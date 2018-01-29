@@ -1,43 +1,27 @@
-Ext.define('PENKNIFE.view.tiles.TilesListController', {
+Ext.define('PENKNIFE.view.projects.ProjectsListController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.tiles-TilesList',
+    alias: 'controller.projects-ProjectsList',
 
-    addCompany: function(controller) {
+    addProject: function(controller) {
         let levelSecond = controller.ctrlHome.lookupReference('LevelSecond')
         levelSecond.removeAll(true)
-        levelSecond.add(Ext.create('PENKNIFE.view.tiles.TileGestCreate', {
+        levelSecond.add(Ext.create('PENKNIFE.view.projects.ProjectGestCreate', {
             controllerHome: controller.ctrlHome,
             controllerList: controller
         }))
         controller.ctrlHome.lookupReference('CntMainContent').setActiveItem(levelSecond)
     },
 
-    updateCompany( idCompany ) {
-        let levelSecond = this.ctrlHome.lookupReference('LevelSecond')
-        levelSecond.removeAll(true)
-        levelSecond.add(Ext.create('PENKNIFE.view.tiles.TileGestCreate', {
-            controllerHome: this.ctrlHome,
-            controllerList: this,
-            updateCompany: idCompany
-        }))
-        this.ctrlHome.lookupReference('CntMainContent').setActiveItem(levelSecond)
-    },
-
-    itemtapListCompanyes: function( th, index, target, record, e ) {
+    itemtapListProjects: function( th, index, target, record, e ) {
         let idTarget = e.target.id,
-            store = this.lookupReference('ListCompanyes').getStore(),
-            admin = PENKNIFE.globals.storeUserSimple.getData().items[0].get('administrator') === 1
+            store = this.lookupReference('ListProjects').getStore()
         
         if (idTarget.indexOf('approved') != -1) {
             
         } else if (idTarget.indexOf('waiting') != -1) {
-            if (!admin) {
-                return false
-            }
-
             store.findRecord('id', record.get('id'), 0, false, false, true).set('approved', 1)
             Ext.Ajax.request({
-                url: `${PENKNIFEwsDomain}ws/company/companyApprove.php`,
+                url: `${PENKNIFEwsDomain}ws/project/projectApprove.php`,
                 method: 'GET',
                 params: {
                     disableLoadMask: true,
@@ -52,16 +36,12 @@ Ext.define('PENKNIFE.view.tiles.TilesListController', {
                 }
             })
         } else if (idTarget.indexOf('edit') != -1) {
-            this.updateCompany(record.get('id'))
+            console.log('edit', record.get('projectname'))
         } else if (idTarget.indexOf('delete') != -1) {
-            if (!admin) {
-                return false
-            }
-
-            Ext.Msg.confirm('Attenzione!', `Sei sicuro di voler eliminare "${record.get('nomeazienda')}"?`, ( buttonId, value, opt) => {
+            Ext.Msg.confirm('Attenzione!', `Sei sicuro di voler eliminare "${record.get('projectname')}"?`, ( buttonId, value, opt) => {
                 if( buttonId === 'yes' ) {
                     Ext.Ajax.request({
-                        url: `${PENKNIFEwsDomain}ws/company/companyDelete.php`,
+                        url: `${PENKNIFEwsDomain}ws/project/projectDelete.php`,
                         method: 'GET',
                         params: {
                             id: record.get('id')
@@ -79,23 +59,20 @@ Ext.define('PENKNIFE.view.tiles.TilesListController', {
         }
     },
 
-    tapBACK_TilesList: function() {
+    tapBACK_ProjectsList: function() {
         let levelHome = this.ctrlHome.lookupReference('LevelHome')
         this.ctrlHome.lookupReference('CntMainContent').setActiveItem(levelHome)
     },
 
     updateList: function() {
-        let store = this.lookupReference('ListCompanyes').getStore()
+        let store = this.lookupReference('ListProjects').getStore()
 
         store.load({
             params: {
                 disableLoadMask: true,
-                creator: PENKNIFE.globals.storeUserSimple.getData().items[0].get('id')
+                creator: 1
             },
             callback: (records, operation, success) => {
-                let admin = PENKNIFE.globals.storeUserSimple.getData().items[0].get('administrator') === 1
-                store.each( rec => rec.set('administrator', admin ? 1 : 0))
-
                 if (!this.view.FAB) {
                     this.createFAB()
                 }
@@ -108,24 +85,24 @@ Ext.define('PENKNIFE.view.tiles.TilesListController', {
             bottom: 20,
             right: 20,
             menuButtonDefault: {
-                FAB_id: 'FAB_tilesList',
+                FAB_id: 'FAB_projectsList',
                 icon: 'resources/img/add-white.svg',
                 handler: () => {
-                    this.addCompany(this)
+                    this.addProject(this)
                 }
             }
         })
-        this.view.FAB_id = 'FAB_tilesList'
+        this.view.FAB_id = 'FAB_projectsList'
     },
 
     init: function() {
         this.view = this.getView()
         this.ctrlHome = this.view.controllerHome
 
-        this.updateList()
+        //this.updateList()
     },
 
     destroy: function() {
-        this.getView().FAB.destroy()
+        //this.getView().FAB.destroy()
     }
 });
