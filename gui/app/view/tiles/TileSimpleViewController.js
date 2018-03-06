@@ -10,6 +10,29 @@ Ext.define('PENKNIFE.view.tiles.TileSimpleViewController', {
         cntMainContent.setActiveItem(levelTo)
     },
 
+    tapLIKE_TileSimpleView(th) {
+        th.setIconCls( th.getIconCls() === 'like-none' ? 'like-yeah' : 'like-none' )
+
+        Ext.Ajax.request({
+            url: `${PENKNIFEwsDomain}ws/company/companyLike.php`,
+            method: 'GET',
+            params: {
+                id_user: PENKNIFE.globals.storeUserSimple.getData().items[0].get('id'),
+                id_company: this.id_company
+            },
+            success: response => {
+                var result = Ext.JSON.decode(response.responseText)
+                th.setIconCls( result.data.length > 0 ? 'like-yeah' : 'like-none' )
+                /* if (!Ext.isEmpty(result.data)) {
+                } */
+            },
+            failure: (conn, response, options, eOpts) => {
+            	var result = Ext.JSON.decode(response.responseText)
+            	console.log(result)
+            }
+        })
+    },
+
     loadData: function(id) {
         Ext.Ajax.request({
             url: `${PENKNIFEwsDomain}ws/company/companyGet.php`,
@@ -26,7 +49,32 @@ Ext.define('PENKNIFE.view.tiles.TileSimpleViewController', {
                     
                     let img = this.lookupReference('ImageLogo')
                     img.setSrc(`../imgrepo/companylogos/${result.data[0].tilelogo}`)
+
+                    this.id_company = result.data[0].id
+                    this.loadLike(this.id_company)
                 }
+            },
+            failure: (conn, response, options, eOpts) => {
+            	var result = Ext.JSON.decode(response.responseText)
+            	console.log(result)
+            }
+        })
+    },
+
+    loadLike(idTile) {
+        Ext.Ajax.request({
+            url: `${PENKNIFEwsDomain}ws/company/companyIsLike.php`,
+            method: 'GET',
+            params: {
+                id_company: idTile,
+                id_user: PENKNIFE.globals.storeUserSimple.getData().items[0].get('id'),
+                disableLoadMask: true
+            },
+            success: response => {
+                var result = Ext.JSON.decode(response.responseText)
+                this.lookupReference('LIKE_TileSimpleView').setIconCls( result.data.length > 0 ? 'like-yeah' : 'like-none' )
+                /* if (!Ext.isEmpty(result.data)) {
+                } */
             },
             failure: (conn, response, options, eOpts) => {
             	var result = Ext.JSON.decode(response.responseText)

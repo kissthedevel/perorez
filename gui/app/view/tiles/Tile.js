@@ -25,5 +25,17 @@ Ext.define('PENKNIFE.view.tiles.Tile',{
     listeners: {
         element: 'element',
         tap: 'getCompany'
+        /* touchstart: 'onTouchPadEvent',
+        touchend: 'onTouchPadEvent',
+        touchmove: 'onTouchPadEvent',
+        swipe: 'onTouchPadEvent',
+        dragstart: 'onTouchPadEvent',
+        drag: 'onTouchPadEvent',
+        dragend: 'onTouchPadEvent',
+        singletap: 'onTouchPadEvent',
+        doubletap: 'onTouchPadEvent',
+        longpress: 'onTouchPadEvent',
+        pinch: 'onTouchPadEvent',
+        rotate: 'onTouchPadEvent' */
     }
 });

@@ -39,7 +39,10 @@ Ext.define('PENKNIFE.view.tiles.TileSimpleView',{
                 {
                     xtype: 'button',
                     itemId: 'LIKE_TileSimpleView', reference: 'LIKE_TileSimpleView',
-                    iconCls: 'like-none'
+                    iconCls: 'like-none',
+                    listeners: {
+                        tap: 'tapLIKE_TileSimpleView'
+                    }
                 },
                 {
                     xtype: 'button',

@@ -106,5 +106,20 @@
 		echo "Error creating table: " . $conn->error;
 	}
 
+	echo '<br>************************************************<br>';
+	// sql to create table
+	$sql = "CREATE TABLE companylikes (
+				id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+				id_company INT(10),
+				id_user INT(7),
+
+				INDEX (id_user)
+			)";
+	if ($conn->query($sql) === TRUE) {
+		echo "Table companylikes created successfully";
+	} else {
+		echo "Error creating table: " . $conn->error;
+	}
+
 	$conn->close();
 ?>
