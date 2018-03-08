@@ -18,17 +18,17 @@ Ext.define('PENKNIFE.view.projects.ProjectGestCreate',{
     items: [
         {
             xtype: 'toolbar',
-            itemId: 'ToolbarTileGestCreate', reference: 'ToolbarTileGestCreate',
+            itemId: 'ToolbarProjectCreate', reference: 'ToolbarProjectCreate',
             docked: 'top',
             localized: 'title',
-            localizedKey: `INSERISCI_AZIENDA`,
+            localizedKey: `INSERISCI_PROGETTO`,
             items: [
                 {
                     xtype: 'button',
-                    itemId: 'BACK_TileGestCreate', reference: 'BACK_TileGestCreate',
+                    itemId: 'BACK_ProjectCreate', reference: 'BACK_ProjectCreate',
                     iconCls: 'left-arrow',
                     listeners: {
-                        tap: 'tapBACK_TileGestCreate'
+                        tap: 'tapBACK_ProjectCreate'
                     }
                 },
                 {
@@ -37,17 +37,17 @@ Ext.define('PENKNIFE.view.projects.ProjectGestCreate',{
                 },
                 {
                     xtype: 'button',
-                    itemId: 'CONFIRM_TileGestCreate', reference: 'CONFIRM_TileGestCreate',
+                    itemId: 'CONFIRM_ProjectCreate', reference: 'CONFIRM_ProjectCreate',
                     iconCls: 'pen-confirm',
                     listeners: {
-                        tap: 'tapCONFIRM_TileGestCreate'
+                        tap: 'tapCONFIRM_ProjectCreate'
                     }
                 }
             ]
         },
         {
             xtype: 'formpanel',
-            itemId: 'Form_TileGestCreate', reference: 'Form_TileGestCreate',
+            itemId: 'Form_ProjectCreate', reference: 'Form_ProjectCreate',
             layout: {
                 type: 'vbox',
                 align: 'stretch'
@@ -56,7 +56,7 @@ Ext.define('PENKNIFE.view.projects.ProjectGestCreate',{
                 {
                     xtype: 'fieldset',
                     localized: 'title',
-                    localizedKey: `PER_COMINCIARE`,
+                    localizedKey: `DATI_PRINCIPALI`,
                     layout: stdPKF.isPhone() ? 'vbox' : 'hbox',
                     items: [
                         {
@@ -66,19 +66,32 @@ Ext.define('PENKNIFE.view.projects.ProjectGestCreate',{
                         },
                         {
                             xtype: 'textfield',
-                            name: 'nomeazienda',
+                            name: 'nomeprogetto',
                             localized: 'label',
-                            localizedKey: `NOME_AZIENDA`,
+                            localizedKey: `NOME_PROGETTO`,
                             inputCls: 'input-gen-penknife',
                             flex: stdPKF.isPhone() ? null : 1,
                             margin: stdPKF.isPhone() ? null : '0 10 0 0'
                         },
                         {
                             xtype: 'textfield',
-                            name: 'website',
+                            name: 'aziendaideatrice',
                             localized: 'label',
-                            localizedKey: `SITO_WEB`,
+                            localizedKey: `AZIENDA_IDEATRICE`,
                             inputCls: 'input-gen-penknife',
+                            flex: stdPKF.isPhone() ? null : 1,
+                            margin: stdPKF.isPhone() ? null : '0 0 0 10'
+                        },
+                        {
+                            xtype: 'selectfield',
+                            itemId: 'Settore', reference: 'Settore',
+                            localized: 'label',
+                            localizedKey: `SETTORE`,
+                            inputCls: 'input-gen-penknife',
+                            name: 'settore',
+                            store: Ext.create('PENKNIFE.view.auth.Settori'),
+                            displayField: 'valoreIT',
+                            valueField: 'codice',
                             flex: stdPKF.isPhone() ? null : 1,
                             margin: stdPKF.isPhone() ? null : '0 0 0 10'
                         }
@@ -87,7 +100,7 @@ Ext.define('PENKNIFE.view.projects.ProjectGestCreate',{
                 {
                     xtype: 'fieldset',
                     localized: 'title',
-                    localizedKey: `COME_VUOI_APPARIRE`,
+                    localizedKey: `INSER_IMM_SLIDE`,
                     margin: '10 0 0 0',
                     layout: {
                         type: 'vbox',
@@ -98,90 +111,58 @@ Ext.define('PENKNIFE.view.projects.ProjectGestCreate',{
                             xtype: 'container',
                             layout: {
                                 type: 'hbox',
-                                align: 'middle'
-                            },
-                            margin: '0 0 15 0',
-                            items: [
-                                {
-                                    xtype: 'image',
-                                    src: 'resources/img/star.svg',
-                                    height: 24,
-                                    width: 24
-                                },
-                                {
-                                    xtype: 'label',
-                                    cls: 'color-red',
-                                    style: {
-                                        'font-weight': 'bold'
-                                    },
-                                    margin: '5 10 0 10',
-                                    localized: 'html',            
-                                    localizedKey: `VUOI_DIVENTARE_ELITE`
-                                },
-                                {
-                                    xtype: 'togglefield',
-                                    name: 'elite',
-                                    margin: '5 0 0 0'
-                                }
-                            ]
-                        },
-                        {
-                            xtype: 'container',
-                            layout: {
-                                type: 'hbox',
                                 align: 'stretch'
                             },
                             items: [
                                 {
                                     xtype: 'button',
-                                    itemId: 'BtnUploadLogo', reference: 'BtnUploadLogo',
+                                    itemId: 'BtnUploadImm1', reference: 'BtnUploadImm1',
                                     cls: 'hamburger-menu-list-buttons button-icon-24 color-red',
                                     iconCls: `icon-upload`,
                                     iconAlign: 'top',
                                     localized: 'text',            
-                                    localizedKey: `CARICA_IL_LOGO_AZIENDA`,
+                                    localizedKey: `CARICA_IMM_1`,
                                     margin: 2,
                                     flex: 1,
                                     maxWidth: !stdPKF.isPhone() ? 100 : null,
                                     listeners: {
-                                        tap: 'tapBtnUploadLogo'
+                                        tap: 'tapBtnUploadImm1'
                                     }
                                 },
                                 {
                                     xtype: 'button',
-                                    itemId: 'BtnBackgroundLogo', reference: 'BtnBackgroundLogo',
+                                    itemId: 'BtnUploadImm2', reference: 'BtnUploadImm2',
                                     cls: 'hamburger-menu-list-buttons button-icon-24 color-red',
-                                    iconCls: `icon-pantone`,
+                                    iconCls: `icon-upload`,
                                     iconAlign: 'top',
                                     localized: 'text',            
-                                    localizedKey: `SCEGLI_COLORE_SFONDO`,
+                                    localizedKey: `CARICA_IMM_2`,
                                     margin: 2,
                                     flex: 1,
                                     maxWidth: !stdPKF.isPhone() ? 100 : null,
                                     listeners: {
-                                        tap: 'tapBtnBackgroundLogo'
+                                        tap: 'tapBtnUploadImm2'
                                     }
                                 },
                                 {
                                     xtype: 'button',
-                                    itemId: 'BtnDimensionsTile', reference: 'BtnDimensionsTile',
+                                    itemId: 'BtnUploadImm3', reference: 'BtnUploadImm3',
                                     cls: 'hamburger-menu-list-buttons button-icon-24 color-red',
-                                    iconCls: `icon-dimensions`,
+                                    iconCls: `icon-upload`,
                                     iconAlign: 'top',
                                     localized: 'text',            
-                                    localizedKey: `SCEGLI_DIMENSIONI`,
+                                    localizedKey: `CARICA_IMM_3`,
                                     margin: 2,
                                     flex: 1,
                                     maxWidth: !stdPKF.isPhone() ? 100 : null,
                                     listeners: {
-                                        tap: 'tapBtnDimensionsTile'
+                                        tap: 'tapBtnUploadImm3'
                                     }
                                 }
                             ]
                         },
                         {
                             xtype: 'container',
-                            itemId: 'CntTileSample', reference: 'CntTileSample',
                             layout: {
                                 type: 'hbox',
                                 align: 'stretch',
@@ -189,85 +170,53 @@ Ext.define('PENKNIFE.view.projects.ProjectGestCreate',{
                             },
                             items: [
                                 {
-                                    xtype: 'container',
-                                    itemId: 'TileSample', reference: 'TileSample',
-                                    layout: {
-                                        type: 'vbox',
-                                        align: 'middle',
-                                        pack: 'center'
+                                    xtype: 'carousel',
+                                    itemId: 'ProjectCarousel', reference: 'ProjectCarousel',
+                                    direction: 'horizontal',
+                                    flex: 1,
+                                    height: '100%',
+                                    maxWidth: 450,
+                                    hidden: true,
+                                    style: {
+                                        'background-color': 'white'
                                     },
                                     items: [
                                         {
-                                            xtype: 'container',
-                                            itemId: 'CntImageLogo', reference: 'CntImageLogo',
-                                            layout: {
-                                                type: 'vbox',
-                                                align: 'stretch'
-                                            },
-                                            height: '100%',
-                                            width: '100%',
-                                            hidden: true,
-                                            items: [
-                                                {
-                                                    xtype: 'image',
-                                                    itemId: 'ImageLogo', reference: 'ImageLogo',
-                                                    src: '',
-                                                    flex: 1
-                                                }
-                                            ]
+                                            xtype: 'image',
+                                            src: 'resources/img/emptyimage.svg'
                                         },
                                         {
-                                            xtype: 'label',
-                                            itemId: 'LabelTileSample', reference: 'LabelTileSample',
-                                            localized: 'html',
-                                            localizedKey: `PREMI_BTN_DIM_SCEGLIERE_DIM`,
-                                            margin: 5,
-                                            style: {
-                                                'text-align': 'center'
-                                            }
+                                            xtype: 'image',
+                                            src: 'resources/img/emptyimage.svg'
                                         },
                                         {
-                                            xtype: 'textfield',
-                                            itemId: 'TileSample_Color', reference: 'TileSample_Color',
-                                            name: 'tilecolor',
-                                            hidden: true
-                                        },
-                                        {
-                                            xtype: 'textfield',
-                                            itemId: 'TileSample_Size', reference: 'TileSample_Size',
-                                            name: 'tilesize',
-                                            hidden: true
-                                        },
-                                        {
-                                            xtype: 'textfield',
-                                            itemId: 'TileLogo', reference: 'TileLogo',
-                                            name: 'tilelogo',
-                                            hidden: true,
-                                            listeners: {
-                                                change: 'changeTileLogo'
-                                            }
+                                            xtype: 'image',
+                                            src: 'resources/img/emptyimage.svg'
                                         }
                                     ],
-                                    margin: '10 0 0 0',
-                                    style: {
-                                        'background-color': 'white',
-                                        color: 'red',
-                                        'box-shadow': '1px 1px 2px darkgrey'
+                                    listeners: {
+                                        /* painted: th => {
+                                            let senchaEl = Ext.fly(th.el)
+                                            senchaEl.config.
+                                            senchaEl.hide()
+                                            Ext.defer(() => {
+                                                
+                                                senchaEl.show()
+                                            }, 100)
+                                        } */
                                     }
                                 }
-                            ]
-                        },
-                        {
-                            xtype: 'numberfield',
-                            localized: 'label',
-                            localizedKey: `TILE_SECOND_LATENCY`,
-                            inputCls: 'input-gen-penknife',
-                            value: 30,
-                            minValue: 10,
-                            maxValue: 60,
-                            name: 'latency',
-                            maxWidth: stdPKF.isPhone() ? Ext.getBody().getSize().width - 30 : 400,
-                            margin: !stdPKF.isPhone() ? '10 0 0 0' : null
+                                /* {
+                                    xtype: 'textfield',
+                                    itemId: 'TileLogo', reference: 'TileLogo',
+                                    name: 'tilelogo',
+                                    hidden: true,
+                                    listeners: {
+                                        change: 'changeTileLogo'
+                                    }
+                                } */
+                            ],
+                            minHeight: !stdPKF.isPhone() ? 300 : 200
                         }
                     ]
                 },
@@ -275,7 +224,7 @@ Ext.define('PENKNIFE.view.projects.ProjectGestCreate',{
                     xtype: 'fieldset',
                     itemId: 'FieldsetDescrLanguages', reference: 'FieldsetDescrLanguages',
                     localized: 'title',
-                    localizedKey: `DESCRIVI_AZIENDA`,
+                    localizedKey: `DESCRIVI_PRJ`,
                     margin: '10 0 0 0',
                     layout: {
                         type: 'hbox',

@@ -684,7 +684,69 @@ class langPKF {
         this.dictionary['en']['ISCRIVITI_INSERT_PROJECT'] = `Sign up to present your project!`
         this.dictionary['it']['ISCRIVITI_INSERT_PROJECT'] = `Iscriviti per presentare il tuo progetto!`
         this.dictionary['zh_CN']['ISCRIVITI_INSERT_PROJECT'] = `注册以呈现您的项目！`
+
+        /**
+         * @description INSERISCI_PROGETTO
+         */
+        this.dictionary['en']['INSERISCI_PROGETTO'] = `translation`
+        this.dictionary['it']['INSERISCI_PROGETTO'] = `Inserisci un progetto`
+        this.dictionary['zh_CN']['INSERISCI_PROGETTO'] = `翻译`
+
+        /**
+         * @description DATI_PRINCIPALI
+         */
+        this.dictionary['en']['DATI_PRINCIPALI'] = `translation`
+        this.dictionary['it']['DATI_PRINCIPALI'] = `Dati principali...`
+        this.dictionary['zh_CN']['DATI_PRINCIPALI'] = `翻译`
+
+        /**
+         * @description NOME_PROGETTO
+         */
+        this.dictionary['en']['NOME_PROGETTO'] = `translation`
+        this.dictionary['it']['NOME_PROGETTO'] = `Nome Progetto`
+        this.dictionary['zh_CN']['NOME_PROGETTO'] = `翻译`
+
+        /**
+         * @description AZIENDA_IDEATRICE
+         */
+        this.dictionary['en']['AZIENDA_IDEATRICE'] = `translation`
+        this.dictionary['it']['AZIENDA_IDEATRICE'] = `Azienda ideatrice`
+        this.dictionary['zh_CN']['AZIENDA_IDEATRICE'] = `翻译`
+
+        /**
+         * @description INSER_IMM_SLIDE
+         */
+        this.dictionary['en']['INSER_IMM_SLIDE'] = `translation`
+        this.dictionary['it']['INSER_IMM_SLIDE'] = `Inserisci immagini alle slide`
+        this.dictionary['zh_CN']['INSER_IMM_SLIDE'] = `翻译`
+
+        /**
+         * @description CARICA_IMM_1
+         */
+        this.dictionary['en']['CARICA_IMM_1'] = `translation`
+        this.dictionary['it']['CARICA_IMM_1'] = `Carica immagine n.1`
+        this.dictionary['zh_CN']['CARICA_IMM_1'] = `翻译`
         
+        /**
+         * @description CARICA_IMM_2
+         */
+        this.dictionary['en']['CARICA_IMM_2'] = `translation`
+        this.dictionary['it']['CARICA_IMM_2'] = `Carica immagine n.2`
+        this.dictionary['zh_CN']['CARICA_IMM_2'] = `翻译`
+
+        /**
+         * @description CARICA_IMM_3
+         */
+        this.dictionary['en']['CARICA_IMM_3'] = `translation`
+        this.dictionary['it']['CARICA_IMM_3'] = `Carica immagine n.3`
+        this.dictionary['zh_CN']['CARICA_IMM_3'] = `翻译`
+        
+        /**
+         * @description DESCRIVI_PRJ
+         */
+        this.dictionary['en']['DESCRIVI_PRJ'] = `translation`
+        this.dictionary['it']['DESCRIVI_PRJ'] = `Descrivi il progetto`
+        this.dictionary['zh_CN']['DESCRIVI_PRJ'] = `翻译`
 
 
         

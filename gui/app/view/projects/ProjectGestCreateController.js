@@ -2,7 +2,7 @@ Ext.define('PENKNIFE.view.projects.ProjectGestCreateController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.projects-ProjectGestCreate',
 
-    tapBACK_TileGestCreate: function(update) {
+    tapBACK_ProjectCreate: function(update) {
         let levelFirst = this.ctrlHome.lookupReference('LevelFirst')
         if (update) {
             this.ctrlList.updateList()
@@ -10,12 +10,12 @@ Ext.define('PENKNIFE.view.projects.ProjectGestCreateController', {
         this.ctrlHome.lookupReference('CntMainContent').setActiveItem(levelFirst)
     },
 
-    tapCONFIRM_TileGestCreate: function() {
+    tapCONFIRM_ProjectCreate: function() {
         if (!this.validateFields()) {
             return false
         }
 
-        let values = this.lookupReference('Form_TileGestCreate').getValues(),
+        let values = this.lookupReference('Form_ProjectCreate').getValues(),
             record = values
         
         Ext.apply(record, {
@@ -32,7 +32,7 @@ Ext.define('PENKNIFE.view.projects.ProjectGestCreateController', {
             params: Ext.JSON.encode(record),
             success: response => {
                 var result = Ext.JSON.decode(response.responseText)
-                this.tapBACK_TileGestCreate(true)
+                this.tapBACK_ProjectCreate(true)
             },
             failure: (conn, response, options, eOpts) => {
             	var result = Ext.JSON.decode(response.responseText)
@@ -137,8 +137,7 @@ Ext.define('PENKNIFE.view.projects.ProjectGestCreateController', {
 
         this.setLinguaggioAttivo('china')
 
-        let ts = this.lookupReference('TileSample')
-        ts.setHeight(PENKNIFE.globals.dimensionTiles['6x4'][1])
-        ts.setWidth(PENKNIFE.globals.dimensionTiles['6x4'][0])
+        Ext.defer( () => this.lookupReference('ProjectCarousel').show(), 1000)
+        
     }
 });

@@ -100,6 +100,10 @@ Ext.define('PENKNIFE.view.projects.ProjectsListController', {
         this.ctrlHome = this.view.controllerHome
 
         //this.updateList()
+        //TODO rimuovere quando ci sarà la list
+        if (!this.view.FAB) {
+            this.createFAB()
+        }
     },
 
     destroy: function() {
