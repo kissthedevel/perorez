@@ -97,23 +97,13 @@ Ext.define('PENKNIFE.view.projects.ProjectGestCreateController', {
         }
     },
 
-    tapBtnBackgroundLogo: function(th) {
-        if (!this.overlayColorPalette) {
-            this.overlayColorPalette = Ext.Viewport.add(Ext.create('PENKNIFE.view.tiles.ColorPalette', {
-                controllerGest: this,
-                controllerHome: this.ctrlHome
-            }))
-        }
-        this.overlayColorPalette.show()
-    },
-
-    tapBtnUploadLogo: function(th) {
-        Ext.Viewport.add(Ext.create('PENKNIFE.view.tiles.UploadLogo', {
-            controllerGestTile: this
+    tapBtnUploadImm: function(th) {debugger
+        Ext.Viewport.add(Ext.create('PENKNIFE.view.projects.UploadImage', {
+            controllerProjectCreate: this
         })).show()
     },
 
-    tapBtnDimensionsTile: function(th) {
+    /* tapBtnDimensionsTile: function(th) {
         if (!this.overlaySizePalette) {
             this.overlaySizePalette = Ext.Viewport.add(Ext.create('PENKNIFE.view.tiles.TilesPalette', {
                 controllerGest: this,
@@ -121,9 +111,9 @@ Ext.define('PENKNIFE.view.projects.ProjectGestCreateController', {
             }))
         }
         this.overlaySizePalette.show()
-    },
+    }, */
 
-    changeTileLogo: function( th, newValue ) {
+    changePrjImage: function( th, newValue ) {debugger
         let imgLogo = this.lookupReference('ImageLogo')
         this.lookupReference('LabelTileSample').setHidden(!Ext.isEmpty(newValue))
         this.lookupReference('CntImageLogo').setHidden(Ext.isEmpty(newValue))

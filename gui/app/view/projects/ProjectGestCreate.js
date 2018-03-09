@@ -126,7 +126,7 @@ Ext.define('PENKNIFE.view.projects.ProjectGestCreate',{
                                     flex: 1,
                                     maxWidth: !stdPKF.isPhone() ? 100 : null,
                                     listeners: {
-                                        tap: 'tapBtnUploadImm1'
+                                        tap: 'tapBtnUploadImm'
                                     }
                                 },
                                 {
@@ -141,7 +141,7 @@ Ext.define('PENKNIFE.view.projects.ProjectGestCreate',{
                                     flex: 1,
                                     maxWidth: !stdPKF.isPhone() ? 100 : null,
                                     listeners: {
-                                        tap: 'tapBtnUploadImm2'
+                                        tap: 'tapBtnUploadImm'
                                     }
                                 },
                                 {
@@ -156,7 +156,7 @@ Ext.define('PENKNIFE.view.projects.ProjectGestCreate',{
                                     flex: 1,
                                     maxWidth: !stdPKF.isPhone() ? 100 : null,
                                     listeners: {
-                                        tap: 'tapBtnUploadImm3'
+                                        tap: 'tapBtnUploadImm'
                                     }
                                 }
                             ]
@@ -183,38 +183,48 @@ Ext.define('PENKNIFE.view.projects.ProjectGestCreate',{
                                     items: [
                                         {
                                             xtype: 'image',
+                                            itemId: 'CardImage1', reference: 'CardImage1',
                                             src: 'resources/img/emptyimage.svg'
                                         },
                                         {
                                             xtype: 'image',
+                                            itemId: 'CardImage2', reference: 'CardImage2',
                                             src: 'resources/img/emptyimage.svg'
                                         },
                                         {
                                             xtype: 'image',
+                                            itemId: 'CardImage3', reference: 'CardImage3',
                                             src: 'resources/img/emptyimage.svg'
                                         }
-                                    ],
-                                    listeners: {
-                                        /* painted: th => {
-                                            let senchaEl = Ext.fly(th.el)
-                                            senchaEl.config.
-                                            senchaEl.hide()
-                                            Ext.defer(() => {
-                                                
-                                                senchaEl.show()
-                                            }, 100)
-                                        } */
-                                    }
-                                }
-                                /* {
+                                    ]
+                                },
+                                {
                                     xtype: 'textfield',
-                                    itemId: 'TileLogo', reference: 'TileLogo',
-                                    name: 'tilelogo',
+                                    itemId: 'PrjImage1', reference: 'PrjImage1',
+                                    name: 'image_1',
                                     hidden: true,
                                     listeners: {
-                                        change: 'changeTileLogo'
+                                        change: 'changePrjImage'
                                     }
-                                } */
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    itemId: 'PrjImage2', reference: 'PrjImage2',
+                                    name: 'image_2',
+                                    hidden: true,
+                                    listeners: {
+                                        change: 'changePrjImage'
+                                    }
+                                },
+                                {
+                                    xtype: 'textfield',
+                                    itemId: 'PrjImage3', reference: 'PrjImage3',
+                                    name: 'image_3',
+                                    hidden: true,
+                                    listeners: {
+                                        change: 'changePrjImage'
+                                    }
+                                }
                             ],
                             minHeight: !stdPKF.isPhone() ? 300 : 200
                         }
