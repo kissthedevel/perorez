@@ -383,6 +383,42 @@ Ext.define('PENKNIFE.view.projects.ProjectGestCreate',{
                             ]
                         }
                     ]
+                },
+                {
+                    xtype: 'fieldset',
+                    localized: 'title',
+                    localizedKey: `RICH_VARIE`,
+                    layout: stdPKF.isPhone() ? 'vbox' : 'hbox',
+                    margin: '5 0 0 0',
+                    items: [
+                        {
+                            xtype: 'textareafield',
+                            itemId: 'OtherRequests', reference: 'OtherRequests',
+                            cls: stdPKF.isPhone() ? 'txtfld-descazienda-phone input-gen-penknife' :
+                                                            'txtfld-descazienda-tablet input-gen-penknife',
+                            maxRows: 10,
+                            name: 'otherrequests',
+                            flex: stdPKF.isPhone() ? null : 1
+                        }
+                    ]
+                },
+                {
+                    xtype: 'fieldset',
+                    localized: 'title',
+                    localizedKey: `ARRICCHISCI_PRJ`,
+                    margin: '10 0 0 0',
+                    items: [
+                        {
+                            xtype: 'label',
+                            localized: 'html',
+                            localizedKey: `ATTACH_AFTER_PROJECT`,
+                            margin: 5,
+                            cls: 'color-red',
+                            style: {
+                                'text-align': 'left'
+                            }
+                        }
+                    ]
                 }
             ]
         }

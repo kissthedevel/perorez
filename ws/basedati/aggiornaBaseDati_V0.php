@@ -121,5 +121,18 @@
 		echo "Error creating table: " . $conn->error;
 	}
 
+	echo '<br>************************************************<br>';
+	// sql to create table
+	$sql = "CREATE TABLE projectimage (
+				id INT(7) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+				formato VARCHAR(10),
+				INDEX (id)
+			)";
+	if ($conn->query($sql) === TRUE) {
+		echo "Table projectimage created successfully";
+	} else {
+		echo "Error creating table: " . $conn->error;
+	}
+
 	$conn->close();
 ?>

@@ -1,12 +1,12 @@
 
-Ext.define('PENKNIFE.view.tiles.UploadImage',{
+Ext.define('PENKNIFE.view.projects.UploadImage',{
     extend: 'Ext.Container',
 
     requires: [
         'PENKNIFE.view.projects.UploadImageController'
     ],
 
-    controller: 'tiles-UploadImage',
+    controller: 'projects-UploadImage',
 
     floated: true,
     modal: true,

@@ -18,7 +18,7 @@
     }
 
     //percorso della cartella dove mettere i file caricati dagli utenti
-    $uploaddir = '../../imgrepo/companylogos/';
+    $uploaddir = '../../imgrepo/projectsimages/';
     //Recupero il percorso temporaneo del file
     $userfile_tmp = $_FILES['userfile']['tmp_name'];
     //recupero il nome originale del file caricato
@@ -54,7 +54,7 @@
 	}
 	
 	$stmt = $conn->prepare(
-        "INSERT INTO companylogo ( formato )
+        "INSERT INTO projectimage ( formato )
          VALUES ( ? )"
     );
     

@@ -21,14 +21,10 @@ Ext.define('PENKNIFE.view.projects.ProjectGestCreateController', {
         Ext.apply(record, {
         	creator: 1,	//TODO da getsire login
         	elite: record.elite ? 1 : 0
-        });
-
-        if (!record.tilesize) {
-            record.tilesize = '6x4'
-        }
-        
+        })
+                
         Ext.Ajax.request({
-            url: `${PENKNIFEwsDomain}ws/company/companySave.php`,
+            url: `${PENKNIFEwsDomain}ws/projects/projectSave.php`,
             params: Ext.JSON.encode(record),
             success: response => {
                 var result = Ext.JSON.decode(response.responseText)
@@ -97,27 +93,18 @@ Ext.define('PENKNIFE.view.projects.ProjectGestCreateController', {
         }
     },
 
-    tapBtnUploadImm: function(th) {debugger
+    tapBtnUploadImm: function(th) {
         Ext.Viewport.add(Ext.create('PENKNIFE.view.projects.UploadImage', {
-            controllerProjectCreate: this
+            controllerProjectCreate: this,
+            imageNumber: th.getItemId().replace('BtnUploadImm', '')
         })).show()
     },
 
-    /* tapBtnDimensionsTile: function(th) {
-        if (!this.overlaySizePalette) {
-            this.overlaySizePalette = Ext.Viewport.add(Ext.create('PENKNIFE.view.tiles.TilesPalette', {
-                controllerGest: this,
-                controllerHome: this.ctrlHome
-            }))
-        }
-        this.overlaySizePalette.show()
-    }, */
+    changePrjImage: function( th, newValue ) {
+        let nImage = th.getItemId().replace('PrjImage', ''),
+            imgLogo = this.lookupReference(`CardImage${nImage}`)
 
-    changePrjImage: function( th, newValue ) {debugger
-        let imgLogo = this.lookupReference('ImageLogo')
-        this.lookupReference('LabelTileSample').setHidden(!Ext.isEmpty(newValue))
-        this.lookupReference('CntImageLogo').setHidden(Ext.isEmpty(newValue))
-        imgLogo.setSrc(`../imgrepo/companylogos/${newValue}`)
+        imgLogo.setSrc(`../imgrepo/projectsimages/${newValue}`)
     },
 
     init: function() {

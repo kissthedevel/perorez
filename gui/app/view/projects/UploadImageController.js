@@ -1,6 +1,6 @@
 Ext.define('PENKNIFE.view.projects.UploadImageController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.tiles-UploadImage',
+    alias: 'controller.projects-UploadImage',
 
     tapCloseIcon: function(th) {
         this.getView().destroy()
@@ -13,7 +13,8 @@ Ext.define('PENKNIFE.view.projects.UploadImageController', {
             waitMsg: 'Upload image...',
             method: 'POST',                    
             success: function (r, a) {
-                controller.controllerProjectCreate.lookupReference('TileLogo').setValue(a.data[0])
+                let nImage = controller.view.imageNumber
+                controller.controllerProjectCreate.lookupReference(`PrjImage${nImage}`).setValue(a.data[0])
                 controller.getView().destroy()
             },
             failure: function (r, a) {                    

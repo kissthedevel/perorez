@@ -52,76 +52,84 @@ class langPKF {
         /**
          * @description PUBBL_IN_ITA_SHORT
          */
-        this.dictionary['en']['PUBBL_IN_ITA_SHORT'] = `Advertise your company in Italy`
-        //this.dictionary['it']['PUBBL_IN_ITA_SHORT'] = `Pubblicizza l'azienda in Italia`
+        /* this.dictionary['en']['PUBBL_IN_ITA_SHORT'] = `Advertise your company in Italy`
         this.dictionary['it']['PUBBL_IN_ITA_SHORT'] = `Pubblicizza in Italia`
-        this.dictionary['zh_CN']['PUBBL_IN_ITA_SHORT'] = `广告公司在意大利`
+        this.dictionary['zh_CN']['PUBBL_IN_ITA_SHORT'] = `广告公司在意大利` */
         /**
          * @description PUBBL_IN_ITA
          */
-        this.dictionary['en']['PUBBL_IN_ITA'] = `Do you want to get acquainted in Italy? Advertise your company`
+        /* this.dictionary['en']['PUBBL_IN_ITA'] = `Do you want to get acquainted in Italy? Advertise your company`
         this.dictionary['it']['PUBBL_IN_ITA'] = `Vuoi farti conoscere in Italia? Pubblicizza la tua azienda`
-        this.dictionary['zh_CN']['PUBBL_IN_ITA'] = `你想在意大利知道吗？贵公司`
+        this.dictionary['zh_CN']['PUBBL_IN_ITA'] = `你想在意大利知道吗？贵公司` */
+
+        /**
+         * @description PUBBL_IN_ITA_SHORT
+         */
+        this.dictionary['en']['PUBBL_IN_ITA_SHORT'] = `Get to know in China`
+        this.dictionary['it']['PUBBL_IN_ITA_SHORT'] = `Fatti conoscere in Cina`
+        this.dictionary['zh_CN']['PUBBL_IN_ITA_SHORT'] = `在中国认识`
+        /**
+         * @description PUBBL_IN_ITA
+         */
+        this.dictionary['en']['PUBBL_IN_ITA'] = `Let your brand know in China`
+        this.dictionary['it']['PUBBL_IN_ITA'] = `Fai conoscere il tuo brand in Cina`
+        this.dictionary['zh_CN']['PUBBL_IN_ITA'] = `让你的品牌在中国知道`
         
         
         /**
          * @description TROVA_AZIENDA_ITA_SHORT
          */
-        this.dictionary['en']['TROVA_AZIENDA_ITA_SHORT'] = `Find an Italian company`
-        //this.dictionary['it']['TROVA_AZIENDA_ITA_SHORT'] = `Trova un'azienda italiana`
-        this.dictionary['it']['TROVA_AZIENDA_ITA_SHORT'] = `Trova un'azienda`
-        this.dictionary['zh_CN']['TROVA_AZIENDA_ITA_SHORT'] = `找到一家意大利公司`
+        this.dictionary['en']['TROVA_AZIENDA_ITA_SHORT'] = `Find a business partner`
+        this.dictionary['it']['TROVA_AZIENDA_ITA_SHORT'] = `Trova un business partner`
+        this.dictionary['zh_CN']['TROVA_AZIENDA_ITA_SHORT'] = `找到一个商业伙伴`
         /**
          * @description TROVA_AZIENDA_ITA
          */
-        this.dictionary['en']['TROVA_AZIENDA_ITA'] = `Find an Italian company interested in you and your products`
-        this.dictionary['it']['TROVA_AZIENDA_ITA'] = `Trova un'azienda italiana interessata a te e ai tuoi prodotti`
-        this.dictionary['zh_CN']['TROVA_AZIENDA_ITA'] = `找到一家意大利公司感兴趣的是你和你的产品`
+        this.dictionary['en']['TROVA_AZIENDA_ITA'] = `Find a potential business partner`
+        this.dictionary['it']['TROVA_AZIENDA_ITA'] = `Trova un potenziale business partner`
+        this.dictionary['zh_CN']['TROVA_AZIENDA_ITA'] = `找到一个潜在的商业伙伴`
         
         
         /**
          * @description PRESENTA_PRG_INNOVAT_SHORT
          */
         this.dictionary['en']['PRESENTA_PRG_INNOVAT_SHORT'] = `It presents an innovative project`
-        //this.dictionary['it']['PRESENTA_PRG_INNOVAT_SHORT'] = `Presenta un progetto innovativo`
         this.dictionary['it']['PRESENTA_PRG_INNOVAT_SHORT'] = `Presenta un progetto`
         this.dictionary['zh_CN']['PRESENTA_PRG_INNOVAT_SHORT'] = `它提出了一个创新项目`
         /**
          * @description PRESENTA_PRG_INNOVAT
          */
-        this.dictionary['en']['PRESENTA_PRG_INNOVAT'] = `It introduces innovative projects to Italian investors`
-        this.dictionary['it']['PRESENTA_PRG_INNOVAT'] = `Presenta progetti innovativi ad investitori italiani`
-        this.dictionary['zh_CN']['PRESENTA_PRG_INNOVAT'] = `它提出各种创新项目，意大利投资者`
+        this.dictionary['en']['PRESENTA_PRG_INNOVAT'] = `It presents an innovative project`
+        this.dictionary['it']['PRESENTA_PRG_INNOVAT'] = `Presenta un progetto innovativo`
+        this.dictionary['zh_CN']['PRESENTA_PRG_INNOVAT'] = `它提出了一个创新项目`
         
         
         /**
          * @description VENDI_COMPRA_IMMOB_SHORT
          */
         this.dictionary['en']['VENDI_COMPRA_IMMOB_SHORT'] = `Chinese Social Media`
-        //this.dictionary['it']['VENDI_COMPRA_IMMOB_SHORT'] = `Vendi / Compra Immobili`
         this.dictionary['it']['VENDI_COMPRA_IMMOB_SHORT'] = `Social Media Cinesi`
         this.dictionary['zh_CN']['VENDI_COMPRA_IMMOB_SHORT'] = `中国社会媒体`
         /**
          * @description VENDI_COMPRA_IMMOB
          */
-        this.dictionary['en']['VENDI_COMPRA_IMMOB'] = `Chinese Social Media to sell your products`
-        this.dictionary['it']['VENDI_COMPRA_IMMOB'] = `Social Media Cinesi per vendere i tuoi prodotti`
-        this.dictionary['zh_CN']['VENDI_COMPRA_IMMOB'] = `中国社交媒体出售您的产品`
+        this.dictionary['en']['VENDI_COMPRA_IMMOB'] = `Chinese Social Media`
+        this.dictionary['it']['VENDI_COMPRA_IMMOB'] = `Social Media Cinesi`
+        this.dictionary['zh_CN']['VENDI_COMPRA_IMMOB'] = `中国社会媒体`
 
         
         /**
          * @description INVESTI_IN_PRG_ITA_SHORT
          */
-        this.dictionary['en']['INVESTI_IN_PRG_ITA_SHORT'] = `Invest in Italian projects`
-        //this.dictionary['it']['INVESTI_IN_PRG_ITA_SHORT'] = `Investi in progetti italiani`
-        this.dictionary['it']['INVESTI_IN_PRG_ITA_SHORT'] = `Investi in Italia`
-        this.dictionary['zh_CN']['INVESTI_IN_PRG_ITA_SHORT'] = `投资意大利项目`
+        this.dictionary['en']['INVESTI_IN_PRG_ITA_SHORT'] = `Invest in projects`
+        this.dictionary['it']['INVESTI_IN_PRG_ITA_SHORT'] = `Investi in progetti`
+        this.dictionary['zh_CN']['INVESTI_IN_PRG_ITA_SHORT'] = `投资项目`
         /**
          * @description INVESTI_IN_PRG_ITA
          */
-        this.dictionary['en']['INVESTI_IN_PRG_ITA'] = `Invest in innovative Italian projects`
-        this.dictionary['it']['INVESTI_IN_PRG_ITA'] = `Investi in progetti innovativi italiani`
-        this.dictionary['zh_CN']['INVESTI_IN_PRG_ITA'] = `投资于创新的意大利项目`
+        this.dictionary['en']['INVESTI_IN_PRG_ITA'] = `Invest in innovative projects`
+        this.dictionary['it']['INVESTI_IN_PRG_ITA'] = `Investi in progetti innovativi`
+        this.dictionary['zh_CN']['INVESTI_IN_PRG_ITA'] = `投资于创新项目`
         
         /**
          * @description SEI_GIA_ISCRITTO
@@ -754,6 +762,28 @@ class langPKF {
         this.dictionary['en']['LOAD_IMM_PRJ'] = `Upload project image`
         this.dictionary['it']['LOAD_IMM_PRJ'] = `Carica immagine progetto`
         this.dictionary['zh_CN']['LOAD_IMM_PRJ'] = `上传项目图片`
+
+        /**
+         * @description RICH_VARIE
+         */
+        this.dictionary['en']['RICH_VARIE'] = `Other requests`
+        this.dictionary['it']['RICH_VARIE'] = `Altre richieste`
+        this.dictionary['zh_CN']['RICH_VARIE'] = `其他请求`
+
+        /**
+         * @description ARRICCHISCI_PRJ
+         */
+        this.dictionary['en']['ARRICCHISCI_PRJ'] = `Enhance your project !!`
+        this.dictionary['it']['ARRICCHISCI_PRJ'] = `Arricchisci il tuo progetto!!`
+        this.dictionary['zh_CN']['ARRICCHISCI_PRJ'] = `增强您的项目！`
+
+        /**
+         * @description ATTACH_AFTER_PROJECT
+         */
+        this.dictionary['en']['ATTACH_AFTER_PROJECT'] = `* After entering the project you can also insert attachments. <br> Ex: Business plan, project analysis, visura ...`
+        this.dictionary['it']['ATTACH_AFTER_PROJECT'] = `* Dopo aver inserito il progetto potrai inserire anche degli allegati. <br> Ex: Business plan, analisi di progetto, visura...`
+        this.dictionary['zh_CN']['ATTACH_AFTER_PROJECT'] = `*进入项目后，您还可以插入附件。 <br> 示例：商业计划书，项目分析...`
+
 
         
 
