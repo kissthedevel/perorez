@@ -66,9 +66,9 @@ Ext.define('PENKNIFE.view.tiles.TileSimpleViewController', {
             url: `${PENKNIFEwsDomain}ws/company/companyIsLike.php`,
             method: 'GET',
             params: {
+                disableLoadMask: true,
                 id_company: idTile,
-                id_user: PENKNIFE.globals.storeUserSimple.getData().items[0].get('id'),
-                disableLoadMask: true
+                id_user: PENKNIFE.globals.storeUserSimple.getData().items[0].get('id')
             },
             success: response => {
                 var result = Ext.JSON.decode(response.responseText)

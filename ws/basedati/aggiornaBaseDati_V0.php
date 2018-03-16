@@ -134,5 +134,47 @@
 		echo "Error creating table: " . $conn->error;
 	}
 
+	echo '<br>************************************************<br>';
+	// sql to create table
+	$sql = "CREATE TABLE project (
+				id INT(7) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+				creator INT(10) NOT NULL,
+				approved BOOLEAN NULL DEFAULT NULL,
+				approver INT(10),
+				join_date DATETIME NOT NULL,
+				nomeprogetto VARCHAR(100),
+				aziendaideatrice VARCHAR(100),
+				settore INT(5),
+				image_1 VARCHAR(30),
+				image_2 VARCHAR(30),
+				image_3 VARCHAR(30),
+				
+				INDEX (id),
+				INDEX (creator),
+				INDEX (approved)
+			)";
+	if ($conn->query($sql) === TRUE) {
+		echo "Table project created successfully";
+	} else {
+		echo "Error creating table: " . $conn->error;
+	}
+
+	echo '<br>************************************************<br>';
+	// sql to create table
+	$sql = "CREATE TABLE projectdescriptions (
+				id INT(7) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+				id_project INT(10) NOT NULL,
+				language VARCHAR(5) NOT NULL,
+				description VARCHAR(5000),
+
+				INDEX (id),
+				INDEX (id_project)
+			)";
+	if ($conn->query($sql) === TRUE) {
+		echo "Table projectdescriptions created successfully";
+	} else {
+		echo "Error creating table: " . $conn->error;
+	}
+
 	$conn->close();
 ?>

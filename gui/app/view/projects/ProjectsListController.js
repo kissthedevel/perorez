@@ -12,16 +12,32 @@ Ext.define('PENKNIFE.view.projects.ProjectsListController', {
         controller.ctrlHome.lookupReference('CntMainContent').setActiveItem(levelSecond)
     },
 
+    updateProject( idProject ) {
+        let levelSecond = this.ctrlHome.lookupReference('LevelSecond')
+        levelSecond.removeAll(true)
+        levelSecond.add(Ext.create('PENKNIFE.view.projects.ProjectGestCreate', {
+            controllerHome: this.ctrlHome,
+            controllerList: this,
+            updateProject: idProject
+        }))
+        this.ctrlHome.lookupReference('CntMainContent').setActiveItem(levelSecond)
+    },
+
     itemtapListProjects: function( th, index, target, record, e ) {
         let idTarget = e.target.id,
-            store = this.lookupReference('ListProjects').getStore()
+            store = this.lookupReference('ListProjects').getStore(),
+            admin = PENKNIFE.globals.storeUserSimple.getData().items[0].get('administrator') === 1
         
         if (idTarget.indexOf('approved') != -1) {
             
         } else if (idTarget.indexOf('waiting') != -1) {
+            if (!admin) {
+                return false
+            }
+
             store.findRecord('id', record.get('id'), 0, false, false, true).set('approved', 1)
             Ext.Ajax.request({
-                url: `${PENKNIFEwsDomain}ws/project/projectApprove.php`,
+                url: `${PENKNIFEwsDomain}ws/projects/projectApprove.php`,
                 method: 'GET',
                 params: {
                     disableLoadMask: true,
@@ -36,12 +52,16 @@ Ext.define('PENKNIFE.view.projects.ProjectsListController', {
                 }
             })
         } else if (idTarget.indexOf('edit') != -1) {
-            console.log('edit', record.get('projectname'))
+            this.updateProject(record.get('id'))
         } else if (idTarget.indexOf('delete') != -1) {
-            Ext.Msg.confirm('Attenzione!', `Sei sicuro di voler eliminare "${record.get('projectname')}"?`, ( buttonId, value, opt) => {
+            if (!admin) {
+                return false
+            }
+
+            Ext.Msg.confirm('Attenzione!', `Sei sicuro di voler eliminare "${record.get('nomeprogetto')}"?`, ( buttonId, value, opt) => {
                 if( buttonId === 'yes' ) {
                     Ext.Ajax.request({
-                        url: `${PENKNIFEwsDomain}ws/project/projectDelete.php`,
+                        url: `${PENKNIFEwsDomain}ws/projects/projectDelete.php`,
                         method: 'GET',
                         params: {
                             id: record.get('id')
@@ -70,9 +90,12 @@ Ext.define('PENKNIFE.view.projects.ProjectsListController', {
         store.load({
             params: {
                 disableLoadMask: true,
-                creator: 1
+                creator: PENKNIFE.globals.storeUserSimple.getData().items[0].get('id')
             },
             callback: (records, operation, success) => {
+                let admin = PENKNIFE.globals.storeUserSimple.getData().items[0].get('administrator') === 1
+                store.each( rec => rec.set('administrator', admin ? 1 : 0))
+
                 if (!this.view.FAB) {
                     this.createFAB()
                 }
@@ -99,11 +122,7 @@ Ext.define('PENKNIFE.view.projects.ProjectsListController', {
         this.view = this.getView()
         this.ctrlHome = this.view.controllerHome
 
-        //this.updateList()
-        //TODO rimuovere quando ci sarà la list
-        if (!this.view.FAB) {
-            this.createFAB()
-        }
+        this.updateList()
     },
 
     destroy: function() {

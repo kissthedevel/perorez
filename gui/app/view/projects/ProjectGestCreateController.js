@@ -18,10 +18,11 @@ Ext.define('PENKNIFE.view.projects.ProjectGestCreateController', {
         let values = this.lookupReference('Form_ProjectCreate').getValues(),
             record = values
         
-        Ext.apply(record, {
-        	creator: 1,	//TODO da getsire login
-        	elite: record.elite ? 1 : 0
-        })
+        if (!this.view.updateProject) {
+            Ext.apply(record, {
+                creator: PENKNIFE.globals.storeUserSimple.getData().items[0].get('id')
+            });
+        }
                 
         Ext.Ajax.request({
             url: `${PENKNIFEwsDomain}ws/projects/projectSave.php`,
@@ -107,6 +108,26 @@ Ext.define('PENKNIFE.view.projects.ProjectGestCreateController', {
         imgLogo.setSrc(`../imgrepo/projectsimages/${newValue}`)
     },
 
+    loadProject( idProject ) {
+        Ext.Ajax.request({
+            url: `${PENKNIFEwsDomain}ws/projects/projectGetExtended.php`,
+            method: 'GET',
+            params: {
+                id: idProject
+            },
+            success: response => {
+                let result = Ext.JSON.decode(response.responseText)
+                if ( result.success && result.data.length > 0 ) {
+                    this.lookupReference('Form_ProjectCreate').setValues(result.data[0])
+                }
+            },
+            failure: (conn, response, options, eOpts) => {
+            	let result = Ext.JSON.decode(response.responseText)
+                Ext.Msg.alert(langPKF._translate('ATTENZIONE'), langPKF._translate(result.message))
+            }
+        })
+    },
+
     init: function() {
         this.view = this.getView()
         this.ctrlHome = this.view.controllerHome
@@ -115,6 +136,10 @@ Ext.define('PENKNIFE.view.projects.ProjectGestCreateController', {
         this.setLinguaggioAttivo('china')
 
         Ext.defer( () => this.lookupReference('ProjectCarousel').show(), 1000)
+
+        if (this.view.updateProject) {
+            this.loadProject(this.view.updateProject)
+        }
         
     }
 });

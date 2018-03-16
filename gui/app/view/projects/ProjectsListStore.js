@@ -5,7 +5,7 @@ Ext.define('PENKNIFE.view.projects.ProjectsListStore', {
 
     proxy: {
         type: 'ajax',
-        url: `${PENKNIFEwsDomain}ws/company/companyList.php`,
+        url: `${PENKNIFEwsDomain}ws/projects/projectsList.php`,
         reader: {
             type: 'json',
             rootProperty: 'data'
