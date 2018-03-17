@@ -12,6 +12,10 @@ Ext.define('PENKNIFE.view.tiles.TileSimpleViewController', {
 
     tapLIKE_TileSimpleView(th) {
         th.setIconCls( th.getIconCls() === 'like-none' ? 'like-yeah' : 'like-none' )
+        th.addCls('animated tada')
+        setTimeout(() => {
+            th.removeCls('animated tada')
+        }, 1000)
 
         Ext.Ajax.request({
             url: `${PENKNIFEwsDomain}ws/company/companyLike.php`,

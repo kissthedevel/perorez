@@ -675,9 +675,9 @@ class langPKF {
         /**
          * @description ISCRIVITI_PER_CERCARE_AZIENDA
          */
-        this.dictionary['en']['ISCRIVITI_PER_CERCARE_AZIENDA'] = `Sign up to find the perfect partner!`
-        this.dictionary['it']['ISCRIVITI_PER_CERCARE_AZIENDA'] = `Iscriviti per trovare il partner ideale!`
-        this.dictionary['zh_CN']['ISCRIVITI_PER_CERCARE_AZIENDA'] = `注册找到完美的合作伙伴！`
+        this.dictionary['en']['ISCRIVITI_PER_CERCARE_AZIENDA'] = `If you want to find a potential Business Partner, sign up for free. Join the club !!`
+        this.dictionary['it']['ISCRIVITI_PER_CERCARE_AZIENDA'] = `Se vuoi trovare un potenziale Business Partner iscriviti gratuitamente. Entra nel club!!`
+        this.dictionary['zh_CN']['ISCRIVITI_PER_CERCARE_AZIENDA'] = `如果您想找到潜在的业务合作伙伴，请免费注册。 加入俱乐部！`
 
         /**
          * @description I_MIEI_PROGETTI
@@ -689,9 +689,9 @@ class langPKF {
         /**
          * @description ISCRIVITI_INSERT_PROJECT
          */
-        this.dictionary['en']['ISCRIVITI_INSERT_PROJECT'] = `Sign up to present your project!`
-        this.dictionary['it']['ISCRIVITI_INSERT_PROJECT'] = `Iscriviti per presentare il tuo progetto!`
-        this.dictionary['zh_CN']['ISCRIVITI_INSERT_PROJECT'] = `注册以呈现您的项目！`
+        this.dictionary['en']['ISCRIVITI_INSERT_PROJECT'] = `If you want to present an Innovative Project, sign up for free. Join the club !!`
+        this.dictionary['it']['ISCRIVITI_INSERT_PROJECT'] = `Se vuoi presentare un Progetto Innovativo iscriviti gratuitamente. Entra nel club!!`
+        this.dictionary['zh_CN']['ISCRIVITI_INSERT_PROJECT'] = `如果您想展示创新项目，请免费注册。 加入俱乐部！`
 
         /**
          * @description INSERISCI_PROGETTO
@@ -783,6 +783,34 @@ class langPKF {
         this.dictionary['en']['ATTACH_AFTER_PROJECT'] = `* After entering the project you can also insert attachments. <br> Ex: Business plan, project analysis, visura ...`
         this.dictionary['it']['ATTACH_AFTER_PROJECT'] = `* Dopo aver inserito il progetto potrai inserire anche degli allegati. <br> Ex: Business plan, analisi di progetto, visura...`
         this.dictionary['zh_CN']['ATTACH_AFTER_PROJECT'] = `*进入项目后，您还可以插入附件。 <br> 示例：商业计划书，项目分析...`
+
+        /**
+         * @description DATI_PERSONALI
+         */
+        this.dictionary['en']['DATI_PERSONALI'] = `Personal details`
+        this.dictionary['it']['DATI_PERSONALI'] = `Dati personali`
+        this.dictionary['zh_CN']['DATI_PERSONALI'] = `个人资料`
+
+        /**
+         * @description CONTATTI
+         */
+        this.dictionary['en']['CONTATTI'] = `Contacts`
+        this.dictionary['it']['CONTATTI'] = `Contatti`
+        this.dictionary['zh_CN']['CONTATTI'] = `往来`
+
+        /**
+         * @description RESIDENZA
+         */
+        this.dictionary['en']['RESIDENZA'] = `Residency`
+        this.dictionary['it']['RESIDENZA'] = `Residenza`
+        this.dictionary['zh_CN']['RESIDENZA'] = `住所`
+
+        /**
+         * @description INFO_PROF
+         */
+        this.dictionary['en']['INFO_PROF'] = `Professional data`
+        this.dictionary['it']['INFO_PROF'] = `Dati professionali`
+        this.dictionary['zh_CN']['INFO_PROF'] = `专业数据`
 
 
         

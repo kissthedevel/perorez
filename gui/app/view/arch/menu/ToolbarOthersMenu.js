@@ -16,9 +16,13 @@ Ext.define('PENKNIFE.view.arch.menu.ToolbarOthersMenu',{
     items: [
         {
             xtype: 'button',
+            itemId: 'BtnEditUser', reference: 'BtnEditUser',
             cls: 'button-icon-24',
             iconCls: 'icon-user-male',
-            flex: 1,                    
+            flex: 1,
+            listeners: {
+                tap: 'tapBtnEditUser'
+            }
         },
         {
             xtype: 'button',

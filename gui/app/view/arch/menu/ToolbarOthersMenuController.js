@@ -2,6 +2,22 @@ Ext.define('PENKNIFE.view.arch.menu.ToolbarOthersMenuController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.arch-menu-ToolbarOthersMenu',
 
+    tapBtnEditUser(th) {
+        if (this.ctrlHam) {
+            this.ctrlHam.tapCloseIconHamburger()
+        }
+
+        let levelFirst = this.ctrlHome.lookupReference('LevelFirst'),
+            levelHome = this.ctrlHome.lookupReference('LevelHome')
+
+        this.ctrlHome.lookupReference('CntMainContent').setActiveItem(levelHome)
+        levelFirst.removeAll(true)
+        levelFirst.add(Ext.create('PENKNIFE.view.auth.UserPanel', {
+            controllerHome: this.ctrlHome
+        }))
+        this.ctrlHome.lookupReference('CntMainContent').setActiveItem(levelFirst)
+    },
+
     tapBtnSendMessage: function(th) {
         if (this.ctrlHam) {
             this.ctrlHam.tapCloseIconHamburger()
