@@ -117,7 +117,8 @@ Ext.define('PENKNIFE.view.auth.UserPanelController', {
         this.view = this.getView()
         this.ctrlHome = this.view.controllerHome
 
-        this.loadData(PENKNIFE.globals.storeUserSimple.getData().items[0].get('id'))
+        let idUserLog = PENKNIFE.globals.storeUserSimple.getData().items[0].get('id')
+        this.loadData( this.view.idUser || idUserLog)
         
     }
 });

@@ -812,6 +812,21 @@ class langPKF {
         this.dictionary['it']['INFO_PROF'] = `Dati professionali`
         this.dictionary['zh_CN']['INFO_PROF'] = `专业数据`
 
+        /**
+         * @description GEST_USERS
+         */
+        this.dictionary['en']['GEST_USERS'] = `Subscriber Management`
+        this.dictionary['it']['GEST_USERS'] = `Gestione Iscritti`
+        this.dictionary['zh_CN']['GEST_USERS'] = `订户管理`
+
+        /**
+         * @description EL_ATTACH
+         */
+        this.dictionary['en']['EL_ATTACH'] = `List of Attachments`
+        this.dictionary['it']['EL_ATTACH'] = `Elenco Allegati`
+        this.dictionary['zh_CN']['EL_ATTACH'] = `附件列表`
+        
+
 
         
 

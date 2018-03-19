@@ -30,10 +30,33 @@ Ext.define('PENKNIFE.view.arch.menu.MainMenuItemsOtherController', {
         
     },
 
+    tapBtnListUsersAdmin(th) {
+        if (this.isAdministrator) {
+            if (this.ctrlHam) {
+                this.ctrlHam.tapCloseIconHamburger()
+            }
+
+            let levelFirst = this.ctrlHome.lookupReference('LevelFirst')
+            levelFirst.removeAll(true)
+            levelFirst.add(Ext.create('PENKNIFE.view.auth.UsersList', {
+                controllerHome: this.ctrlHome
+            }))
+            this.ctrlHome.lookupReference('CntMainContent').setActiveItem(levelFirst)
+        }
+    },
+
     init: function() {
         //this.lookupReference('BtnAdvertiseTbMain').hide()
         this.view = this.getView()
         this.ctrlHome = this.view.controllerHome
         this.ctrlHam = this.view.controllerHamburger
+
+        this.isAdministrator = PENKNIFE.globals.storeUserSimple.getData().items[0].data['administrator']
+
+        if (this.isAdministrator) {
+            this.lookupReference('BtnListUsersAdmin').setHidden(false)
+        } else {
+            this.lookupReference('BtnListUsersAdmin').destroy()
+        }
     }
 });

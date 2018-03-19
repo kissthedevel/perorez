@@ -45,6 +45,19 @@ Ext.define('PENKNIFE.view.arch.menu.MainMenuItemsOther',{
             listeners: {
                 tap: 'tapBtnListMyCompanies'
             }
+        },
+        {
+            xtype: 'button',
+            itemId: 'BtnListUsersAdmin', reference: 'BtnListUsersAdmin',
+            cls: 'hamburger-menu-list-buttons button-text-dark button-icon-24',
+            iconCls: `users-list`,
+            iconAlign: 'left',
+            localized: 'text',
+            localizedKey: `GEST_USERS`,
+            hidden: true,
+            listeners: {
+                tap: 'tapBtnListUsersAdmin'
+            }
         }
     ]
 });
