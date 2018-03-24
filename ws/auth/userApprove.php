@@ -24,20 +24,14 @@
 		$response->message = "Error: " . $conn->connect_error;
 	} 
 	
-	if ( isset($_GET['id']) && $administrator ) {
+	if ( $administrator && isset($_GET['id']) && isset($_GET['approved']) ) {
 		$stmt = $conn->prepare("
-			DELETE FROM company
+			UPDATE users
+			SET attivo = ?
 			WHERE id = ?
 		");
-		$stmt->bind_param("i", $_GET['id']);
-
-		if ($stmt->execute()) {
-			$response->message = 'Eliminazione eseguita!';
-			$response->success = true;
-		} else {
-			$response->success = false;
-			$response->message = "Error: " . $conn->error;
-		}
+		$stmt->bind_param("ii", $_GET['approved'], $_GET['id']);
+		$stmt->execute();
 		$stmt->close();
 	}
 

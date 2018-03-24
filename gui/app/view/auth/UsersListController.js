@@ -33,7 +33,7 @@ Ext.define('PENKNIFE.view.auth.UsersListController', {
                     disableLoadMask: true,
                     id: record.get('id'),
                     approved: 1,
-                    approver: PENKNIFE.globals.storeUserSimple.getData().items[0].get('id')
+                    user: PENKNIFE.globals.storeUserSimple.getData().items[0].get('id')
                 },
                 success: response => {
                 },
@@ -46,13 +46,14 @@ Ext.define('PENKNIFE.view.auth.UsersListController', {
                 return false
             }
 
-            Ext.Msg.confirm('Attenzione!', `Sei sicuro di voler eliminare "${record.get('nomeprogetto')}"?`, ( buttonId, value, opt) => {
+            Ext.Msg.confirm('Attenzione!', `Sei sicuro di voler eliminare "${record.get('nominativo')}"?`, ( buttonId, value, opt) => {
                 if( buttonId === 'yes' ) {
                     Ext.Ajax.request({
                         url: `${PENKNIFEwsDomain}ws/auth/userDelete.php`,
                         method: 'GET',
                         params: {
-                            id: record.get('id')
+                            id: record.get('id'),
+                            user: PENKNIFE.globals.storeUserSimple.getData().items[0].get('id')
                         },
                         success: response => {
                             this.updateList()

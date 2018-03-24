@@ -43,7 +43,8 @@ Ext.define('PENKNIFE.view.tiles.TilesListController', {
                     disableLoadMask: true,
                     id: record.get('id'),
                     approved: 1,
-                    approver: PENKNIFE.globals.storeUserSimple.getData().items[0].get('id')
+                    approver: PENKNIFE.globals.storeUserSimple.getData().items[0].get('id'),
+                    user: PENKNIFE.globals.storeUserSimple.getData().items[0].get('id')
                 },
                 success: response => {
                 },
@@ -64,7 +65,8 @@ Ext.define('PENKNIFE.view.tiles.TilesListController', {
                         url: `${PENKNIFEwsDomain}ws/company/companyDelete.php`,
                         method: 'GET',
                         params: {
-                            id: record.get('id')
+                            id: record.get('id'),
+                            user: PENKNIFE.globals.storeUserSimple.getData().items[0].get('id')
                         },
                         success: response => {
                             this.updateList()

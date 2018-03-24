@@ -26,7 +26,7 @@
 	
 	if ( isset($_GET['id']) && $administrator ) {
 		$stmt = $conn->prepare("
-			DELETE FROM company
+			DELETE FROM users
 			WHERE id = ?
 		");
 		$stmt->bind_param("i", $_GET['id']);

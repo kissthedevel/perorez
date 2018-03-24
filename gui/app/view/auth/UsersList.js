@@ -57,6 +57,15 @@ Ext.define('PENKNIFE.view.auth.UsersList',{
                         <tpl else>
                             <img id='waiting-${Ext.id()}' src="resources/img/waiting-time-left.svg" height='24' width='24' style="float:left;">
                         </tpl>
+                        <tpl if="account_type === 'p'">
+                            <img id='premium-${Ext.id()}' src="resources/img/small-crown.svg" height='24' width='24' style="float:left; margin-left: 8px;">
+                        </tpl>
+                        <tpl if="account_type === 'i'">
+                            <img id='investor-${Ext.id()}' src="resources/img/growth.svg" height='24' width='24' style="float:left; margin-left: 8px;">
+                        </tpl>
+                        <tpl if="account_type === 'c'">
+                            <img id='classic-${Ext.id()}' src="resources/img/approved-signal.svg" height='24' width='24' style="float:left; margin-left: 8px;">
+                        </tpl>
                         <span style="margin-left:10px; font-size:18px;">{nominativo}</span>
                         <img id='delete-${Ext.id()}' src="resources/img/rubbish-bin-delete-button.svg" height='24' width='24' style="float:right;">`,
             listeners: {
