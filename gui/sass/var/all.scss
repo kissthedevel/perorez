@@ -278,6 +278,7 @@ $highlight-color: red;
     box-shadow: 2px 2px 1px #B71C1C;
     background-color: #F44336 !important;
     color: white !important;
+    font-size: 12px !important;
 }
 .premium-member-big {
     background-image: url("img/small-crown.svg") !important;
@@ -285,6 +286,10 @@ $highlight-color: red;
 }
 .classic-member-big {
     background-image: url("img/approved-signal.svg") !important;
+    font-size: 32px;
+}
+.investor-member-big {
+    background-image: url("img/growth.svg") !important;
     font-size: 32px;
 }
 

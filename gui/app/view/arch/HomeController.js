@@ -158,7 +158,7 @@ Ext.define('PENKNIFE.view.arch.HomeController', {
             } else {
                 panelTiles.setHidden(true)
             }
-        }, 500)
+        }, 700)
         /* panelTiles.setHidden(true) */
         this.panelTiles = panelTiles
 

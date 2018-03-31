@@ -45,7 +45,10 @@ Ext.define('PENKNIFE.view.arch.menu.MainMenuItemsList',{
                         //text: PENKNIFE.lang._translate(`PUBBL_IN_ITA${this.minimalMenu ? '_SHORT' : ''}`),
                         itemId: 'BtnAdvertiseTbMain', reference: 'BtnAdvertiseTbMain',
                         iconCls: `icon-advertising ${this.minimalMenu ? 'toolbar-menu-minimal-button-icon' : ''}`,
-                        localizedKey: `PUBBL_IN_ITA${this.minimalMenu ? '_SHORT' : ''}`
+                        localizedKey: `PUBBL_IN_ITA${this.minimalMenu ? '_SHORT' : ''}`,
+                        listeners: {
+                            tap: 'tapFattiConoscere'
+                        }
                     },
                     {
                         //text: PENKNIFE.lang._translate(`TROVA_AZIENDA_ITA${this.minimalMenu ? '_SHORT' : ''}`),
@@ -63,14 +66,20 @@ Ext.define('PENKNIFE.view.arch.menu.MainMenuItemsList',{
                         }
                     },
                     {
-                        //text: PENKNIFE.lang._translate(`VENDI_COMPRA_IMMOB${this.minimalMenu ? '_SHORT' : ''}`),
-                        localizedKey: `VENDI_COMPRA_IMMOB${this.minimalMenu ? '_SHORT' : ''}`,
-                        iconCls: `icon-skyscraper ${this.minimalMenu ? 'toolbar-menu-minimal-button-icon' : ''}`
-                    },
-                    {
                         //text: PENKNIFE.lang._translate(`INVESTI_IN_PRG_ITA${this.minimalMenu ? '_SHORT' : ''}`),
                         localizedKey: `INVESTI_IN_PRG_ITA${this.minimalMenu ? '_SHORT' : ''}`,
-                        iconCls: `icon-investment ${this.minimalMenu ? 'toolbar-menu-minimal-button-icon' : ''}`
+                        iconCls: `icon-investment ${this.minimalMenu ? 'toolbar-menu-minimal-button-icon' : ''}`,
+                        listeners: {
+                            tap: 'tapInvestProjects'
+                        }
+                    },
+                    {
+                        //text: PENKNIFE.lang._translate(`VENDI_COMPRA_IMMOB${this.minimalMenu ? '_SHORT' : ''}`),
+                        localizedKey: `VENDI_COMPRA_IMMOB${this.minimalMenu ? '_SHORT' : ''}`,
+                        iconCls: `icon-skyscraper ${this.minimalMenu ? 'toolbar-menu-minimal-button-icon' : ''}`,
+                        listeners: {
+                            tap: 'tapSocialMedia'
+                        }
                     }
                 ]
             }

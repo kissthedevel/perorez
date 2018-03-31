@@ -25,7 +25,7 @@ Ext.define('PENKNIFE.view.auth.UsersListController', {
                 return false
             }
 
-            store.findRecord('id', record.get('id'), 0, false, false, true).set('approved', 1)
+            store.findRecord('id', record.get('id'), 0, false, false, true).set('attivo', 1)
             Ext.Ajax.request({
                 url: `${PENKNIFEwsDomain}ws/auth/userApprove.php`,
                 method: 'GET',
@@ -38,7 +38,7 @@ Ext.define('PENKNIFE.view.auth.UsersListController', {
                 success: response => {
                 },
                 failure: (conn, response, options, eOpts) => {
-                    store.findRecord('id', record.get('id'), 0, false, false, true).set('approved', 0)
+                    store.findRecord('id', record.get('id'), 0, false, false, true).set('attivo', 0)
                 }
             })
         } else if (idTarget.indexOf('delete') != -1) {

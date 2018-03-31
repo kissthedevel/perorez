@@ -103,6 +103,11 @@ Ext.define('PENKNIFE.view.arch.menu.HamburgerMenuController', {
             controllerHome: this.ctrlHome
         }))
         this.ctrlHome.lookupReference('CntMainContent').setActiveItem(levelFirst)
+
+        
+        let title = langPKF._translate('CHI_E_PENKNIFE_TITLE'),
+            message = langPKF._translate('CHI_E_PENKNIFE_SLOGAN')
+        Ext.Msg.alert( title, message)
     },
 
     tapNostriServizi: function(th) {

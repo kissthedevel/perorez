@@ -358,6 +358,13 @@ class langPKF {
         this.dictionary['zh_CN']['CLASSIC_MEMBER'] = `经典/免费`
 
         /**
+         * @description INVESTOR_MEMBER
+         */
+        this.dictionary['en']['INVESTOR_MEMBER'] = `Investor`
+        this.dictionary['it']['INVESTOR_MEMBER'] = `Investitore`
+        this.dictionary['zh_CN']['INVESTOR_MEMBER'] = `投资者`
+
+        /**
          * @description SLOGAN_PREMIUM
          */
         this.dictionary['en']['SLOGAN_PREMIUM'] = `Get the most out of Penknife, boost your business!`
@@ -370,6 +377,13 @@ class langPKF {
         this.dictionary['en']['SLOGAN_CLASSIC'] = `Discover the Penknife world, simple, fast .. Free`
         this.dictionary['it']['SLOGAN_CLASSIC'] = `Scopri il mondo Penknife, semplice, rapido..Free`
         this.dictionary['zh_CN']['SLOGAN_CLASSIC'] = `发现铅笔刀世界，简单，快速..免费`
+
+        /**
+         * @description SLOGAN_INVESTOR
+         */
+        this.dictionary['en']['SLOGAN_INVESTOR'] = `Invest with Penknife, find the most innovative project for free!`
+        this.dictionary['it']['SLOGAN_INVESTOR'] = `Investi con Penknife, trova gratis il progetto più innovativo!`
+        this.dictionary['zh_CN']['SLOGAN_INVESTOR'] = `投资Penknife，免费找到最具创新性的项目！`
 
         /**
          * @description CONFERMA_ISCRIZIONE
@@ -827,8 +841,59 @@ class langPKF {
         this.dictionary['zh_CN']['EL_ATTACH'] = `附件列表`
         
 
+        /**
+         * END TRASLATION VALIDATE
+         */
 
+        /**
+         * @description PUBBL_IN_ITA_SLOGAN
+         */
+        this.dictionary['en']['PUBBL_IN_ITA_SLOGAN'] = `If you want to point out your company to large Chinese investors, enter your brand by subscribing to the Penknife platform (Join Club)`
+        this.dictionary['it']['PUBBL_IN_ITA_SLOGAN'] = `Se vuoi far notare la tua azienda a grandi investitori cinesi inserisci il tuo brand, iscrivendoti alla piattaforma Penknife (Entra nel Club)`
+        this.dictionary['zh_CN']['PUBBL_IN_ITA_SLOGAN'] = `如果您想向大型中国投资者指出您的公司，请通过在Penknife平台（加入俱乐部）注册来输入您的品牌。`
+
+        /**
+         * @description TROVA_AZIENDA_ITA_SLOGAN
+         */
+        this.dictionary['en']['TROVA_AZIENDA_ITA_SLOGAN'] = `If you are looking for a business partner sign up for the Penknife platform and then enter all the features that your potential partner must have (you can tell us about the characteristics your ideal business partner must have).`
+        this.dictionary['it']['TROVA_AZIENDA_ITA_SLOGAN'] = `Se sei alla ricerca di un business partner iscriviti alla piattaforma Penknife e inserisci successivamente tutte le caratteristiche che deve avere il tuo potenziale partner ( Potrai comunicarci le caratteristiche che deve avere il tuo business partner ideale ).`
+        this.dictionary['zh_CN']['TROVA_AZIENDA_ITA_SLOGAN'] = `如果您正在寻找合作伙伴注册Penknife平台，然后输入潜在合作伙伴必须拥有的所有功能（您可以告诉我们您理想的业务合作伙伴必须具备的特征）。`
+
+        /**
+         * @description PRESENTA_PRG_INNOVAT_SLOGAN
+         */
+        this.dictionary['en']['PRESENTA_PRG_INNOVAT_SLOGAN'] = `If you want to present an innovative project to Chinese investors, sign up for the Penknife platform and upload your project. Your project will only be visible to investors after contributing to the Chinese language translation costs of your project. Once your project is approved, you will see the green light on your project.`
+        this.dictionary['it']['PRESENTA_PRG_INNOVAT_SLOGAN'] = `Se vuoi presentare un progetto innovativo ad investitori cinesi iscriviti alla piattaforma Penknife e carica il tuo progetto. Il tuo progetto sarà visibile agli investitori solo dopo aver contribuito alla spese di traduzione in lingua cinese del tuo progetto. Nel momento in cui il tuo progetto verrà approvato, vedrai il semaforo verde sul tuo progetto.`
+        this.dictionary['zh_CN']['PRESENTA_PRG_INNOVAT_SLOGAN'] = `如果您想向中国投资者展示一个创新项目，请注册Penknife平台并上传您的项目。 您的项目只有在为您的项目提供中文语言翻译费用后才会被投资者看到。 一旦您的项目获得批准，您将看到项目上的绿灯。`
+
+        /**
+         * @description INVESTI_IN_PRG_ITA_SLOGAN
+         */
+        this.dictionary['en']['INVESTI_IN_PRG_ITA_SLOGAN'] = `If you are interested in investing in innovative Italian and Chinese projects, register with the Penknife platform in the exclusive space dedicated to investors.`
+        this.dictionary['it']['INVESTI_IN_PRG_ITA_SLOGAN'] = `Se sei interessato ad investire in progetti innovativi italiani e cinesi iscrivi alla piattaforma Penknife nello spazio esclusivo dedicato agli investitori.`
+        this.dictionary['zh_CN']['INVESTI_IN_PRG_ITA_SLOGAN'] = `如果您有兴趣投资意大利和中国的创新项目，请在投资者专用区域注册Penknife平台。`
         
+        /**
+         * @description SOCIAL_MEDIA_SLOGAN
+         */
+        this.dictionary['en']['SOCIAL_MEDIA_SLOGAN'] = `If you want to find a marketing strategy to sell in China, subscribe for free to the Penknife platform and fill out the request form.`
+        this.dictionary['it']['SOCIAL_MEDIA_SLOGAN'] = `Se vuoi trovare una strategia di marketing per vendere in Cina iscriviti gratuitamente alla piattaforma Penknife e compila il format di richiesta.`
+        this.dictionary['zh_CN']['SOCIAL_MEDIA_SLOGAN'] = `如果您想找到在中国销售的营销策略，请在Penknife平台免费注册并填写申请表。`
+
+        /**
+         * @description CHI_E_PENKNIFE_TITLE
+         */
+        this.dictionary['en']['CHI_E_PENKNIFE_TITLE'] = `Who is Penknife Investment?`
+        this.dictionary['it']['CHI_E_PENKNIFE_TITLE'] = `Chi è Penknife Investment?`
+        this.dictionary['zh_CN']['CHI_E_PENKNIFE_TITLE'] = `谁是Penknife投资？`
+
+        /**
+         * @description CHI_E_PENKNIFE_SLOGAN
+         */
+        this.dictionary['en']['CHI_E_PENKNIFE_SLOGAN'] = `Penknife Investment is the only Italian innovative company that uses artificial intelligence and big data to link innovative Italian and European projects with large Chinese investors. Penknife thus creates business between Italy, Europe and China also through various services obtainable through its platform.`
+        this.dictionary['it']['CHI_E_PENKNIFE_SLOGAN'] = `Penknife Investment è l’unica azienda innovativa italiana che utilizzando intelligenza artificiale e big data riesce a mettere in collegamento progetti innovativi italiani ed europei con grandi investitori cinesi. Penknife crea così business tra l’Italia, l’Europa e la Cina anche attraverso vari servizi ottenibili tramite la propria piattaforma.`
+        this.dictionary['zh_CN']['CHI_E_PENKNIFE_SLOGAN'] = `Penknife Investment是唯一一家意大利创新公司，利用人工智能和大数据将意大利和欧洲的创新项目与大型中国投资者联系起来。 因此，通过其平台可以获得各种服务，因此，小刀在意大利，欧洲和中国之间创建业务。`
+
 
 
         /**
