@@ -71,7 +71,7 @@ Ext.define('PENKNIFE.view.arch.menu.MainMenuItemsListController', {
             return false
         }
 
-        /* if (this.ctrlHome.overlayHamburger) {
+        if (this.ctrlHome.overlayHamburger) {
             let ctrlHamburger = this.ctrlHome.overlayHamburger.lookupController()
             ctrlHamburger.tapCloseIconHamburger()
         }        
@@ -81,10 +81,10 @@ Ext.define('PENKNIFE.view.arch.menu.MainMenuItemsListController', {
 
         this.ctrlHome.lookupReference('CntMainContent').setActiveItem(levelHome)
         levelFirst.removeAll(true)
-        levelFirst.add(Ext.create('PENKNIFE.view.projects.ProjectsList', {
+        levelFirst.add(Ext.create('PENKNIFE.view.projects.AllProjects', {
             controllerHome: this.ctrlHome
         }))
-        this.ctrlHome.lookupReference('CntMainContent').setActiveItem(levelFirst) */
+        this.ctrlHome.lookupReference('CntMainContent').setActiveItem(levelFirst)
     },
 
     tapSocialMedia( th ) {
