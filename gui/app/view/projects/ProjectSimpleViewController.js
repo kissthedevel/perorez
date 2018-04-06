@@ -57,8 +57,19 @@ Ext.define('PENKNIFE.view.projects.ProjectSimpleViewController', {
                     this.lookupReference('CardImage1').setSrc(img1)
                     this.lookupReference('CardImage2').setSrc(img2)
                     this.lookupReference('CardImage3').setSrc(img3)
-                    /* this.lookupReference('ProjectCarousel').hide()
-                    Ext.defer(() => this.lookupReference('ProjectCarousel').show(), 100) */
+
+                    this.lookupReference('LabelCompany').setHtml(result.data[0].aziendaideatrice)
+
+                    let labelSettore = this.lookupReference('LabelSettore')
+                    this.lookupReference('CntSettore').setHidden(Ext.isEmpty(result.data[0].settore))
+                    if (!Ext.isEmpty(result.data[0].settore)) {
+                        let stSett = Ext.create('PENKNIFE.view.auth.Settori'),
+                            settTransrec = stSett.getAt(stSett.findExact('codice', result.data[0].settore)),
+                            settTrans = settTransrec.get(PENKNIFE.globals.language === 'it' ? 'valoreIT' :
+                                            ( PENKNIFE.globals.language === 'zh_CN' ? 'valoreCN' : 'valoreEN' ) )
+                        
+                        labelSettore.setHtml(settTrans)
+                    }
 
                     this.id_project = result.data[0].id
                     //this.loadLike(this.id_project)
@@ -94,9 +105,21 @@ Ext.define('PENKNIFE.view.projects.ProjectSimpleViewController', {
     }, */
 
     init: function() {
+        Ext.suspendLayouts()
+
         this.view = this.getView()
         this.ctrlHome = this.view.controllerHome
 
+        Ext.defer( () => this.lookupReference('ProjectCarousel').show(), 800)
+
         this.loadData(this.view.idProject)
+
+        this.listAttach = Ext.create('PENKNIFE.view.projects.ProjectsAttachList', {
+            idProject: this.view.idProject
+        })
+        this.lookupReference('CntAttach').add(this.listAttach)
+        this.listAttach.lookupController().updateList()
+
+        Ext.resumeLayouts()
     }
 });

@@ -36,6 +36,9 @@ Ext.define('PENKNIFE.view.auth.PreSignUpController', {
     tapButtonClassic: function(th) {
         this.startSignUp('classic')
     },
+    tapButtonInvestor: function(th) {
+        this.startSignUp('investor')
+    },
 
     init: function() {
         this.view = this.getView()

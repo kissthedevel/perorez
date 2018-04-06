@@ -101,6 +101,13 @@ Ext.define('PENKNIFE.view.projects.ProjectGestCreateController', {
         })).show()
     },
 
+    tapInsertAttach(th) {
+        Ext.Viewport.add(Ext.create('PENKNIFE.view.projects.UploadAttachment', {
+            controllerProjectCreate: this,
+            idProject: this.view.updateProject
+        })).show()
+    },
+
     changePrjImage: function( th, newValue ) {
         let nImage = th.getItemId().replace('PrjImage', ''),
             imgLogo = this.lookupReference(`CardImage${nImage}`)
@@ -119,6 +126,8 @@ Ext.define('PENKNIFE.view.projects.ProjectGestCreateController', {
                 let result = Ext.JSON.decode(response.responseText)
                 if ( result.success && result.data.length > 0 ) {
                     this.lookupReference('Form_ProjectCreate').setValues(result.data[0])
+                    this.lookupReference('LabelAttachAfter').hide()
+                    this.lookupReference('BtnAttachFile').show()
                 }
             },
             failure: (conn, response, options, eOpts) => {
@@ -139,6 +148,13 @@ Ext.define('PENKNIFE.view.projects.ProjectGestCreateController', {
 
         if (this.view.updateProject) {
             this.loadProject(this.view.updateProject)
+
+            this.listAttach = Ext.create('PENKNIFE.view.projects.ProjectsAttachList', {
+                controllerGest: this,
+                idProject: this.view.updateProject
+            })
+            this.lookupReference('FldArricchisci').add(this.listAttach)
+            this.listAttach.lookupController().updateList()
         }
         
     }

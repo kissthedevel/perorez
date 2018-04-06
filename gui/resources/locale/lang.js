@@ -19,7 +19,7 @@ class langPKF {
          */
         this.dictionary['en']['SIGN_IN'] = `Sign In`
         this.dictionary['it']['SIGN_IN'] = `Accedi`
-        this.dictionary['zh_CN']['SIGN_IN'] = `签到`
+        this.dictionary['zh_CN']['SIGN_IN'] = `登录`
 
         /**
          * @description NOSTRI_SERVIZI
@@ -54,26 +54,26 @@ class langPKF {
          */
         /* this.dictionary['en']['PUBBL_IN_ITA_SHORT'] = `Advertise your company in Italy`
         this.dictionary['it']['PUBBL_IN_ITA_SHORT'] = `Pubblicizza in Italia`
-        this.dictionary['zh_CN']['PUBBL_IN_ITA_SHORT'] = `广告公司在意大利` */
+        this.dictionary['zh_CN']['PUBBL_IN_ITA_SHORT'] = `意大利的广告公司` */
         /**
          * @description PUBBL_IN_ITA
          */
         /* this.dictionary['en']['PUBBL_IN_ITA'] = `Do you want to get acquainted in Italy? Advertise your company`
         this.dictionary['it']['PUBBL_IN_ITA'] = `Vuoi farti conoscere in Italia? Pubblicizza la tua azienda`
-        this.dictionary['zh_CN']['PUBBL_IN_ITA'] = `你想在意大利知道吗？贵公司` */
+        this.dictionary['zh_CN']['PUBBL_IN_ITA'] = `贵公司想熟悉意大利吗？` */
 
         /**
          * @description PUBBL_IN_ITA_SHORT
          */
         this.dictionary['en']['PUBBL_IN_ITA_SHORT'] = `Get to know in China`
         this.dictionary['it']['PUBBL_IN_ITA_SHORT'] = `Fatti conoscere in Cina`
-        this.dictionary['zh_CN']['PUBBL_IN_ITA_SHORT'] = `在中国认识`
+        this.dictionary['zh_CN']['PUBBL_IN_ITA_SHORT'] = `认识中国`
         /**
          * @description PUBBL_IN_ITA
          */
         this.dictionary['en']['PUBBL_IN_ITA'] = `Let your brand know in China`
         this.dictionary['it']['PUBBL_IN_ITA'] = `Fai conoscere il tuo brand in Cina`
-        this.dictionary['zh_CN']['PUBBL_IN_ITA'] = `让你的品牌在中国知道`
+        this.dictionary['zh_CN']['PUBBL_IN_ITA'] = `让你的品牌在中国打响`
         
         
         /**
@@ -115,7 +115,7 @@ class langPKF {
          */
         this.dictionary['en']['VENDI_COMPRA_IMMOB'] = `Chinese Social Media`
         this.dictionary['it']['VENDI_COMPRA_IMMOB'] = `Social Media Cinesi`
-        this.dictionary['zh_CN']['VENDI_COMPRA_IMMOB'] = `中国社会媒体`
+        this.dictionary['zh_CN']['VENDI_COMPRA_IMMOB'] = `中国媒体`
 
         
         /**
@@ -123,7 +123,7 @@ class langPKF {
          */
         this.dictionary['en']['INVESTI_IN_PRG_ITA_SHORT'] = `Invest in projects`
         this.dictionary['it']['INVESTI_IN_PRG_ITA_SHORT'] = `Investi in progetti`
-        this.dictionary['zh_CN']['INVESTI_IN_PRG_ITA_SHORT'] = `投资项目`
+        this.dictionary['zh_CN']['INVESTI_IN_PRG_ITA_SHORT'] = `项目投资`
         /**
          * @description INVESTI_IN_PRG_ITA
          */
@@ -136,7 +136,7 @@ class langPKF {
          */
         this.dictionary['en']['SEI_GIA_ISCRITTOKEY'] = `Are you already a member?`
         this.dictionary['it']['SEI_GIA_ISCRITTO'] = `sei già iscritto?`
-        this.dictionary['zh_CN']['SEI_GIA_ISCRITTO'] = `你已经注册了吗？`
+        this.dictionary['zh_CN']['SEI_GIA_ISCRITTO'] = `你注册了吗？`
         
         /**
          * @description LE_MIE_AZIENDE
@@ -192,14 +192,14 @@ class langPKF {
          */
         this.dictionary['en']['DESCRIZIONE_IN_CINESE'] = `In Chinese`
         this.dictionary['it']['DESCRIZIONE_IN_CINESE'] = `In lingua Cinese`
-        this.dictionary['zh_CN']['DESCRIZIONE_IN_CINESE'] = `用中文`
+        this.dictionary['zh_CN']['DESCRIZIONE_IN_CINESE'] = `中文`
         
         /**
          * @description DESCRIZIONE_IN_ITALIANO
          */
         this.dictionary['en']['DESCRIZIONE_IN_ITALIANO'] = `In Italian language`
         this.dictionary['it']['DESCRIZIONE_IN_ITALIANO'] = `In lingua Italiana`
-        this.dictionary['zh_CN']['DESCRIZIONE_IN_ITALIANO'] = `在意大利语`
+        this.dictionary['zh_CN']['DESCRIZIONE_IN_ITALIANO'] = `意大利语`
         
         /**
          * @description DESCRIZIONE_IN_INGLESE
@@ -241,7 +241,7 @@ class langPKF {
          */
         this.dictionary['en']['TILE_SECOND_LATENCY'] = `How many "seconds" do you want to stay on home (min 10 - max 60)?`
         this.dictionary['it']['TILE_SECOND_LATENCY'] = `Quanti "secondi" vuoi rimanere sulla home (min 10 - max 60)?`
-        this.dictionary['zh_CN']['TILE_SECOND_LATENCY'] = `你想留几个“秒”（最小10 - 最多60）？`
+        this.dictionary['zh_CN']['TILE_SECOND_LATENCY'] = `你想停留多少“秒”（最小10 - 最多60）？`
 
         /**
          * @description SCEGLI_COLORE_TILE
@@ -306,7 +306,7 @@ class langPKF {
          */
         this.dictionary['en']['COOKIE_SHORT'] = `Penknife Investment uses cookies. Continuing to surf the site, you implicitly accept our use of cookies. For details, read our cookie policy.`
         this.dictionary['it']['COOKIE_SHORT'] = `Penknife Investment usa i cookie. Continuando a navigare nel sito, accetti implicitamente il nostro uso dei cookie. Per dettagli, leggi la nostra politica sui cookie.`
-        this.dictionary['zh_CN']['COOKIE_SHORT'] = `Penknife投资使用饼干。 继续浏览网站，您隐含地接受我们使用Cookie。 详情请参阅我们的Cookie政策。`
+        this.dictionary['zh_CN']['COOKIE_SHORT'] = `Penknife投资使用。 继续浏览网站，您隐含地接受我们使用Cookie。 详情请参阅我们的Cookie政策。`
         
         /**
          * @description USERNAME
@@ -369,14 +369,14 @@ class langPKF {
          */
         this.dictionary['en']['SLOGAN_PREMIUM'] = `Get the most out of Penknife, boost your business!`
         this.dictionary['it']['SLOGAN_PREMIUM'] = `Ottieni il massimo da Penknife, potenzia il tuo Business!`
-        this.dictionary['zh_CN']['SLOGAN_PREMIUM'] = `充分利用铅笔刀，提高您的业务！`
+        this.dictionary['zh_CN']['SLOGAN_PREMIUM'] = `充分利用铅笔刀，提升您的业务！`
 
         /**
          * @description SLOGAN_CLASSIC
          */
         this.dictionary['en']['SLOGAN_CLASSIC'] = `Discover the Penknife world, simple, fast .. Free`
         this.dictionary['it']['SLOGAN_CLASSIC'] = `Scopri il mondo Penknife, semplice, rapido..Free`
-        this.dictionary['zh_CN']['SLOGAN_CLASSIC'] = `发现铅笔刀世界，简单，快速..免费`
+        this.dictionary['zh_CN']['SLOGAN_CLASSIC'] = `发现铅笔刀的世界，简单，快速..免费`
 
         /**
          * @description SLOGAN_INVESTOR
@@ -404,7 +404,7 @@ class langPKF {
          */
         this.dictionary['en']['ISCRIZIONE_CLASSIC'] = `Classical Inscription`
         this.dictionary['it']['ISCRIZIONE_CLASSIC'] = `Iscrizione Classic`
-        this.dictionary['zh_CN']['ISCRIZIONE_CLASSIC'] = `古典题字`
+        this.dictionary['zh_CN']['ISCRIZIONE_CLASSIC'] = `经典题字`
 
         /**
          * @description EMAIL
@@ -530,7 +530,7 @@ class langPKF {
          */
         this.dictionary['en']['PATRIMONIO'] = `Assets`
         this.dictionary['it']['PATRIMONIO'] = `Patrimonio`
-        this.dictionary['zh_CN']['PATRIMONIO'] = `遗产`
+        this.dictionary['zh_CN']['PATRIMONIO'] = `资产`
 
         /**
          * @description COMPLIMENTI
@@ -607,7 +607,7 @@ class langPKF {
          */
         this.dictionary['en']['OGGETTO_RICHIESTA'] = `Subject Required`
         this.dictionary['it']['OGGETTO_RICHIESTA'] = `Oggetto richiesta`
-        this.dictionary['zh_CN']['OGGETTO_RICHIESTA'] = `主题必需`
+        this.dictionary['zh_CN']['OGGETTO_RICHIESTA'] = `主题需求`
 
         /**
          * @description MESSAGGIO
@@ -628,14 +628,14 @@ class langPKF {
          */
         this.dictionary['en']['COMPILARE_CAMPI_ALL'] = `Fill in all the fields ..`
         this.dictionary['it']['COMPILARE_CAMPI_ALL'] = `Compilare tutti i campi..`
-        this.dictionary['zh_CN']['COMPILARE_CAMPI_ALL'] = `填写所有的字段..`
+        this.dictionary['zh_CN']['COMPILARE_CAMPI_ALL'] = `填写所有字段部分..`
 
         /**
          * @description MESSAGGIO_INVIATO
          */
         this.dictionary['en']['MESSAGGIO_INVIATO'] = `Mail sent successfully!`
         this.dictionary['it']['MESSAGGIO_INVIATO'] = `Mail inviata correttamente!`
-        this.dictionary['zh_CN']['MESSAGGIO_INVIATO'] = `邮件发送正确！`
+        this.dictionary['zh_CN']['MESSAGGIO_INVIATO'] = `邮件发送成功！`
 
         /**
          * @description MESSAGGIO_FALLITO
@@ -649,7 +649,7 @@ class langPKF {
          */
         this.dictionary['en']['NOME_OBBLIGATORIO'] = `Field Name required`
         this.dictionary['it']['NOME_OBBLIGATORIO'] = `Campo Nome obbligatorio`
-        this.dictionary['zh_CN']['NOME_OBBLIGATORIO'] = `字段名称必需`
+        this.dictionary['zh_CN']['NOME_OBBLIGATORIO'] = `字段名称必填`
 
         /**
          * @description EMAIL_OBBLIGATORIO
@@ -663,21 +663,21 @@ class langPKF {
          */
         this.dictionary['en']['PASSWORD_OBBLIGATORIO'] = `Password field required`
         this.dictionary['it']['PASSWORD_OBBLIGATORIO'] = `Campo Password obbligatorio`
-        this.dictionary['zh_CN']['PASSWORD_OBBLIGATORIO'] = `需要密码字段`
+        this.dictionary['zh_CN']['PASSWORD_OBBLIGATORIO'] = `密码字段必填`
 
         /**
          * @description TELEFONO_OBBLIGATORIO
          */
         this.dictionary['en']['TELEFONO_OBBLIGATORIO'] = `Telephone field required`
         this.dictionary['it']['TELEFONO_OBBLIGATORIO'] = `Campo Telefono obbligatorio`
-        this.dictionary['zh_CN']['TELEFONO_OBBLIGATORIO'] = `需要电话领域`
+        this.dictionary['zh_CN']['TELEFONO_OBBLIGATORIO'] = `电话领域必填`
 
         /**
          * @description COGNOME_OBBLIGATORIO
          */
         this.dictionary['en']['COGNOME_OBBLIGATORIO'] = `Field Required last name`
         this.dictionary['it']['COGNOME_OBBLIGATORIO'] = `Campo Cognome obbligatorio`
-        this.dictionary['zh_CN']['COGNOME_OBBLIGATORIO'] = `字段必填姓氏`
+        this.dictionary['zh_CN']['COGNOME_OBBLIGATORIO'] = `姓氏必填`
 
         /**
          * @description DIVENTA_MEMBRO
@@ -782,14 +782,14 @@ class langPKF {
          */
         this.dictionary['en']['RICH_VARIE'] = `Other requests`
         this.dictionary['it']['RICH_VARIE'] = `Altre richieste`
-        this.dictionary['zh_CN']['RICH_VARIE'] = `其他请求`
+        this.dictionary['zh_CN']['RICH_VARIE'] = `其他要求`
 
         /**
          * @description ARRICCHISCI_PRJ
          */
         this.dictionary['en']['ARRICCHISCI_PRJ'] = `Enhance your project !!`
         this.dictionary['it']['ARRICCHISCI_PRJ'] = `Arricchisci il tuo progetto!!`
-        this.dictionary['zh_CN']['ARRICCHISCI_PRJ'] = `增强您的项目！`
+        this.dictionary['zh_CN']['ARRICCHISCI_PRJ'] = `加强您的项目！`
 
         /**
          * @description ATTACH_AFTER_PROJECT
@@ -810,7 +810,7 @@ class langPKF {
          */
         this.dictionary['en']['CONTATTI'] = `Contacts`
         this.dictionary['it']['CONTATTI'] = `Contatti`
-        this.dictionary['zh_CN']['CONTATTI'] = `往来`
+        this.dictionary['zh_CN']['CONTATTI'] = `联系`
 
         /**
          * @description RESIDENZA
@@ -831,7 +831,7 @@ class langPKF {
          */
         this.dictionary['en']['GEST_USERS'] = `Subscriber Management`
         this.dictionary['it']['GEST_USERS'] = `Gestione Iscritti`
-        this.dictionary['zh_CN']['GEST_USERS'] = `订户管理`
+        this.dictionary['zh_CN']['GEST_USERS'] = `客户管理`
 
         /**
          * @description EL_ATTACH
@@ -894,6 +894,62 @@ class langPKF {
         this.dictionary['it']['CHI_E_PENKNIFE_SLOGAN'] = `Penknife Investment è l’unica azienda innovativa italiana che utilizzando intelligenza artificiale e big data riesce a mettere in collegamento progetti innovativi italiani ed europei con grandi investitori cinesi. Penknife crea così business tra l’Italia, l’Europa e la Cina anche attraverso vari servizi ottenibili tramite la propria piattaforma.`
         this.dictionary['zh_CN']['CHI_E_PENKNIFE_SLOGAN'] = `Penknife Investment是唯一一家意大利创新公司，利用人工智能和大数据将意大利和欧洲的创新项目与大型中国投资者联系起来。 因此，通过其平台可以获得各种服务，因此，小刀在意大利，欧洲和中国之间创建业务。`
 
+        /**
+         * @description PASSWORD_CHECK_NO
+         */
+        this.dictionary['en']['PASSWORD_CHECK_NO'] = `Incorrect confirmation password`
+        this.dictionary['it']['PASSWORD_CHECK_NO'] = `Password di conferma errata`
+        this.dictionary['zh_CN']['PASSWORD_CHECK_NO'] = `错误的确认密码`
+
+        /**
+         * @description INSERISCI_ALLEGATO
+         */
+        this.dictionary['en']['INSERISCI_ALLEGATO'] = `Insert attachment`
+        this.dictionary['it']['INSERISCI_ALLEGATO'] = `Inserisci allegato`
+        this.dictionary['zh_CN']['INSERISCI_ALLEGATO'] = `插入附件`
+
+        /**
+         * @description NO_FILE_VALID
+         */
+        this.dictionary['en']['NO_FILE_VALID'] = `You have not submitted a valid file ...`
+        this.dictionary['it']['NO_FILE_VALID'] = `Non hai inviato un file valido...`
+        this.dictionary['zh_CN']['NO_FILE_VALID'] = `您尚未提交有效的文件...`
+        
+        /**
+         * @description FILE_TOO_BIG
+         */
+        this.dictionary['en']['FILE_TOO_BIG'] = `The file is too big! Maximum size 4MB ..`
+        this.dictionary['it']['FILE_TOO_BIG'] = `Il file è troppo grande! Dimensione massima 4MB..`
+        this.dictionary['zh_CN']['FILE_TOO_BIG'] = `该文件太大了！ 最大尺寸4MB ..`
+        
+        /**
+         * @description INVALID_EXT
+         */
+        this.dictionary['en']['INVALID_EXT'] = `The file has an extension that is not allowed!`
+        this.dictionary['it']['INVALID_EXT'] = `Il file ha un estensione non ammessa!`
+        this.dictionary['zh_CN']['INVALID_EXT'] = `该文件有一个不允许的扩展名！`
+        
+        /**
+         * @description FILE_SUCCESS
+         */
+        this.dictionary['en']['FILE_SUCCESS'] = `File successfully sent.`
+        this.dictionary['it']['FILE_SUCCESS'] = `File inviato con successo.`
+        this.dictionary['zh_CN']['FILE_SUCCESS'] = `文件已成功发送。`
+        
+        /**
+         * @description INVALID_UPLOAD
+         */
+        this.dictionary['en']['INVALID_UPLOAD'] = `Upload NOT valid!`
+        this.dictionary['it']['INVALID_UPLOAD'] = `Upload NON valido!`
+        this.dictionary['zh_CN']['INVALID_UPLOAD'] = `上传无效！`
+
+        /**
+         * @description ANTEPRIMA_ATTACH
+         */
+        this.dictionary['en']['ANTEPRIMA_ATTACH'] = `Preview attached`
+        this.dictionary['it']['ANTEPRIMA_ATTACH'] = `Anteprima allegato`
+        this.dictionary['zh_CN']['ANTEPRIMA_ATTACH'] = `预览附件`
+        
 
 
         /**

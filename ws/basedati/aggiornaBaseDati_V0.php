@@ -176,5 +176,23 @@
 		echo "Error creating table: " . $conn->error;
 	}
 
+	echo '<br>************************************************<br>';
+	// sql to create table
+	$sql = "CREATE TABLE projectattachments (
+				id INT(7) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+				id_project INT(7) NOT NULL,
+				originalfilename VARCHAR(500),
+				encrypted_name VARCHAR(500),
+				formato VARCHAR(10),
+
+				INDEX (id),
+				INDEX (id_project)
+			)";
+	if ($conn->query($sql) === TRUE) {
+		echo "Table projectattachments created successfully";
+	} else {
+		echo "Error creating table: " . $conn->error;
+	}
+
 	$conn->close();
 ?>

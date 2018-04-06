@@ -89,6 +89,10 @@ Ext.define('PENKNIFE.view.auth.SignUpController', {
         if (Ext.isEmpty(values['password'])) {
             message.push(langPKF._translate('PASSWORD_OBBLIGATORIO'))
         }
+
+        if (values['password'] !== values['passwordcheck']) {
+            message.push(langPKF._translate('PASSWORD_CHECK_NO'))
+        }
         
         if (Ext.isEmpty(values['telefono'])) {
             message.push(langPKF._translate('TELEFONO_OBBLIGATORIO'))

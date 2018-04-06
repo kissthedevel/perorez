@@ -3,16 +3,24 @@ Ext.define('PENKNIFE.view.arch.menu.MainMenuItemsListController', {
     alias: 'controller.arch-menu-MainMenuItemsList',
 
     tapFattiConoscere( th ) {
-        /**
-         * TODO:
-         * collegare il tap all'handler Le mie aziende
-         */
-        //if (PENKNIFE.globals.storeUserSimple.getCount() === 0) {
+        if (PENKNIFE.globals.storeUserSimple.getCount() === 0) {
             let title = langPKF._translate('PUBBL_IN_ITA'),
             message = langPKF._translate('PUBBL_IN_ITA_SLOGAN')
             Ext.Msg.alert( title, message)
             return false
-        //}
+        }
+
+        if (this.ctrlHome.overlayHamburger) {
+            let ctrlHamburger = this.ctrlHome.overlayHamburger.lookupController()
+            ctrlHamburger.tapCloseIconHamburger()
+        }
+
+        let levelFirst = this.ctrlHome.lookupReference('LevelFirst')
+        levelFirst.removeAll(true)
+        levelFirst.add(Ext.create('PENKNIFE.view.tiles.TilesList', {
+            controllerHome: this.ctrlHome
+        }))
+        this.ctrlHome.lookupReference('CntMainContent').setActiveItem(levelFirst)
     },
 
     tapTrovaAziendaItaliana: function(th) {
@@ -88,12 +96,12 @@ Ext.define('PENKNIFE.view.arch.menu.MainMenuItemsListController', {
     },
 
     tapSocialMedia( th ) {
-        if (PENKNIFE.globals.storeUserSimple.getCount() === 0) {
+        //if (PENKNIFE.globals.storeUserSimple.getCount() === 0) {
             let title = langPKF._translate('VENDI_COMPRA_IMMOB_SHORT'),
             message = langPKF._translate('SOCIAL_MEDIA_SLOGAN')
             Ext.Msg.alert( title, message)
             return false
-        }
+        //}
 
         /* if (this.ctrlHome.overlayHamburger) {
             let ctrlHamburger = this.ctrlHome.overlayHamburger.lookupController()

@@ -93,6 +93,7 @@ Ext.define('PENKNIFE.view.projects.ProjectSimpleView',{
                                     direction: 'horizontal',
                                     flex: 1,
                                     margin: '0 10 0 10',
+                                    hidden: true,
                                     style: {
                                         'background-color': 'white',
                                         'border-radius': '5px 5px 5px 5px'
@@ -121,23 +122,95 @@ Ext.define('PENKNIFE.view.projects.ProjectSimpleView',{
                 },
                 {
                     xtype: 'container',
+                    layout: 'hbox',
+                    margin: '10 0 0 0',
+                    defaults: {
+                        style: {
+                            'font-size': '17px'
+                        }
+                    },
+                    items: [
+                        {
+                            xtype: 'label',
+                            localized: 'html',
+                            localizedKey: `AZIENDA_IDEATRICE`,
+                            cls: 'label-view-company-name'
+                        },
+                        {
+                            xtype: 'label',
+                            html: ': ',
+                            cls: 'label-view-company-name'
+                        },
+                        {
+                            xtype: 'label',
+                            itemId: 'LabelCompany', reference: 'LabelCompany',
+                            margin: '0 0 0 15',
+                            cls: 'label-view-company-name'
+                        }
+                    ]
+                },
+                {
+                    xtype: 'container',
+                    itemId: 'CntSettore', reference: 'CntSettore',
+                    layout: 'hbox',
+                    defaults: {
+                        style: {
+                            'font-size': '17px'
+                        }
+                    },
+                    items: [
+                        {
+                            xtype: 'label',
+                            localized: 'html',
+                            localizedKey: `SETTORE`,
+                            cls: 'label-view-company-name'
+                        },
+                        {
+                            xtype: 'label',
+                            html: ': ',
+                            cls: 'label-view-company-name'
+                        },
+                        {
+                            xtype: 'label',
+                            itemId: 'LabelSettore', reference: 'LabelSettore',
+                            margin: '0 0 0 15',
+                            cls: 'label-view-company-name'
+                        }
+                    ]
+                },
+                {
+                    xtype: 'container',
                     layout: {
-                        type: 'fit'
+                        type: 'vbox',
+                        align: 'stretch'
                     },
                     width: stdPKF.isPhone() ? '90%' : '70%',
-                    flex: 1,
                     margin: '15 0 10 0',
-                    scrollable: true,
                     items: [
                         {
                             xtype: 'container',
                             itemId: 'DescriptionProject', reference: 'DescriptionProject',
-                            flex: 1,
                             style: {
                                 'text-align': 'justify'
                             }
                         }
                     ]
+                },
+                {
+                    xtype: 'label',
+                    margin: '15 0 10 0',
+                    localized: 'html',
+                    localizedKey: 'EL_ATTACH',
+                    cls: 'label-view-company-name'
+                },
+                {
+                    xtype: 'container',
+                    itemId: 'CntAttach', reference: 'CntAttach',
+                    layout: {
+                        type: 'vbox',
+                        align: 'stretch'
+                    },
+                    height: 250
                 }
             ]
         }

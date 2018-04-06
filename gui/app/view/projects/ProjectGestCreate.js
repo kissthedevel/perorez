@@ -2,7 +2,8 @@ Ext.define('PENKNIFE.view.projects.ProjectGestCreate',{
     extend: 'Ext.Container',
 
     requires: [
-        'PENKNIFE.view.projects.ProjectGestCreateController'
+        'PENKNIFE.view.projects.ProjectGestCreateController',
+        'PENKNIFE.view.projects.ProjectsAttachList'
     ],
 
     controller: 'projects-ProjectGestCreate',
@@ -404,18 +405,34 @@ Ext.define('PENKNIFE.view.projects.ProjectGestCreate',{
                 },
                 {
                     xtype: 'fieldset',
+                    itemId: 'FldArricchisci', reference: 'FldArricchisci',
                     localized: 'title',
                     localizedKey: `ARRICCHISCI_PRJ`,
                     margin: '10 0 0 0',
                     items: [
                         {
                             xtype: 'label',
+                            itemId: 'LabelAttachAfter', reference: 'LabelAttachAfter',
                             localized: 'html',
                             localizedKey: `ATTACH_AFTER_PROJECT`,
                             margin: 5,
                             cls: 'color-red',
                             style: {
                                 'text-align': 'left'
+                            }
+                        },
+                        {
+                            xtype: 'button',
+                            itemId: 'BtnAttachFile', reference: 'BtnAttachFile',
+                            cls: 'hamburger-menu-list-buttons button-icon-24 color-red',
+                            iconAlign: 'left',
+                            localized: 'text',
+                            localizedKey: 'INSERISCI_ALLEGATO',
+                            iconCls: 'icon-upload',
+                            maxWidth: 190,
+                            hidden: true,
+                            listeners: {
+                                tap: 'tapInsertAttach'
                             }
                         }
                     ]
